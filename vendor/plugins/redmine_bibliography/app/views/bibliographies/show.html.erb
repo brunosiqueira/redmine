@@ -1,73 +1,78 @@
-<p>
-  <b>Título:</b>
-  <%=h @bibliography.title %>
-</p>
+<div class="bibliography">
+  <p>
+    <b><%= l "field_title" %>:</b>
+    <%=h @bibliography.title %>
+  </p>
 
-<p>
-  <b>translation missing: pt-BR, field_subtitle:</b>
-  <%=h @bibliography.subtitle %>
-</p>
+  <p>
+    <b><%= l "field_subtitle" %>:</b>
+    <%=h @bibliography.subtitle %>
+  </p>
 
-<p>
-  <b>translation missing: pt-BR, field_edition:</b>
-  <%=h @bibliography.edition %>
-</p>
+  <p>
+    <b><%= l "field_edition" %>:</b>
+    <%=h @bibliography.edition %>
+  </p>
 
-<p>
-  <b>translation missing: pt-BR, field_publisher:</b>
-  <%=h @bibliography.publisher %>
-</p>
+  <p>
+    <b><%= l "field_publisher" %>:</b>
+    <%=h @bibliography.publisher %>
+  </p>
 
-<p>
-  <b>translation missing: pt-BR, field_publishing_date:</b>
-  <%=h @bibliography.publishing_date %>
-</p>
+  <p>
+    <b><%= l "field_publishing_date" %>:</b>
+    <%=h @bibliography.publishing_date %>
+  </p>
 
-<p>
-  <b>translation missing: pt-BR, field_pages:</b>
-  <%=h @bibliography.pages %>
-</p>
+  <p>
+    <b><%= l "field_pages" %>:</b>
+    <%=h @bibliography.pages %>
+  </p>
 
-<p>
-  <b>translation missing: pt-BR, field_volumes:</b>
-  <%=h @bibliography.volumes %>
-</p>
+  <p>
+    <b><%= l "field_volumes" %>:</b>
+    <%=h @bibliography.volumes %>
+  </p>
 
-<p>
-  <b>translation missing: pt-BR, field_illustration:</b>
-  <%=h @bibliography.illustration %>
-</p>
+  <p>
+    <b><%= l "field_illustration" %>:</b>
+    <%=h @bibliography.illustration %>
+  </p>
 
-<p>
-  <b>translation missing: pt-BR, field_dimension:</b>
-  <%=h @bibliography.dimension %>
-</p>
+  <p>
+    <b><%= l "field_dimension" %>:</b>
+    <%=h @bibliography.dimension %>
+  </p>
 
-<p>
-  <b>translation missing: pt-BR, field_colection:</b>
-  <%=h @bibliography.colection %>
-</p>
+  <p>
+    <b><%= l "field_collection" %>:</b>
+    <%=h @bibliography.collection %>
+  </p>
 
-<p>
-  <b>translation missing: pt-BR, field_special_notes:</b>
-  <%=h @bibliography.special_notes %>
-</p>
+  <p>
+    <b><%= l "field_special_notes" %>:</b>
+    <%=h @bibliography.special_notes %>
+  </p>
 
-<p>
-  <b>translation missing: pt-BR, field_isbn:</b>
-  <%=h @bibliography.isbn %>
-</p>
+  <p>
+    <b><%= l "field_isbn" %>:</b>
+    <%=h @bibliography.isbn %>
+  </p>
 
-<p>
-  <b>translation missing: pt-BR, field_newspaper_title:</b>
-  <%=h @bibliography.newspaper_title %>
-</p>
+  <p>
+    <b><%= l "field_newspaper_title" %>:</b>
+    <%=h @bibliography.newspaper_title %>
+  </p>
 
-<p>
-  <b>URL:</b>
-  <%=h @bibliography.url %>
-</p>
+  <p>
+    <b><%=l "field_url" %>:</b>
+    <%=h @bibliography.url %>
+  </p>
+</div>
+<%= link_to l(:button_edit), :action=>"edit", :id=>@bibliography,:project_id=>@project %> |
+<%= link_to l(:button_back), :action=>:index,:project_id=>@project %>
 
+<% content_for :header_tags do %>
+  <%= stylesheet_link_tag 'bibliography', :plugin => 'redmine_bibliography' %>
+<% end %>
 
-<%= link_to 'Edit', edit_bibliography_path(@bibliography) %> |
-<%= link_to 'Back', bibliographies_path %>

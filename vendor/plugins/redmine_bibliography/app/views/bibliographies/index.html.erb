@@ -1,26 +1,26 @@
-<h1>Listing bibliographies</h1>
+<h2>Bibliographies</h2>
 
-<table>
+<table class="list issues">
   <tr>
-    <th>Título</th>
-    <th>translation missing: pt-BR, field_subtitle</th>
-    <th>translation missing: pt-BR, field_edition</th>
-    <th>translation missing: pt-BR, field_publisher</th>
-    <th>translation missing: pt-BR, field_publishing_date</th>
-    <th>translation missing: pt-BR, field_pages</th>
-    <th>translation missing: pt-BR, field_volumes</th>
-    <th>translation missing: pt-BR, field_illustration</th>
-    <th>translation missing: pt-BR, field_dimension</th>
-    <th>translation missing: pt-BR, field_colection</th>
-    <th>translation missing: pt-BR, field_special_notes</th>
-    <th>translation missing: pt-BR, field_isbn</th>
-    <th>translation missing: pt-BR, field_newspaper_title</th>
-    <th>URL</th>
+    <th><%= I18n.t "field_title"%></th>
+    <th><%= I18n.t "field_subtitle"%></th>
+    <th><%= I18n.t "field_edition"%></th>
+    <th><%= I18n.t "field_publisher"%></th>
+    <th><%= I18n.t "field_publishing_date"%></th>
+    <th><%= I18n.t "field_pages"%></th>
+    <th><%= I18n.t "field_volumes"%></th>
+    <th><%= I18n.t "field_illustration"%></th>
+    <th><%= I18n.t "field_dimension"%></th>
+    <th><%= I18n.t "field_collection"%></th>
+    <th><%= I18n.t "field_special_notes"%></th>
+    <th><%= I18n.t "field_isbn"%></th>
+    <th><%= I18n.t "field_newspaper_title"%></th>
+    <th><%= I18n.t "field_url"%></th>
   </tr>
 
 <% for bibliography in @bibliographies %>
   <tr>
-    <td><%=h bibliography.title %></td>
+    <td><%= link_to h(bibliography.title), :action=>:show,:id=>bibliography,:project_id=>@project %></td>
     <td><%=h bibliography.subtitle %></td>
     <td><%=h bibliography.edition %></td>
     <td><%=h bibliography.publisher %></td>
@@ -29,18 +29,18 @@
     <td><%=h bibliography.volumes %></td>
     <td><%=h bibliography.illustration %></td>
     <td><%=h bibliography.dimension %></td>
-    <td><%=h bibliography.colection %></td>
+    <td><%=h bibliography.collection %></td>
     <td><%=h bibliography.special_notes %></td>
     <td><%=h bibliography.isbn %></td>
     <td><%=h bibliography.newspaper_title %></td>
     <td><%=h bibliography.url %></td>
-    <td><%= link_to 'Show', bibliography %></td>
-    <td><%= link_to 'Edit', edit_bibliography_path(bibliography) %></td>
-    <td><%= link_to 'Destroy', bibliography, :confirm => 'Are you sure?', :method => :delete %></td>
+    
+    <td><%= link_to l(:button_edit), :action=>"edit", :id=>bibliography,:project_id=>@project %></td>
+    <td><%= link_to l(:button_delete), {:action=>:destroy,:id=>bibliography,:project_id=>@project}, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New bibliography', new_academic_bibliography_path %>
+<%= link_to link_to l(:button_new_bibliography), :action=>:new,:project_id=>@project %>

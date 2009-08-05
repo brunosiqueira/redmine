@@ -1,9 +1,10 @@
 class BibliographiesController < ApplicationController
-  # GET /academic_bibliographies
-  # GET /academic_bibliographies.xml
+  unloadable
+  # GET /bibliographies
+  # GET /bibliographies.xml
   before_filter :find_project, :authorize
   def index
-    @bibliographies = Academic::Bibliography.find(:all)
+    @bibliographies = Bibliography.find(:all,:include=>:bibliography_projects,:conditions=>["bibliography_projects.project_id=?",@project.id])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -11,10 +12,10 @@ class BibliographiesController < ApplicationController
     end
   end
 
-  # GET /academic_bibliographies/1
-  # GET /academic_bibliographies/1.xml
+  # GET /bibliographies/1
+  # GET /bibliographies/1.xml
   def show
-    @bibliography = Academic::Bibliography.find(params[:id])
+    @bibliography = BibliographyProject.find_by_bibliography_id_and_project_id(params[:id],@project.id).bibliography
 
     respond_to do |format|
       format.html # show.html.erb
@@ -22,11 +23,11 @@ class BibliographiesController < ApplicationController
     end
   end
 
-  # GET /academic_bibliographies/new
-  # GET /academic_bibliographies/new.xml
+  # GET /bibliographies/new
+  # GET /bibliographies/new.xml
   def new
-    @type = Academic::Book.name.split("::").last
-    @bibliography = Academic::Bibliography.new
+    @type = Book.name
+    @bibliography = Book.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,54 +35,55 @@ class BibliographiesController < ApplicationController
     end
   end
 
-  # GET /academic_bibliographies/1/edit
+  # GET /bibliographies/1/edit
   def edit
-    @bibliography = Academic::Bibliography.find(params[:id])
+    @bibliography = BibliographyProject.find_by_bibliography_id_and_project_id(params[:id],@project.id).bibliography
+    @type = @bibliography[:type]
   end
 
-  # POST /academic_bibliographies
-  # POST /academic_bibliographies.xml
+  # POST /bibliographies
+  # POST /bibliographies.xml
   def create
     @type = params[:type]
-    @bibliography = Academic::Bibliography.new(params[:bibliography])
-
+    @bibliography = Bibliography.find_by_title_and_type(params[:bibliography][:title],params[:bibliography][:type]) || @type.constantize.new(params[:bibliography])
+    @bibliography.projects << @project
     respond_to do |format|
       if @bibliography.save
-        flash[:notice] = 'Academic::Bibliography was successfully created.'
-        format.html { redirect_to(@bibliography) }
+        flash[:notice] = 'Bibliography was successfully created.'
+        format.html { redirect_to(:action=>:show,:id=>@bibliography,:project_id=>@project) }
         format.xml  { render :xml => @bibliography, :status => :created, :location => @bibliography }
       else
-        format.html { render :action => "new" }
+        format.html { render :action => "new",:project_id=>@project }
         format.xml  { render :xml => @bibliography.errors, :status => :unprocessable_entity }
       end
     end
   end
 
-  # PUT /academic_bibliographies/1
-  # PUT /academic_bibliographies/1.xml
+  # PUT /bibliographies/1
+  # PUT /bibliographies/1.xml
   def update
-    @bibliography = Academic::Bibliography.find(params[:id])
+    @bibliography = BibliographyProject.find_by_bibliography_id_and_project_id(params[:id],@project.id).bibliography
 
     respond_to do |format|
       if @bibliography.update_attributes(params[:bibliography])
-        flash[:notice] = 'Academic::Bibliography was successfully updated.'
-        format.html { redirect_to(@bibliography) }
+        flash[:notice] = 'Bibliography was successfully updated.'
+        format.html { redirect_to(:action=>:show,:id=>@bibliography,:project_id=>@project) }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
+        format.html { render :action => "edit",:project_id=>@project }
         format.xml  { render :xml => @bibliography.errors, :status => :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /academic_bibliographies/1
-  # DELETE /academic_bibliographies/1.xml
+  # DELETE /bibliographies/1
+  # DELETE /bibliographies/1.xml
   def destroy
-    @bibliography = Academic::Bibliography.find(params[:id])
-    @bibliography.destroy
+    @bibliography_project = BibliographyProject.find_by_bibliography_id_and_project_id(params[:id],@project.id)
+    @bibliography_project.destroy
 
     respond_to do |format|
-      format.html { redirect_to(academic_bibliographies_url) }
+      format.html { redirect_to(:action=>:index,:project_id=>@project) }
       format.xml  { head :ok }
     end
   end

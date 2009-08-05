@@ -1,11 +1,10 @@
-<h1>New bibliography</h1>
+<h2><%=I18n.t "title_new_#{@type.downcase}"%></h2>
 
-<% form_for(@bibliography) do |f| %>
-  <%= f.error_messages %>
-  <%=render :partial=>"/academic/bibliographies/new_#{@type.downcase}",:locals=>{:f=>f}%>
-  <p>
+<% form_for(:bibliography,@bibliography,:url=>{:action=>"create",:project_id=>@project,:type=>@type},:method=>:put, :builder => TabularFormBuilder,:html=>{:class=>"tabular"}) do |f| %>
+  <div class="box">
+    <%= f.error_messages %>
+    <%=render :partial=>"/bibliographies/new_#{@type.downcase}",:locals=>{:f=>f}%>
+  </div>
     <%= f.submit "Create" %>
-  </p>
 <% end %>
-
-<%= link_to 'Back', academic_bibliographies_path %>
+<%= link_to l(:button_back), :action=>:index,:project_id=>@project %>

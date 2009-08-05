@@ -1,68 +1,22 @@
-<h1>Editing bibliography</h1>
+<h2><%=I18n.t "title_edit_#{@type.downcase}"%></h2>
 
-<% form_for(@bibliography) do |f| %>
-  <%= f.error_messages %>
+<div id="authors">
+  <div class="box">
+    <%= render :partial=>"/authors/authors" %>
+  </div>
+</div>
+<% form_for(:bibliography,@bibliography,:url=>{:action=>"update",:id=>@bibliography,:project_id=>@project,:type=>@type},:method=>:put, :builder => TabularFormBuilder,:html=>{:class=>"tabular"}) do |f| %>
+  <div class="box">
+    <%= f.error_messages %>
 
-  <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :subtitle %><br />
-    <%= f.text_field :subtitle %>
-  </p>
-  <p>
-    <%= f.label :edition %><br />
-    <%= f.text_field :edition %>
-  </p>
-  <p>
-    <%= f.label :publisher %><br />
-    <%= f.text_field :publisher %>
-  </p>
-  <p>
-    <%= f.label :publishing_date %><br />
-    <%= f.date_select :publishing_date %>
-  </p>
-  <p>
-    <%= f.label :pages %><br />
-    <%= f.text_field :pages %>
-  </p>
-  <p>
-    <%= f.label :volumes %><br />
-    <%= f.text_field :volumes %>
-  </p>
-  <p>
-    <%= f.label :illustration %><br />
-    <%= f.text_field :illustration %>
-  </p>
-  <p>
-    <%= f.label :dimension %><br />
-    <%= f.text_field :dimension %>
-  </p>
-  <p>
-    <%= f.label :colection %><br />
-    <%= f.text_field :colection %>
-  </p>
-  <p>
-    <%= f.label :special_notes %><br />
-    <%= f.text_field :special_notes %>
-  </p>
-  <p>
-    <%= f.label :isbn %><br />
-    <%= f.text_field :isbn %>
-  </p>
-  <p>
-    <%= f.label :newspaper_title %><br />
-    <%= f.text_field :newspaper_title %>
-  </p>
-  <p>
-    <%= f.label :url %><br />
-    <%= f.text_field :url %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
-  </p>
+    <%=render :partial=>"/bibliographies/new_#{@type.downcase}",:locals=>{:f=>f}%>
+  </div>
+  <%= f.submit "Update" %>
 <% end %>
 
-<%= link_to 'Show', @bibliography %> |
-<%= link_to 'Back', bibliographies_path %>
+<%= link_to l(:button_show), :action=>:show,:id=>@bibliography,:project_id=>@project %> |
+<%= link_to l(:button_back), :action=>:index,:project_id=>@project %>
+
+<% content_for :header_tags do %>
+  <%= stylesheet_link_tag 'bibliography', :plugin => 'redmine_bibliography' %>
+<% end %>
