@@ -1,0 +1,35 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+  title: MyString
+  subtitle: MyString
+  edition: MyString
+  publisher: MyString
+  publishing_date: MyString
+  pages: MyString
+  volumes: MyString
+  illustration: MyString
+  dimension: MyString
+  collection: MyString
+  special_notes: MyString
+  isbn: MyString
+  newspaper_title: MyString
+  url: MyString
+  type: MyString
+two:
+  id: 2
+  title: MyString
+  subtitle: MyString
+  edition: MyString
+  publisher: MyString
+  publishing_date: MyString
+  pages: MyString
+  volumes: MyString
+  illustration: MyString
+  dimension: MyString
+  collection: MyString
+  special_notes: MyString
+  isbn: MyString
+  newspaper_title: MyString
+  url: MyString
+  type: MyString
