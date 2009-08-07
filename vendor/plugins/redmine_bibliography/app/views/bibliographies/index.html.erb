@@ -1,4 +1,9 @@
-<h2>Bibliographies</h2>
+<div class="contextual">
+<%= link_to(l(:label_search_bibliography),
+                          {:controller => 'bibliography_search', :project_id => @project},
+                          :class => 'icon icon22-tracker') %>
+</div>
+<h2><%=l :title_bibliographies%></h2>
 
 <table class="list issues">
   <tr>

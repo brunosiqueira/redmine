@@ -56,7 +56,7 @@ text_formatting:
 wiki_compression:
   default: ""
 default_language:
-  default: en
+  default: pt-BR
 host_name:
   default: localhost:3000
 protocol:

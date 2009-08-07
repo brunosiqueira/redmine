@@ -1,8 +1,8 @@
 module Redmine
   module Info
     class << self
-      def app_name; 'Redmine' end
-      def url; 'http://www.redmine.org/' end
+      def app_name; 'Mundo Acadêmico' end
+      def url; 'http://www.mundoacademico.info/' end
       def help_url; 'http://www.redmine.org/guide' end
       def versioned_name; "#{app_name} #{Redmine::VERSION}" end
 
