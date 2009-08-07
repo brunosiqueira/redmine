@@ -1,0 +1,3 @@
+<% remote_form_for(:author,:url=>{:controller=>"authors",:action=>"create",:bibliography_id=>@bibliography,:project_id=>@project},:method=>:put,:builder => TabularFormBuilder,:html=>{:class=>"tabular"}) do |a| %>
+  <%=a.text_field :name ,:required=>true%> <%=a.submit%>
+<% end %>

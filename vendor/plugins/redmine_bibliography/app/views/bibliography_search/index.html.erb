@@ -1,0 +1,42 @@
+<h2><%=l :title_bibliographies%></h2>
+
+<table class="list issues">
+  <tr>
+    <th><%= I18n.t "field_title"%></th>
+    <th><%= I18n.t "field_subtitle"%></th>
+    <th><%= I18n.t "field_edition"%></th>
+    <th><%= I18n.t "field_publisher"%></th>
+    <th><%= I18n.t "field_publishing_date"%></th>
+    <th><%= I18n.t "field_pages"%></th>
+    <th><%= I18n.t "field_volumes"%></th>
+    <th><%= I18n.t "field_illustration"%></th>
+    <th><%= I18n.t "field_dimension"%></th>
+    <th><%= I18n.t "field_collection"%></th>
+    <th><%= I18n.t "field_special_notes"%></th>
+    <th><%= I18n.t "field_isbn"%></th>
+    <th><%= I18n.t "field_newspaper_title"%></th>
+    <th><%= I18n.t "field_url"%></th>
+  </tr>
+
+<% for bibliography in @bibliographies %>
+  <tr>
+    <td><%= link_to h(bibliography.title), {:action=>:create,:id=>bibliography,:project_id=>@project},:title=>l(:label_create_bibliography) %></td>
+    <td><%=h bibliography.subtitle %></td>
+    <td><%=h bibliography.edition %></td>
+    <td><%=h bibliography.publisher %></td>
+    <td><%=h bibliography.publishing_date %></td>
+    <td><%=h bibliography.pages %></td>
+    <td><%=h bibliography.volumes %></td>
+    <td><%=h bibliography.illustration %></td>
+    <td><%=h bibliography.dimension %></td>
+    <td><%=h bibliography.collection %></td>
+    <td><%=h bibliography.special_notes %></td>
+    <td><%=h bibliography.isbn %></td>
+    <td><%=h bibliography.newspaper_title %></td>
+    <td><%=h bibliography.url %></td>
+  </tr>
+<% end %>
+</table>
+
+
+<%= link_to l(:button_back), :controller=>"bibliographies",:project_id=>@project %>

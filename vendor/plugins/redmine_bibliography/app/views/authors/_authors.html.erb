@@ -1,0 +1,17 @@
+<h3><%=l "title_authors"%></h3>
+<div class="box">
+  <%= link_to_remote l(:button_new_authors),:url=>{:controller=>"authors",:action=>:new,:project_id=>@project,:bibliography_id=>@bibliography},:update=>"new_author" %>
+  <div id="new_author"></div>
+  <table>
+    <% @bibliography.authors.each  do |author| %>
+      <tr id="author_<%=author.id%>">
+        <td >
+          <%=in_place_editor_field :author,"name",{},{:url=>url_for(:controller=>"authors",:action=>"set_author_name",:id=>author,:project_id=>@project)},author%>
+        </td>
+        <td>
+          <%= link_to_remote l(:button_delete), :url=>{:controller=>"authors",:action=>:destroy,:bibliography_id=>@bibliography,:project_id=>@project,:id=>author}, :confirm => 'Are you sure?', :method => :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

@@ -1,0 +1,198 @@
+# Logfile created on Mon Jul 27 12:48:54 -0300 2009  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing BibliographiesController#index (for 0.0.0.0 at 2009-07-27 12:52:13) [GET]
+  Parameters: {"action"=>"index", "controller"=>"bibliographies"}
+  [4;35;1mSetting Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT max(`settings`.updated_on) AS max_updated_on FROM `settings` [0m
+  [4;35;1mAnonymousUser Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mAnonymousUser Load (0.6ms)[0m   [0;1mSELECT * FROM `users` WHERE ( (`users`.`type` = 'AnonymousUser' ) ) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: login
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE ( (`users`.`type` = 'AnonymousUser' ) ) LIMIT 1[0m
+  [4;36;1mAnonymousUser Create (0.6ms)[0m   [0;1mINSERT INTO `users` (`created_on`, `hashed_password`, `admin`, `language`, `lastname`, `mail`, `updated_on`, `type`, `firstname`, `mail_notification`, `login`, `status`, `identity_url`, `last_login_on`, `auth_source_id`) VALUES('2009-07-27 12:52:13', '', 0, '', 'Anonymous', '', '2009-07-27 12:52:13', 'AnonymousUser', '', 0, '', 0, NULL, NULL, NULL)[0m
+  [4;35;1mSetting Load (0.6ms)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'login_required') LIMIT 1[0m
+  [4;36;1mSetting Load (0.3ms)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'default_language') LIMIT 1[0m
+Rendering template within layouts/base
+Rendering common/404 (404)
+  [4;35;1mSetting Load (0.3ms)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'app_title') LIMIT 1[0m
+  [4;36;1mSetting Load (0.2ms)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'ui_theme') LIMIT 1[0m
+  [4;35;1mSetting Load (0.2ms)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'text_formatting') LIMIT 1[0m
+  [4;36;1mSetting Load (0.2ms)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'self_registration') LIMIT 1[0m
+  [4;35;1mProject Load (0.5ms)[0m   [0mSELECT `projects`.* FROM `projects` INNER JOIN members ON projects.id = members.project_id WHERE ((`members`.user_id = 1) AND ((projects.status=1))) [0m
+Filter chain halted as [:find_project] rendered_or_redirected.
+Completed in 702ms (View: 645, DB: 10) | 404 Not Found [http://test.host/bibliographies]
+  [4;36;1mSQL (5.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+
+
+Processing BibliographiesController#new (for 0.0.0.0 at 2009-07-27 12:52:14) [GET]
+  Parameters: {"action"=>"new", "controller"=>"bibliographies"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT max(`settings`.updated_on) AS max_updated_on FROM `settings` [0m
+  [4;35;1mAnonymousUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE ( (`users`.`type` = 'AnonymousUser' ) ) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: login
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE ( (`users`.`type` = 'AnonymousUser' ) ) LIMIT 1[0m
+  [4;35;1mAnonymousUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`created_on`, `hashed_password`, `admin`, `language`, `lastname`, `mail`, `updated_on`, `type`, `firstname`, `mail_notification`, `login`, `status`, `identity_url`, `last_login_on`, `auth_source_id`) VALUES('2009-07-27 12:52:14', '', 0, '', 'Anonymous', '', '2009-07-27 12:52:14', 'AnonymousUser', '', 0, '', 0, NULL, NULL, NULL)[0m
+Rendering template within layouts/base
+Rendering common/404 (404)
+  [4;36;1mProject Load (0.3ms)[0m   [0;1mSELECT `projects`.* FROM `projects` INNER JOIN members ON projects.id = members.project_id WHERE ((`members`.user_id = 2) AND ((projects.status=1))) [0m
+Filter chain halted as [:find_project] rendered_or_redirected.
+Completed in 19ms (View: 9, DB: 6) | 404 Not Found [http://test.host/bibliographies/new]
+  [4;35;1mSQL (25.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing BibliographiesController#index (for 0.0.0.0 at 2009-07-27 12:52:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"bibliographies"}
+  [4;35;1mSetting Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT max(`settings`.updated_on) AS max_updated_on FROM `settings` [0m
+  [4;35;1mAnonymousUser Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mAnonymousUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE ( (`users`.`type` = 'AnonymousUser' ) ) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: login
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE ( (`users`.`type` = 'AnonymousUser' ) ) LIMIT 1[0m
+  [4;36;1mAnonymousUser Create (0.3ms)[0m   [0;1mINSERT INTO `users` (`created_on`, `hashed_password`, `admin`, `language`, `lastname`, `mail`, `updated_on`, `type`, `firstname`, `mail_notification`, `login`, `status`, `identity_url`, `last_login_on`, `auth_source_id`) VALUES('2009-07-27 12:52:37', '', 0, '', 'Anonymous', '', '2009-07-27 12:52:37', 'AnonymousUser', '', 0, '', 0, NULL, NULL, NULL)[0m
+  [4;35;1mSetting Load (0.5ms)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'login_required') LIMIT 1[0m
+  [4;36;1mSetting Load (0.1ms)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'default_language') LIMIT 1[0m
+Rendering template within layouts/base
+Rendering common/404 (404)
+  [4;35;1mSetting Load (0.1ms)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'app_title') LIMIT 1[0m
+  [4;36;1mSetting Load (0.1ms)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'ui_theme') LIMIT 1[0m
+  [4;35;1mSetting Load (0.1ms)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'text_formatting') LIMIT 1[0m
+  [4;36;1mSetting Load (0.1ms)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'self_registration') LIMIT 1[0m
+  [4;35;1mProject Load (0.3ms)[0m   [0mSELECT `projects`.* FROM `projects` INNER JOIN members ON projects.id = members.project_id WHERE ((`members`.user_id = 3) AND ((projects.status=1))) [0m
+Filter chain halted as [:find_project] rendered_or_redirected.
+Completed in 647ms (View: 597, DB: 5) | 404 Not Found [http://test.host/bibliographies]
+  [4;36;1mSQL (19.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+
+
+Processing BibliographiesController#new (for 0.0.0.0 at 2009-07-27 12:52:38) [GET]
+  Parameters: {"action"=>"new", "controller"=>"bibliographies"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT max(`settings`.updated_on) AS max_updated_on FROM `settings` [0m
+  [4;35;1mAnonymousUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE ( (`users`.`type` = 'AnonymousUser' ) ) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: login
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE ( (`users`.`type` = 'AnonymousUser' ) ) LIMIT 1[0m
+  [4;35;1mAnonymousUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`created_on`, `hashed_password`, `admin`, `language`, `lastname`, `mail`, `updated_on`, `type`, `firstname`, `mail_notification`, `login`, `status`, `identity_url`, `last_login_on`, `auth_source_id`) VALUES('2009-07-27 12:52:38', '', 0, '', 'Anonymous', '', '2009-07-27 12:52:38', 'AnonymousUser', '', 0, '', 0, NULL, NULL, NULL)[0m
+Rendering template within layouts/base
+Rendering common/404 (404)
+  [4;36;1mProject Load (0.3ms)[0m   [0;1mSELECT `projects`.* FROM `projects` INNER JOIN members ON projects.id = members.project_id WHERE ((`members`.user_id = 4) AND ((projects.status=1))) [0m
+Filter chain halted as [:find_project] rendered_or_redirected.
+Completed in 22ms (View: 12, DB: 20) | 404 Not Found [http://test.host/bibliographies/new]
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing BibliographiesController#index (for 0.0.0.0 at 2009-07-27 13:01:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"bibliographies"}
+  [4;35;1mSetting Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT max(`settings`.updated_on) AS max_updated_on FROM `settings` [0m
+  [4;35;1mAnonymousUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mAnonymousUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE ( (`users`.`type` = 'AnonymousUser' ) ) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: login
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE ( (`users`.`type` = 'AnonymousUser' ) ) LIMIT 1[0m
+  [4;36;1mAnonymousUser Create (0.4ms)[0m   [0;1mINSERT INTO `users` (`created_on`, `hashed_password`, `admin`, `language`, `lastname`, `mail`, `updated_on`, `type`, `firstname`, `mail_notification`, `login`, `status`, `identity_url`, `last_login_on`, `auth_source_id`) VALUES('2009-07-27 13:01:56', '', 0, '', 'Anonymous', '', '2009-07-27 13:01:56', 'AnonymousUser', '', 0, '', 0, NULL, NULL, NULL)[0m
+  [4;35;1mSetting Load (0.2ms)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'login_required') LIMIT 1[0m
+  [4;36;1mSetting Load (0.2ms)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'default_language') LIMIT 1[0m
+Rendering template within layouts/base
+Rendering common/404 (404)
+  [4;35;1mSetting Load (0.1ms)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'app_title') LIMIT 1[0m
+  [4;36;1mSetting Load (0.1ms)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'ui_theme') LIMIT 1[0m
+  [4;35;1mSetting Load (0.1ms)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'text_formatting') LIMIT 1[0m
+  [4;36;1mSetting Load (0.1ms)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'self_registration') LIMIT 1[0m
+  [4;35;1mProject Load (0.3ms)[0m   [0mSELECT `projects`.* FROM `projects` INNER JOIN members ON projects.id = members.project_id WHERE ((`members`.user_id = 5) AND ((projects.status=1))) [0m
+Filter chain halted as [:find_project] rendered_or_redirected.
+Completed in 743ms (View: 712, DB: 5) | 404 Not Found [http://test.host/bibliographies]
+  [4;36;1mSQL (6.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+
+
+Processing BibliographiesController#new (for 0.0.0.0 at 2009-07-27 13:01:57) [GET]
+  Parameters: {"action"=>"new", "controller"=>"bibliographies"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT max(`settings`.updated_on) AS max_updated_on FROM `settings` [0m
+  [4;35;1mAnonymousUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE ( (`users`.`type` = 'AnonymousUser' ) ) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: login
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE ( (`users`.`type` = 'AnonymousUser' ) ) LIMIT 1[0m
+  [4;35;1mAnonymousUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`created_on`, `hashed_password`, `admin`, `language`, `lastname`, `mail`, `updated_on`, `type`, `firstname`, `mail_notification`, `login`, `status`, `identity_url`, `last_login_on`, `auth_source_id`) VALUES('2009-07-27 13:01:57', '', 0, '', 'Anonymous', '', '2009-07-27 13:01:57', 'AnonymousUser', '', 0, '', 0, NULL, NULL, NULL)[0m
+Rendering template within layouts/base
+Rendering common/404 (404)
+  [4;36;1mProject Load (0.3ms)[0m   [0;1mSELECT `projects`.* FROM `projects` INNER JOIN members ON projects.id = members.project_id WHERE ((`members`.user_id = 6) AND ((projects.status=1))) [0m
+Filter chain halted as [:find_project] rendered_or_redirected.
+Completed in 19ms (View: 9, DB: 7) | 404 Not Found [http://test.host/bibliographies/new]
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
