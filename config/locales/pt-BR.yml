@@ -101,6 +101,9 @@ pt-BR:
   # Active Record
   activerecord:
     errors:
+      models:
+        bibliography:
+          publishing_date_invalid: formato inválido.
       template:
         header:
           one: "model não pode ser salvo: 1 erro"
@@ -840,12 +843,12 @@ pt-BR:
   field_special_notes: Notas Especiais
   field_edition: Edição
   field_volumes: Volumes
-  field_publishing_date: Data de Publicação
+  field_publishing_date: Data de Publicação ou Acesso
   field_newspaper_title: Jornal
   field_pages: Páginas
   field_collection: Coleção
   field_illustration: Ilustração
-  field_publisher: Editora
+  field_publisher: Editora ou Conferência
   field_isbn: ISBN
   field_subtitle: Subtítulo
   title_edit_article: Editar Artigo
@@ -862,3 +865,13 @@ pt-BR:
   title_bibliographies: Bibliografias
   label_search_bibliography: Buscar Bibliografias
   label_create_bibliography: Associar ao Projeto
+  label_website: Site
+  label_book: Livro
+  label_newspaper: Jornal
+  label_article: Artigo
+  title_new_newspaper: Novo Jornal
+  title_edit_newspaper: Editar Jornal
+ 
+  label_news_paper: NewsPaper
+  field_local: Local
+  button_list_bibliography_references: Listar Referências

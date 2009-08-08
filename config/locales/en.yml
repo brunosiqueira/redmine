@@ -68,6 +68,9 @@ en:
       
   activerecord:
     errors:
+      models:
+        bibliography:
+          publishing_date_invalid: invalid format.
       messages:
         inclusion: "is not included in the list"
         exclusion: "is reserved"
@@ -249,6 +252,7 @@ en:
   field_group_by: Group results by
   field_subtitle: Subtitle
   field_edition: Edition
+  field_local: Local
   field_publisher: Publisher
   field_publishing_date: Publishing Date
   field_pages: Pages
@@ -817,6 +821,8 @@ en:
   title_new_book: New Book
   title_new_article: New Article
   title_new_website: New Website
+  title_new_newspaper: New Newspaper
+  title_edit_newspaper: Edit Newspaper
   title_edit_book: Edit Book
   title_edit_article: Edit Article
   title_edit_website: Edit Website
@@ -827,3 +833,8 @@ en:
   menu_bibliographies: Bibliographies
   label_search_bibliography: Search Bibliographies
   label_create_bibliography: Associate to Project
+  label_article: Article
+  label_book: Book
+  label_website: Website
+  label_news_paper: NewsPaper
+  button_list_bibliography_references: List References

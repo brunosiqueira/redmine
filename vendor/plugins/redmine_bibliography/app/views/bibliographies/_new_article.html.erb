@@ -1,42 +1,21 @@
-  <p>
-    <%= f.text_field :title,:required=>true %>
-  </p>
-  <p>
-    <%= f.text_field :subtitle %>
-  </p>
-  <p>
-    <%= f.text_field :edition %>
-  </p>
-  <p>
-    <%= f.text_field :publisher,:required=>true %>
-  </p>
-  <p>
-    <%= f.text_field :publishing_date,:required=>true, :size => 10 %><%= calendar_for('bibliography_publishing_date') %>
-  </p>
-  <p>
-    <%= f.text_field :pages %>
-  </p>
-  <p>
-    <%= f.text_field :volumes %>
-  </p>
-  <p>
-    <%= f.text_field :illustration %>
-  </p>
-  <p>
-    <%= f.text_field :dimension %>
-  </p>
-  <p>
-    <%= f.text_field :collection %>
-  </p>
-  <p>
-    <%= f.text_field :special_notes %>
-  </p>
-  <p>
-    <%= f.text_field :isbn %>
-  </p>
-  <p>
-    <%= f.text_field :newspaper_title %>
-  </p>
-  <p>
-    <%= f.text_field :url,:required=>true %>
-  </p>
+<p>
+  <%= f.text_field :title,:required=>true %>
+</p>
+<p>
+  <%= f.text_field :subtitle %>
+</p>
+<p>
+  <%= f.text_field :local,:required=>true %>
+</p>
+<p>
+  <%= f.text_field :publisher,:required=>true %>
+</p>
+<p>
+  <%= f.text_field :publishing_date,:required=>true, :size => 10 %><%= calendar_for('bibliography_publishing_date') %>
+</p>
+<p>
+  <%= f.text_field :illustration %>
+</p>
+<p>
+  <%= f.text_field :special_notes %>
+</p>

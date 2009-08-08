@@ -11,7 +11,7 @@
 
     <%=render :partial=>"/bibliographies/new_#{@type.downcase}",:locals=>{:f=>f}%>
   </div>
-  <%= f.submit "Update" %>
+  <%= f.submit l(:button_update) %>
 <% end %>
 
 <%= link_to l(:button_show), :action=>:show,:id=>@bibliography,:project_id=>@project %> |

@@ -15,6 +15,7 @@ class CreateBibliographies < ActiveRecord::Migration
       t.column :isbn, :string
       t.column :newspaper_title, :string
       t.column :url, :string
+      t.column :local, :string
       t.column :type, :string
     end
   end

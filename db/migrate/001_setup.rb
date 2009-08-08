@@ -292,7 +292,7 @@ class Setup < ActiveRecord::Migration
                        :lastname => "Admin",
                        :mail => "admin@example.net",
                        :mail_notification => true,
-                       :language => "en",
+                       :language => "pt-BR",
                        :status => 1
   end
 

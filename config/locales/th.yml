@@ -828,3 +828,11 @@ th:
   title_bibliographies: Bibliographies
   label_search_bibliography: Buscar Bibliografias
   label_create_bibliography: Associate to Project
+  label_website: Website
+  label_book: Book
+  label_news_paper: NewsPaper
+  label_article: Article
+  title_new_newspaper: New Newspaper
+  title_edit_newspaper: Edit Newspaper
+  field_local: Local
+  button_list_bibliography_references: List References

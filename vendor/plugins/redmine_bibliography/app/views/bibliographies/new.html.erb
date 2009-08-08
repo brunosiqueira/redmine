@@ -3,6 +3,7 @@
 <% form_for(:bibliography,@bibliography,:url=>{:action=>"create",:project_id=>@project,:type=>@type},:method=>:put, :builder => TabularFormBuilder,:html=>{:class=>"tabular"}) do |f| %>
   <div class="box">
     <%= f.error_messages %>
+    <%= select_tag :type,options_for_select(Bibliography.subclasses_list, @type),:onchange=>remote_function(:update=>"content_main",:url=>{:action=>:change_type,:project_id=>@project},:with=>"'type=' + encodeURIComponent(value)") %>
     <%=render :partial=>"/bibliographies/new_#{@type.downcase}",:locals=>{:f=>f}%>
   </div>
     <%= f.submit l(:button_create) %>

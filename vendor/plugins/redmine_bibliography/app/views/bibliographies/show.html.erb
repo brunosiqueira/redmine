@@ -1,4 +1,7 @@
 <div class="bibliography">
+  <blockquote>
+    <%= render :partial=>"/bibliographies/show_#{@bibliography[:type].downcase}",:locals=>{:bibliography=>@bibliography} %>
+  </blockquote>
   <p>
     <b><%= l "field_title" %>:</b>
     <%=h @bibliography.title %>

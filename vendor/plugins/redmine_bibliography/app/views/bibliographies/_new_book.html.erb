@@ -5,6 +5,9 @@
   <%= f.text_field :subtitle %>
 </p>
 <p>
+  <%= f.text_field :local,:required=>true %>
+</p>
+<p>
   <%= f.text_field :edition %>
 </p>
 <p>
@@ -33,10 +36,4 @@
 </p>
 <p>
   <%= f.text_field :isbn %>
-</p>
-<p>
-  <%= f.text_field :newspaper_title %>
-</p>
-<p>
-  <%= f.text_field :url,:required=>true %>
 </p>

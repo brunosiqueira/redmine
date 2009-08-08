@@ -12,6 +12,15 @@ class BibliographiesController < ApplicationController
     end
   end
 
+  def index_references
+    @bibliographies = Bibliography.find(:all,:include=>:bibliography_projects,:conditions=>["bibliography_projects.project_id=?",@project.id])
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @bibliographies }
+    end
+  end
+
   # GET /bibliographies/1
   # GET /bibliographies/1.xml
   def show
@@ -26,13 +35,19 @@ class BibliographiesController < ApplicationController
   # GET /bibliographies/new
   # GET /bibliographies/new.xml
   def new
-    @type = Book.name
-    @bibliography = Book.new
+    @type = params[:type] || Book.name
+    @bibliography = @type.constantize.new
 
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @bibliography }
     end
+  end
+
+  def change_type
+    @type = params[:type] || Book.name
+    @bibliography = @type.constantize.new
+    render :action=>:new,:layout=>false
   end
 
   # GET /bibliographies/1/edit
@@ -50,7 +65,7 @@ class BibliographiesController < ApplicationController
     respond_to do |format|
       if @bibliography.save
         flash[:notice] = 'Bibliography was successfully created.'
-        format.html { redirect_to(:action=>:show,:id=>@bibliography,:project_id=>@project) }
+        format.html { redirect_to(:action=>:edit,:id=>@bibliography,:project_id=>@project) }
         format.xml  { render :xml => @bibliography, :status => :created, :location => @bibliography }
       else
         format.html { render :action => "new",:project_id=>@project }
@@ -63,7 +78,7 @@ class BibliographiesController < ApplicationController
   # PUT /bibliographies/1.xml
   def update
     @bibliography = BibliographyProject.find_by_bibliography_id_and_project_id(params[:id],@project.id).bibliography
-
+    @type = @bibliography[:type]
     respond_to do |format|
       if @bibliography.update_attributes(params[:bibliography])
         flash[:notice] = 'Bibliography was successfully updated.'

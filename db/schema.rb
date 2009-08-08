@@ -41,34 +41,6 @@ ActiveRecord::Schema.define(:version => 20090804193502) do
     t.boolean "tls",                             :default => false, :null => false
   end
 
-  create_table "authors", :force => true do |t|
-    t.integer "bibliography_id"
-    t.string  "name"
-  end
-
-  create_table "bibliographies", :force => true do |t|
-    t.string "title"
-    t.string "subtitle"
-    t.string "edition"
-    t.string "publisher"
-    t.string "publishing_date"
-    t.string "pages"
-    t.string "volumes"
-    t.string "illustration"
-    t.string "dimension"
-    t.string "collection"
-    t.string "special_notes"
-    t.string "isbn"
-    t.string "newspaper_title"
-    t.string "url"
-    t.string "type"
-  end
-
-  create_table "bibliography_projects", :force => true do |t|
-    t.integer "project_id"
-    t.integer "bibliography_id"
-  end
-
   create_table "boards", :force => true do |t|
     t.integer "project_id",                      :null => false
     t.string  "name",            :default => "", :null => false

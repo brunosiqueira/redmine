@@ -52,7 +52,9 @@
     
     <div id="content">
 				<%= render_flash_messages %>
+      <div id="content_main">
         <%= yield %>
+      </div>
         <%= call_hook :view_layouts_base_content %>
 				<div style="clear:both;"></div>
     </div>
