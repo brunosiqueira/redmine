@@ -1,0 +1,8 @@
+<%=render :partial=>"/authors/show_authors",:locals=>{:authors=>bibliography.authors}%> 
+<%= h bibliography.title %>
+<%= bibliography.subtitle.nil? || bibliography.subtitle.blank? ? "." : h(": #{bibliography.subtitle}.") %>
+<%=h "#{bibliography.local}:"%>
+<%=h bibliography.publisher%>,
+<%=h " #{bibliography.publishing_date_month} #{Date.strptime(bibliography.publishing_date,"%Y-%m-%d").year}."%>
+<%= bibliography.illustration.nil? || bibliography.illustration.blank?  ? "" : h(", Ilustração #{bibliography.illustration}") %>
+<%= bibliography.special_notes.nil? || bibliography.special_notes.blank?  ? "" : h(", #{bibliography.special_notes}") %>

@@ -1,0 +1,11 @@
+<% output ="" %>
+<% authors.each{ |author| %>
+  <% list = author.name.split(" ") %>
+  <% last_name = list.last.upcase %>
+  <% list.delete(list.last) %>
+  <% second_name = list.last %>
+  <% list.delete(second_name) %>
+  <% list << "#{second_name[0,1]}." %>
+  <% output <<  "#{last_name}, #{list.join(" ")}," %>
+<% } %>
+<%= output  %>

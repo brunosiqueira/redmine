@@ -1,0 +1,7 @@
+<h2><%=l :title_bibliographies%></h2>
+<% @bibliographies.each{|bibliography| %>
+  <p>
+    <%= render :partial=>"/bibliographies/show_#{bibliography[:type].downcase}",:locals=>{:bibliography=>bibliography} %>
+  </p>
+<% } %>
+<%= link_to l(:button_back), :action=>:index,:project_id=>@project %>

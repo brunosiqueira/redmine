@@ -1,0 +1,4 @@
+<%= h bibliography.title.upcase %>
+<%= bibliography.subtitle.nil? || bibliography.subtitle.empty? ? "." : ": #{bibliography.subtitle}." %> Disponível em:
+< <%= h bibliography.url %> >.
+Acesso em  <%=h "#{Date.strptime(bibliography.publishing_date,"%Y-%m-%d").day} de #{bibliography.publishing_date_month} de #{Date.strptime(bibliography.publishing_date,"%Y-%m-%d").year}."%>

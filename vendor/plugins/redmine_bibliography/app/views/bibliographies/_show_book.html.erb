@@ -1,0 +1,13 @@
+<%=render :partial=>"/authors/show_authors",:locals=>{:authors=>bibliography.authors}%> 
+<%= h bibliography.title %>
+<%= bibliography.subtitle.nil? || bibliography.subtitle.blank? ? "." : h(": #{bibliography.subtitle}.") %>
+<%= bibliography.edition.nil? || bibliography.edition.blank?  ? "" : h("#{bibliography.edition}ª Edição.") %>
+<%=h "#{bibliography.local}:"%>
+<%=h bibliography.publisher%>,<%=h " #{bibliography.publishing_date_month} #{Date.strptime(bibliography.publishing_date,"%Y-%m-%d").year}."%>
+<%= bibliography.pages.nil? || bibliography.pages.blank?  ? "" : h(" #{bibliography.pages} p.") %>
+<%= bibliography.volumes.nil? || bibliography.volumes.blank?  ? "" : h(", Volume #{bibliography.volumes}") %>
+<%= bibliography.dimension.nil? || bibliography.dimension.blank?  ? "" : h(", Dimensões #{bibliography.dimension}") %>
+<%= bibliography.illustration.nil? || bibliography.illustration.blank?  ? "" : h(", Ilustração #{bibliography.illustration}") %>
+<%= bibliography.collection.nil? || bibliography.collection.blank?  ? "" : h(", Coleção #{bibliography.collection}") %>
+<%= bibliography.special_notes.nil? || bibliography.special_notes.blank?  ? "" : h(", #{bibliography.special_notes}") %>
+<%= bibliography.isbn.nil? || bibliography.isbn.blank?  ? "" : h(", ISBN #{bibliography.isbn}") %>
