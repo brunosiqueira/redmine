@@ -36,6 +36,8 @@ class Project < ActiveRecord::Base
   has_one :repository, :dependent => :destroy
   has_many :changesets, :through => :repository
   has_one :wiki, :dependent => :destroy
+  has_many :project_rules
+  has_many :rules,:through => :project_rules
   # Custom field for the project issues
   has_and_belongs_to_many :issue_custom_fields, 
                           :class_name => 'IssueCustomField',
@@ -67,7 +69,7 @@ class Project < ActiveRecord::Base
   validates_exclusion_of :identifier, :in => %w( new )
 
   before_destroy :delete_all_members
-  after_create :create_issue_categories
+  after_create :include_rules
 
   named_scope :has_module, lambda { |mod| { :conditions => ["#{Project.table_name}.id IN (SELECT em.project_id FROM #{EnabledModule.table_name} em WHERE em.name=?)", mod.to_s] } }
   named_scope :active, { :conditions => "#{Project.table_name}.status = #{STATUS_ACTIVE}"}
@@ -408,10 +410,8 @@ private
     @actions_allowed ||= allowed_permissions.inject([]) { |actions, permission| actions += Redmine::AccessControl.allowed_actions(permission) }.flatten
   end
 
-  def create_issue_categories
-    self.issue_categories.create(:name=>"Desenvolvimento")
-    self.issue_categories.create(:name=>"Teste")
-    self.issue_categories.create(:name=>"Documentação")
-    self.issue_categories.create(:name=>"Pesquisa")
+  def include_rules
+    self.rules = Rule.find :all
   end
+
 end

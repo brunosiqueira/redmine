@@ -46,6 +46,10 @@
     <% end %>
 </tr>
 <tr>
+    <td class=""><b><%=l(:field_pre_requirement)%>:</b></td>
+    <td class="progress"><%= @issue.pre_requirement.nil? ? "-" : h(@issue.pre_requirement.subject) %></td>
+</tr>
+<tr>
 <% n = 0 -%>
 <% @issue.custom_field_values.each do |value| -%>
     <td valign="top"><b><%=h value.custom_field.name %>:</b></td><td valign="top"><%= simple_format(h(show_value(value))) %></td>

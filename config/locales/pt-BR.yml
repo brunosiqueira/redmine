@@ -223,7 +223,7 @@ pt-BR:
   field_due_date: Data prevista
   field_assigned_to: Atribuído para
   field_priority: Prioridade
-  field_fixed_version: Versão
+  field_fixed_version: Iteração
   field_user: Usuário
   field_role: Papel
   field_homepage: Página inicial
@@ -240,7 +240,7 @@ pt-BR:
   field_password: Senha
   field_new_password: Nova senha
   field_password_confirmation: Confirmação
-  field_version: Versão
+  field_version: Iteração
   field_type: Tipo
   field_host: Servidor
   field_port: Porta
@@ -426,9 +426,9 @@ pt-BR:
   label_change_log: Registro de alterações
   label_settings: Configurações
   label_overview: Visão geral
-  label_version: Versão
-  label_version_new: Nova versão
-  label_version_plural: Versões
+  label_version: Iteração
+  label_version_new: Nova iteração
+  label_version_plural: Iterações
   label_confirmation: Confirmação
   label_export_to: Exportar para
   label_read: Ler...
@@ -526,7 +526,7 @@ pt-BR:
   label_roadmap: Planejamento
   label_roadmap_due_in: "Previsto para {{value}}"
   label_roadmap_overdue: "{{value}} atrasado"
-  label_roadmap_no_issues: Sem tarefas para esta versão
+  label_roadmap_no_issues: Sem tarefas para esta iteração
   label_search: Busca
   label_result_plural: Resultados
   label_all_words: Todas as palavras
@@ -537,7 +537,7 @@ pt-BR:
   label_wiki_page_plural: páginas Wiki
   label_index_by_title: Índice por título
   label_index_by_date: Índice por data
-  label_current_version: Versão atual
+  label_current_version: Iteração atual
   label_preview: Pré-visualizar
   label_feed_plural: Feeds
   label_changes_details: Detalhes de todas as alterações
@@ -575,7 +575,7 @@ pt-BR:
   label_start_to_end: início para fim
   label_stay_logged_in: Permanecer logado
   label_disabled: desabilitado
-  label_show_completed_versions: Exibir versões completas
+  label_show_completed_versions: Exibir iterações completas
   label_me: mim
   label_board: Fórum
   label_board_new: Novo fórum
@@ -620,7 +620,7 @@ pt-BR:
   label_change_properties: Alterar propriedades
   label_general: Geral
   label_more: Mais
-  label_scm: 'Controle de versão:'
+  label_scm: 'Controle de iteração:'
   label_plugins: Plugins
   label_ldap_authentication: Autenticação LDAP
   label_downloads_abbr: D/L
@@ -759,7 +759,7 @@ pt-BR:
   permission_log_time: Adicionar tempo gasto
   permission_view_changesets: Ver changesets
   permission_view_time_entries: Ver tempo gasto
-  permission_manage_versions: Gerenciar versões
+  permission_manage_versions: Gerenciar iterações
   permission_manage_wiki: Gerenciar wiki
   permission_manage_categories: Gerenciar categorias de tarefas
   permission_protect_wiki_pages: Proteger páginas wiki
@@ -875,3 +875,6 @@ pt-BR:
   label_news_paper: NewsPaper
   field_local: Local
   button_list_bibliography_references: Listar Referências
+  error_no_default_status_in_project: Não há status padrão definido para a tarefa. Por favor verifique as configurações (Vá para "Administração -> Status da Tarefa").
+  error_no_tracker_in_project: Nenhum tipo de tarefa está associado ao projeto. Verifique as configurações do projeto.
+  field_pre_requirement: Pré-Requisito

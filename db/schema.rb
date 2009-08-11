@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090804193502) do
+ActiveRecord::Schema.define(:version => 20090811131653) do
 
   create_table "attachments", :force => true do |t|
     t.integer  "container_id",                 :default => 0,  :null => false
@@ -39,6 +39,35 @@ ActiveRecord::Schema.define(:version => 20090804193502) do
     t.string  "attr_mail",         :limit => 30
     t.boolean "onthefly_register",               :default => false, :null => false
     t.boolean "tls",                             :default => false, :null => false
+  end
+
+  create_table "authors", :force => true do |t|
+    t.integer "bibliography_id"
+    t.string  "name"
+  end
+
+  create_table "bibliographies", :force => true do |t|
+    t.string "title"
+    t.string "subtitle"
+    t.string "edition"
+    t.string "publisher"
+    t.string "publishing_date"
+    t.string "pages"
+    t.string "volumes"
+    t.string "illustration"
+    t.string "dimension"
+    t.string "collection"
+    t.string "special_notes"
+    t.string "isbn"
+    t.string "newspaper_title"
+    t.string "url"
+    t.string "local"
+    t.string "type"
+  end
+
+  create_table "bibliography_projects", :force => true do |t|
+    t.integer "project_id"
+    t.integer "bibliography_id"
   end
 
   create_table "boards", :force => true do |t|
@@ -163,6 +192,15 @@ ActiveRecord::Schema.define(:version => 20090804193502) do
 
   add_index "issue_categories", ["project_id"], :name => "issue_categories_project_id"
 
+  create_table "issue_pre_requirements", :force => true do |t|
+    t.integer  "issue_pre_id"
+    t.integer  "issue_post_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "issue_pre_requirements", ["issue_pre_id", "issue_post_id"], :name => "index_issue_pre_requirements_on_issue_pre_id_and_issue_post_id", :unique => true
+
   create_table "issue_relations", :force => true do |t|
     t.integer "issue_from_id",                 :null => false
     t.integer "issue_to_id",                   :null => false
@@ -275,6 +313,15 @@ ActiveRecord::Schema.define(:version => 20090804193502) do
     t.string  "salt",       :null => false
   end
 
+  create_table "project_rules", :force => true do |t|
+    t.integer  "project_id"
+    t.integer  "rule_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "project_rules", ["project_id", "rule_id"], :name => "index_project_rules_on_project_id_and_rule_id", :unique => true
+
   create_table "projects", :force => true do |t|
     t.string   "name",        :limit => 30, :default => "",   :null => false
     t.text     "description"
@@ -325,11 +372,30 @@ ActiveRecord::Schema.define(:version => 20090804193502) do
     t.text    "permissions"
   end
 
+  create_table "rules", :force => true do |t|
+    t.string   "name"
+    t.text     "context"
+    t.string   "message"
+    t.string   "importance"
+    t.string   "process_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "settings", :force => true do |t|
     t.string   "name",       :default => "", :null => false
     t.text     "value"
     t.datetime "updated_on"
   end
+
+  create_table "solutions", :force => true do |t|
+    t.integer  "rule_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "solutions", ["rule_id", "id"], :name => "index_solutions_on_rule_id_and_id"
 
   create_table "time_entries", :force => true do |t|
     t.integer  "project_id",  :null => false

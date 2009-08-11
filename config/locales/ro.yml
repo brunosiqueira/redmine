@@ -836,3 +836,6 @@ ro:
   title_edit_newspaper: Edit Newspaper
   field_local: Local
   button_list_bibliography_references: List References
+  error_no_default_status_in_project: No default issue status is defined. Please check your configuration (Go to "Administration -> Issue statuses").
+  error_no_tracker_in_project: No tracker is associated to this project. Please check the Project settings.
+  field_pre_requirement: Pre Requirement

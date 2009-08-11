@@ -25,6 +25,9 @@
 
 <p><%= f.select :priority_id, (@priorities.collect {|p| [p.name, p.id]}), :required => true %></p>
 <p><%= f.select :assigned_to_id, (@issue.assignable_users.collect {|m| [m.name, m.id]}), :include_blank => true %></p>
+  <p>
+    <%=render :partial=>"pre_requirement",:locals=>{:f=>f}%>
+  </p>
 <% unless @project.issue_categories.empty? %>
 <p><%= f.select :category_id, (@project.issue_categories.collect {|c| [c.name, c.id]}), :include_blank => true %>
 <%= prompt_to_remote(l(:label_issue_category_new),
@@ -43,6 +46,8 @@
 <p><%= f.text_field :estimated_hours, :size => 3 %> <%= l(:field_hours) %></p>
 <p><%= f.select :done_ratio, ((0..10).to_a.collect {|r| ["#{r*10} %", r*10] }) %></p>
 </div>
+
+
 
 <div style="clear:both;"> </div>
 <%= render :partial => 'form_custom_fields' %>

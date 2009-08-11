@@ -16,6 +16,10 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 class Issue < ActiveRecord::Base
+  has_many :pre_requirements_relationship,:class_name=>"IssuePreRequirement",:foreign_key=>"issue_post_id"
+  has_many :pre_requirements,:class_name=>"Issue",:through => :pre_requirements_relationship,:source=>"issue_pre"
+  has_many :post_requirements_relationship,:class_name=>"IssuePreRequirement",:foreign_key=>"issue_pre_id"
+  has_many :post_requirements,:class_name=>"Issue",:through => :post_requirements_relationship,:source=>"issue_post"
   belongs_to :project
   belongs_to :tracker
   belongs_to :status, :class_name => 'IssueStatus', :foreign_key => 'status_id'
@@ -57,6 +61,8 @@ class Issue < ActiveRecord::Base
   named_scope :open, :conditions => ["#{IssueStatus.table_name}.is_closed = ?", false], :include => :status
   
   after_save :create_journal
+
+  after_save :check_rules
   
   # Returns true if usr or current user is allowed to view the issue
   def visible?(usr=nil)
@@ -284,6 +290,42 @@ class Issue < ActiveRecord::Base
     s << ' assigned-to-me' if User.current.logged? && assigned_to_id == User.current.id
     s
   end
+
+  def possible_pre_requirements(project)
+    if self.new_record?
+      Issue.find :all,:conditions=>["project_id=?",project.id],:order=>"subject"
+    else
+      Issue.find :all,:conditions=>["id <> ? and project_id=?",self.id,project.id],:order=>"subject"
+    end
+  end
+
+  def pre_requirement_id
+    self.pre_requirements.empty? ? nil : self.pre_requirements.first.id.to_s
+  end
+
+  def pre_requirement
+    self.pre_requirements.empty? ? nil : self.pre_requirements.first
+  end
+
+  def pre_requirement_id=(id)
+    self.pre_requirements << Issue.find_by_id(id) unless id.nil? || id.blank?
+  end
+
+  def invalid_rules
+    @invalid_rules || []
+  end
+
+  def is_development?
+    self.tracker.name == "Desenvolvimento"
+  end
+
+  def is_test?
+    self.tracker.name == "Teste"
+  end
+
+  def self.find_tests(project)
+    Issue.find(:all,:include=>"tracker",:conditions=>["project_id=? and trackers.name=?",project.id,"Teste"])
+  end
   
   private
   
@@ -318,5 +360,13 @@ class Issue < ActiveRecord::Base
       }      
       @current_journal.save
     end
+  end
+
+  def check_rules
+    rules = Rule.find :all,:include=>:project_rules,:conditions=>["process_type=? and importance=? and project_rules.project_id=?",Issue.name,"low",self.project_id]
+    @invalid_rules = []
+    rules.each { |rule|
+      @invalid_rules << rule unless rule.valid_rule?(self)
+    }
   end
 end

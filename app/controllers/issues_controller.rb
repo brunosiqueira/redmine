@@ -131,7 +131,7 @@ class IssuesController < ApplicationController
     # Tracker must be set before custom field values
     @issue.tracker ||= @project.trackers.find((params[:issue] && params[:issue][:tracker_id]) || params[:tracker_id] || :first)
     if @issue.tracker.nil?
-      render_error 'No tracker is associated to this project. Please check the Project settings.'
+      render_error I18n.t(:error_no_tracker_in_project)
       return
     end
     if params[:issue].is_a?(Hash)
@@ -142,7 +142,7 @@ class IssuesController < ApplicationController
     
     default_status = IssueStatus.default
     unless default_status
-      render_error 'No default issue status is defined. Please check your configuration (Go to "Administration -> Issue statuses").'
+      render_error I18n.t(:error_no_default_status_in_project)
       return
     end    
     @issue.status = default_status
@@ -156,10 +156,15 @@ class IssuesController < ApplicationController
       @issue.status = (@allowed_statuses.include? requested_status) ? requested_status : default_status
       if @issue.save
         attach_files(@issue, params[:attachments])
-        flash[:notice] = l(:notice_successful_create)
         call_hook(:controller_issues_new_after_save, { :params => params, :issue => @issue})
+        if (@issue.invalid_rules.empty?)
+        flash[:notice] = l(:notice_successful_create)
         redirect_to(params[:continue] ? { :action => 'new', :tracker_id => @issue.tracker } :
                                         { :action => 'show', :id => @issue })
+        else
+          flash[:invalid_rules] = @issue.invalid_rules
+          redirect_to(:controller=>"rules",:action=>"new",:id => @issue,:project_id=>@project)
+        end
         return
       end		
     end	
