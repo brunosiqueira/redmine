@@ -377,6 +377,7 @@ ActiveRecord::Schema.define(:version => 20090811131653) do
     t.text     "context"
     t.string   "message"
     t.string   "importance"
+    t.string   "action"
     t.string   "process_type"
     t.datetime "created_at"
     t.datetime "updated_at"

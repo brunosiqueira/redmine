@@ -15,7 +15,7 @@ one:
   isbn: MyString
   newspaper_title: MyString
   url: MyString
-  type: MyString
+  type: Book
 two:
   id: 2
   title: MyString
@@ -32,4 +32,4 @@ two:
   isbn: MyString
   newspaper_title: MyString
   url: MyString
-  type: MyString
+  type: Article

@@ -308,7 +308,8 @@ class Issue < ActiveRecord::Base
   end
 
   def pre_requirement_id=(id)
-    self.pre_requirements << Issue.find_by_id(id) unless id.nil? || id.blank?
+    issue = Issue.find_by_id(id)
+    self.pre_requirements << issue unless issue.nil? || self.pre_requirements.include?(issue)
   end
 
   def invalid_rules
@@ -363,7 +364,7 @@ class Issue < ActiveRecord::Base
   end
 
   def check_rules
-    rules = Rule.find :all,:include=>:project_rules,:conditions=>["process_type=? and importance=? and project_rules.project_id=?",Issue.name,"low",self.project_id]
+    rules = Rule.find :all,:include=>:project_rules,:conditions=>["process_type=? and importance=? and project_rules.project_id=? and action=?",Issue.name,"low",self.project_id,"create"]
     @invalid_rules = []
     rules.each { |rule|
       @invalid_rules << rule unless rule.valid_rule?(self)

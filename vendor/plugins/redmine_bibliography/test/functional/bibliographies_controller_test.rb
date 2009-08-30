@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + '/../test_helper'
 class BibliographiesControllerTest < ActionController::TestCase
   fixtures :projects,
     :users,
-    :roles
+    :roles,:bibliographies
 
   def setup
     User.current = users(:users_004)
@@ -20,7 +20,7 @@ class BibliographiesControllerTest < ActionController::TestCase
   end
 
   test "should create bibliography" do
-    assert_difference('Academic::Bibliography.count') do
+    assert_difference('Bibliography.count') do
       post :create, :bibliography => { }
     end
 
@@ -43,7 +43,7 @@ class BibliographiesControllerTest < ActionController::TestCase
   end
 
   test "should destroy bibliography" do
-    assert_difference('Academic::Bibliography.count', -1) do
+    assert_difference('Bibliography.count', -1) do
       delete :destroy, :id => bibliographies(:one).id
     end
 
