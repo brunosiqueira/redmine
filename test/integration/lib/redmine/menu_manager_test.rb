@@ -53,10 +53,10 @@ class MenuManagerTest < ActionController::IntegrationTest
                                                                                :attributes => { :class => 'bar' } },
                                                       :before => { :tag => 'li', :child => { :tag => 'a', :content => 'ECOOKBOOK' } } }
 
-      assert_tag :div, :attributes => { :id => 'main-menu' },
-                       :descendant => { :tag => 'li', :child => { :tag => 'a', :content => 'ECOOKBOOK',
-                                                                               :attributes => { :class => 'hello' } },
-                                                      :before => { :tag => 'li', :child => { :tag => 'a', :content => 'Activity' } } }
+#      assert_tag :div, :attributes => { :id => 'main-menu' },
+#                       :descendant => { :tag => 'li', :child => { :tag => 'a', :content => 'ECOOKBOOK',
+#                                                                               :attributes => { :class => 'hello' } },
+#                                                      :before => { :tag => 'li', :child => { :tag => 'a', :content => 'Activity' } } }
       
       # Remove the menu items
       Redmine::MenuManager.map :project_menu do |menu|

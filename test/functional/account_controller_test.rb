@@ -61,7 +61,7 @@ class AccountControllerTest < Test::Unit::TestCase
     assert_template 'login'
     assert_tag 'div',
                :attributes => { :class => "flash error" },
-               :content => /Invalid user or password/
+               :content => /Usuário ou senha inválido./
   end
   
   if Object.const_defined?(:OpenID)
