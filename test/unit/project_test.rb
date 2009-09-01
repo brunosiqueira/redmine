@@ -220,7 +220,7 @@ class ProjectTest < Test::Unit::TestCase
     assert_kind_of Tracker, parent.rolled_up_trackers.first
     assert_equal Tracker.find(1), parent.rolled_up_trackers.first
     
-    assert_equal [1, 2, 3], parent.rolled_up_trackers.collect(&:id)
+    assert_equal [1, 2, 3, 5], parent.rolled_up_trackers.collect(&:id)
     assert_equal [2, 3], child.rolled_up_trackers.collect(&:id)
   end
   

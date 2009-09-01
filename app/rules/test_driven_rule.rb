@@ -4,7 +4,7 @@
 class TestDrivenRule
   def valid?(issue)
     if issue.is_development?
-      return !issue.pre_requirement.nil? && issue.pre_requirement.is_test?
+      return !issue.pre_requirement.nil?
     else
       return true
     end

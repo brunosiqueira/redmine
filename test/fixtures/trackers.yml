@@ -14,3 +14,13 @@ trackers_003:
   id: 3
   is_in_chlog: false
   position: 3
+trackers_004:
+  name: Desenvolvimento
+  id: 4
+  is_in_chlog: false
+  position: 4
+trackers_005:
+  name: Teste
+  id: 5
+  is_in_chlog: false
+  position: 5
