@@ -62,7 +62,8 @@ class Issue < ActiveRecord::Base
   
   after_save :create_journal
 
-  after_save :check_rules
+  after_save :check_rules_save
+  after_update :check_rules_update
   
   # Returns true if usr or current user is allowed to view the issue
   def visible?(usr=nil)
@@ -312,6 +313,10 @@ class Issue < ActiveRecord::Base
     self.pre_requirements << issue unless issue.nil? || self.pre_requirements.include?(issue)
   end
 
+  def is_closed?
+    self.status.name == "Concluída"
+  end
+
   def invalid_rules
     @invalid_rules || []
   end
@@ -363,9 +368,17 @@ class Issue < ActiveRecord::Base
     end
   end
 
-  def check_rules
+  def check_rules_save
     rules = Rule.find :all,:include=>:project_rules,:conditions=>["process_type=? and importance=? and project_rules.project_id=? and action=?",Issue.name,"low",self.project_id,"create"]
-    @invalid_rules = []
+    @invalid_rules ||= []
+    rules.each { |rule|
+      @invalid_rules << rule unless rule.valid_rule?(self)
+    }
+  end
+
+  def check_rules_update
+    rules = Rule.find :all,:include=>:project_rules,:conditions=>["process_type=? and project_rules.project_id=? and action=?",Issue.name,self.project_id,"update"]
+    @invalid_rules ||= []
     rules.each { |rule|
       @invalid_rules << rule unless rule.valid_rule?(self)
     }

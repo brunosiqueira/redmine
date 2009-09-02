@@ -29,3 +29,8 @@ issue_statuses_005:
   is_default: false
   is_closed: true
   id: 5
+issue_statuses_006:
+  name: Concluída
+  is_default: false
+  is_closed: true
+  id: 6
