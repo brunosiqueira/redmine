@@ -34,3 +34,8 @@ issue_statuses_006:
   is_default: false
   is_closed: true
   id: 6
+issue_statuses_007:
+  name: Em Andamento
+  is_default: false
+  is_closed: false
+  id: 7
