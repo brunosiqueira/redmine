@@ -63,7 +63,7 @@ class Issue < ActiveRecord::Base
   after_save :create_journal
 
   after_save :check_rules_save
-  after_update :check_rules_update
+  before_update :check_rules_update
   
   # Returns true if usr or current user is allowed to view the issue
   def visible?(usr=nil)
@@ -314,7 +314,7 @@ class Issue < ActiveRecord::Base
   end
 
   def is_closed?
-    self.status.name == "Concluída"
+    IssueStatus.find_by_id(self.status_id).name == "Concluída"
   end
 
   def invalid_rules

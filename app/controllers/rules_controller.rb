@@ -10,7 +10,7 @@ class RulesController < ApplicationController
     @issue = @project.issues.find params[:id]
     @rule = @project.rules.find params[:rule_id]
     @solution = @rule.solutions.find params[:solution_id]
-    @solution.name.constantize::create :project=>@project,:issue=>@issue,:params=>params, :current_user=>self.logged_user
+    @solution.name.constantize::create :project=>@project,:issue=>@issue,:params=>params, :current_user=>User.find(session[:user_id])
     render :update do |page|
       page.replace_html "rule_#{@rule.id}","<h2>Resolvido</h2>"
     end

@@ -59,17 +59,17 @@ class IssuesController < ApplicationController
       @issue_count = Issue.count(:include => [:status, :project], :conditions => @query.statement)
       @issue_pages = Paginator.new self, @issue_count, limit, params['page']
       @issues = Issue.find :all, :order => [@query.group_by_sort_order, sort_clause].compact.join(','),
-                           :include => [ :assigned_to, :status, :tracker, :project, :priority, :category, :fixed_version ],
-                           :conditions => @query.statement,
-                           :limit  =>  limit,
-                           :offset =>  @issue_pages.current.offset
+        :include => [ :assigned_to, :status, :tracker, :project, :priority, :category, :fixed_version ],
+        :conditions => @query.statement,
+        :limit  =>  limit,
+        :offset =>  @issue_pages.current.offset
       respond_to do |format|
         format.html { 
           if @query.grouped?
             # Retrieve the issue count by group
             @issue_count_by_group = begin
               Issue.count(:group => @query.group_by, :include => [:status, :project], :conditions => @query.statement)
-            # Rails will raise an (unexpected) error if there's only a nil group value
+              # Rails will raise an (unexpected) error if there's only a nil group value
             rescue ActiveRecord::RecordNotFound
               {nil => @issue_count}
             end
@@ -95,9 +95,9 @@ class IssuesController < ApplicationController
     
     if @query.valid?
       @journals = Journal.find :all, :include => [ :details, :user, {:issue => [:project, :author, :tracker, :status]} ],
-                                     :conditions => @query.statement,
-                                     :limit => 25,
-                                     :order => "#{Journal.table_name}.created_on DESC"
+        :conditions => @query.statement,
+        :limit => 25,
+        :order => "#{Journal.table_name}.created_on DESC"
     end
     @title = (@project ? @project.name : Setting.app_title) + ": " + (@query.new_record? ? l(:label_changes_details) : @query.name)
     render :layout => false, :content_type => 'application/atom+xml'
@@ -158,9 +158,9 @@ class IssuesController < ApplicationController
         attach_files(@issue, params[:attachments])
         call_hook(:controller_issues_new_after_save, { :params => params, :issue => @issue})
         if (@issue.invalid_rules.empty?)
-        flash[:notice] = l(:notice_successful_create)
-        redirect_to(params[:continue] ? { :action => 'new', :tracker_id => @issue.tracker } :
-                                        { :action => 'show', :id => @issue })
+          flash[:notice] = l(:notice_successful_create)
+          redirect_to(params[:continue] ? { :action => 'new', :tracker_id => @issue.tracker } :
+              { :action => 'show', :id => @issue })
         else
           flash[:invalid_rules] = @issue.invalid_rules
           redirect_to(:controller=>"rules",:action=>"new",:id => @issue,:project_id=>@project)
@@ -210,7 +210,14 @@ class IssuesController < ApplicationController
           flash[:notice] = l(:notice_successful_update)
         end
         call_hook(:controller_issues_edit_after_save, { :params => params, :issue => @issue, :time_entry => @time_entry, :journal => journal})
-        redirect_to(params[:back_to] || {:action => 'show', :id => @issue})
+
+        if (@issue.invalid_rules.empty?)
+          redirect_to(params[:back_to] || {:action => 'show', :id => @issue})
+        else
+          flash[:invalid_rules] = @issue.invalid_rules
+          redirect_to(:controller=>"rules",:action=>"new",:id => @issue,:project_id=>@project)
+        end
+        
       end
     end
   rescue ActiveRecord::StaleObjectError
@@ -270,15 +277,15 @@ class IssuesController < ApplicationController
         flash[:notice] = l(:notice_successful_update) unless @issues.empty?
       else
         flash[:error] = l(:notice_failed_to_save_issues, :count => unsaved_issue_ids.size,
-                                                         :total => @issues.size,
-                                                         :ids => '#' + unsaved_issue_ids.join(', #'))
+          :total => @issues.size,
+          :ids => '#' + unsaved_issue_ids.join(', #'))
       end
       redirect_to(params[:back_to] || {:controller => 'issues', :action => 'index', :project_id => @project})
       return
     end
     # Find potential statuses the user could be allowed to switch issues to
     @available_statuses = Workflow.find(:all, :include => :new_status,
-                                              :conditions => {:role_id => User.current.roles_for_project(@project).collect(&:id)}).collect(&:new_status).compact.uniq.sort
+      :conditions => {:role_id => User.current.roles_for_project(@project).collect(&:id)}).collect(&:new_status).compact.uniq.sort
     @custom_fields = @project.issue_custom_fields.select {|f| f.field_format == 'list'}
   end
 
@@ -305,8 +312,8 @@ class IssuesController < ApplicationController
         flash[:notice] = l(:notice_successful_update) unless @issues.empty?
       else
         flash[:error] = l(:notice_failed_to_save_issues, :count => unsaved_issue_ids.size,
-                                                         :total => @issues.size,
-                                                         :ids => '#' + unsaved_issue_ids.join(', #'))
+          :total => @issues.size,
+          :ids => '#' + unsaved_issue_ids.join(', #'))
       end
       redirect_to :controller => 'issues', :action => 'index', :project_id => @project
       return
@@ -346,19 +353,19 @@ class IssuesController < ApplicationController
       events = []
       # Issues that have start and due dates
       events += Issue.find(:all, 
-                           :order => "start_date, due_date",
-                           :include => [:tracker, :status, :assigned_to, :priority, :project], 
-                           :conditions => ["(#{@query.statement}) AND (((start_date>=? and start_date<=?) or (due_date>=? and due_date<=?) or (start_date<? and due_date>?)) and start_date is not null and due_date is not null)", @gantt.date_from, @gantt.date_to, @gantt.date_from, @gantt.date_to, @gantt.date_from, @gantt.date_to]
-                           )
+        :order => "start_date, due_date",
+        :include => [:tracker, :status, :assigned_to, :priority, :project],
+        :conditions => ["(#{@query.statement}) AND (((start_date>=? and start_date<=?) or (due_date>=? and due_date<=?) or (start_date<? and due_date>?)) and start_date is not null and due_date is not null)", @gantt.date_from, @gantt.date_to, @gantt.date_from, @gantt.date_to, @gantt.date_from, @gantt.date_to]
+      )
       # Issues that don't have a due date but that are assigned to a version with a date
       events += Issue.find(:all, 
-                           :order => "start_date, effective_date",
-                           :include => [:tracker, :status, :assigned_to, :priority, :project, :fixed_version], 
-                           :conditions => ["(#{@query.statement}) AND (((start_date>=? and start_date<=?) or (effective_date>=? and effective_date<=?) or (start_date<? and effective_date>?)) and start_date is not null and due_date is null and effective_date is not null)", @gantt.date_from, @gantt.date_to, @gantt.date_from, @gantt.date_to, @gantt.date_from, @gantt.date_to]
-                           )
+        :order => "start_date, effective_date",
+        :include => [:tracker, :status, :assigned_to, :priority, :project, :fixed_version],
+        :conditions => ["(#{@query.statement}) AND (((start_date>=? and start_date<=?) or (effective_date>=? and effective_date<=?) or (start_date<? and effective_date>?)) and start_date is not null and due_date is null and effective_date is not null)", @gantt.date_from, @gantt.date_to, @gantt.date_from, @gantt.date_to, @gantt.date_from, @gantt.date_to]
+      )
       # Versions
       events += Version.find(:all, :include => :project,
-                                   :conditions => ["(#{@query.project_statement}) AND effective_date BETWEEN ? AND ?", @gantt.date_from, @gantt.date_to])
+        :conditions => ["(#{@query.project_statement}) AND effective_date BETWEEN ? AND ?", @gantt.date_from, @gantt.date_to])
                                    
       @gantt.events = events
     end
@@ -387,11 +394,11 @@ class IssuesController < ApplicationController
     if @query.valid?
       events = []
       events += Issue.find(:all, 
-                           :include => [:tracker, :status, :assigned_to, :priority, :project], 
-                           :conditions => ["(#{@query.statement}) AND ((start_date BETWEEN ? AND ?) OR (due_date BETWEEN ? AND ?))", @calendar.startdt, @calendar.enddt, @calendar.startdt, @calendar.enddt]
-                           )
+        :include => [:tracker, :status, :assigned_to, :priority, :project],
+        :conditions => ["(#{@query.statement}) AND ((start_date BETWEEN ? AND ?) OR (due_date BETWEEN ? AND ?))", @calendar.startdt, @calendar.enddt, @calendar.startdt, @calendar.enddt]
+      )
       events += Version.find(:all, :include => :project,
-                                   :conditions => ["(#{@query.project_statement}) AND effective_date BETWEEN ? AND ?", @calendar.startdt, @calendar.enddt])
+        :conditions => ["(#{@query.project_statement}) AND effective_date BETWEEN ? AND ?", @calendar.startdt, @calendar.enddt])
                                      
       @calendar.events = events
     end
@@ -409,12 +416,12 @@ class IssuesController < ApplicationController
     @project = projects.first if projects.size == 1
 
     @can = {:edit => (@project && User.current.allowed_to?(:edit_issues, @project)),
-            :log_time => (@project && User.current.allowed_to?(:log_time, @project)),
-            :update => (@project && (User.current.allowed_to?(:edit_issues, @project) || (User.current.allowed_to?(:change_status, @project) && @allowed_statuses && !@allowed_statuses.empty?))),
-            :move => (@project && User.current.allowed_to?(:move_issues, @project)),
-            :copy => (@issue && @project.trackers.include?(@issue.tracker) && User.current.allowed_to?(:add_issues, @project)),
-            :delete => (@project && User.current.allowed_to?(:delete_issues, @project))
-            }
+      :log_time => (@project && User.current.allowed_to?(:log_time, @project)),
+      :update => (@project && (User.current.allowed_to?(:edit_issues, @project) || (User.current.allowed_to?(:change_status, @project) && @allowed_statuses && !@allowed_statuses.empty?))),
+      :move => (@project && User.current.allowed_to?(:move_issues, @project)),
+      :copy => (@issue && @project.trackers.include?(@issue.tracker) && User.current.allowed_to?(:add_issues, @project)),
+      :delete => (@project && User.current.allowed_to?(:delete_issues, @project))
+    }
     if @project
       @assignables = @project.assignable_users
       @assignables << @issue.assigned_to if @issue && @issue.assigned_to && !@assignables.include?(@issue.assigned_to)
@@ -439,7 +446,7 @@ class IssuesController < ApplicationController
     render :partial => 'common/preview'
   end
   
-private
+  private
   def find_issue
     @issue = Issue.find(params[:id], :include => [:project, :tracker, :status, :author, :priority, :category])
     @project = @issue.project

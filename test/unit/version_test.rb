@@ -103,6 +103,11 @@ class VersionTest < Test::Unit::TestCase
     assert_progress_equal (25.0*0.2 + 25.0*1 + 10.0*0.3 + 40.0*0.1)/100.0*100, v.completed_pourcent
     assert_progress_equal 25.0/100.0*100, v.closed_pourcent
   end
+
+  def test_find_opened_versions
+    project = Project.find(1)
+    assert_equal 1, Version.find_opened(project).size
+  end
   
   private
   

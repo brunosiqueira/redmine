@@ -49,6 +49,12 @@ class Version < ActiveRecord::Base
   def completed?
     effective_date && (effective_date <= Date.today) && (open_issues_count == 0)
   end
+
+  def self.find_opened(project)
+    Version.find(:all,
+      :include=>:fixed_issues,
+      :conditions=>["versions.project_id=? and (versions.effective_date>? or exists ( select 1 from issue_statuses as issue_s where issue_s.id=issues.status_id and issue_s.is_closed = ?))",project.id,Date.today,true])
+  end
   
   # Returns the completion percentage of this version based on the amount of open/closed issues
   # and the time spent on the open issues.
