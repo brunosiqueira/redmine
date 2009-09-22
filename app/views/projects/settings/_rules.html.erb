@@ -1,0 +1,12 @@
+<% form_for :project, @project,
+            :url => { :action => 'rules', :id => @project },
+            :html => {:id => 'modules-form'} do |f| %>
+
+<div class=box>
+<strong><%= l(:text_select_project_rules) %></strong>
+  <%= collection_multiple_select_tag "rules",Rule.find(:all),:id,:to_s,:selected_items=>@project.rule_ids  %>
+</div>
+
+<p><%= submit_tag l(:button_save) %></p>
+
+<% end %>

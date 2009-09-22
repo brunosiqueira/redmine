@@ -908,3 +908,16 @@ vi:
   error_no_default_status_in_project: No default issue status is defined. Please check your configuration (Go to "Administration -> Issue statuses").
   error_no_tracker_in_project: No tracker is associated to this project. Please check the Project settings.
   field_pre_requirement: Pre Requirement
+  text_select_project_rules: "Select rules to enable for this project:"
+  label_rule_plural: Rules
+  rules: 
+    error: 
+      start_in_finished_version: A issue can't be started in a completed version
+      move_to_finished_version: A issue can't be moved to a completed version
+      pre_requirement_conclusion_rule: A pre-requirement rule must be concluded when a issue is concluded
+      test_driven_rule: A development rule must have a test rule as pre-requirement
+  field_action: Action
+  field_context: Context
+  field_message: Message
+  field_process_type: Process Type
+  field_importance: Importance

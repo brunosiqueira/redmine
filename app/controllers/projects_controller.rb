@@ -170,6 +170,11 @@ class ProjectsController < ApplicationController
     redirect_to :action => 'settings', :id => @project, :tab => 'modules'
   end
 
+  def rules
+    @project.rule_ids = params[:rules]
+    redirect_to :action => 'settings', :id => @project, :tab => 'rules'
+  end
+
   def archive
     @project.archive if request.post? && @project.active?
     redirect_to(url_for(:controller => 'admin', :action => 'projects', :status => params[:status]))

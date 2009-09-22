@@ -878,3 +878,16 @@ pt-BR:
   error_no_default_status_in_project: Não há status padrão definido para a tarefa. Por favor verifique as configurações (Vá para "Administração -> Status da Tarefa").
   error_no_tracker_in_project: Nenhum tipo de tarefa está associado ao projeto. Verifique as configurações do projeto.
   field_pre_requirement: Pré-Requisito
+  text_select_project_rules: 'Selecione regras para habilitar para este projeto:'
+  label_rule_plural: Regras
+  rules: 
+    error: 
+      start_in_finished_version: Uma tarefa não pode ser iniciada em uma iteração concluída
+      move_to_finished_version: Uma tarefa não pode ser movida para uma iteração concluída
+      pre_requirement_conclusion_rule: Um pré-requisito deve estar concluído quando uma tarefa é concluída
+      test_driven_rule: Uma tarefa de desenvolvimento deve ter uma tarefa de teste como pré-requisito
+  field_action: Ação
+  field_context: Contexto
+  field_message: Mensagem
+  field_process_type: Tipo do Processo
+  field_importance: Importância

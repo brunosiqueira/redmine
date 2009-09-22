@@ -10,4 +10,8 @@ class Rule < ActiveRecord::Base
     rule = self.name.constantize.new
     rule.valid?(object)
   end
+
+  def to_s
+    self.context
+  end
 end

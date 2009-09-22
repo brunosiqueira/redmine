@@ -720,7 +720,6 @@ a.close-icon:hover {
 .icon-file.application-x-gzip { background-image: url(../images/files/zip.png); }
 
 .icon22-projects { background-image: url(../images/22x22/projects.png); }
-.icon22-rules { background-image: url(../images/22x22/rules.png); }
 .icon22-users { background-image: url(../images/22x22/users.png); }
 .icon22-tracker { background-image: url(../images/22x22/tracker.png); }
 .icon22-role { background-image: url(../images/22x22/role.png); }
@@ -785,22 +784,11 @@ h2 img { vertical-align:middle; }
     #content { width: 99%; margin: 0; padding: 0; border: 0; background: #fff; overflow: visible !important;}
     #wiki_add_attachment { display:none; }
 }
-div.rule_box{
 
-    border-right-style: groove;
-    border-left-style: groove;
-    border-bottom-style: groove;
-    border-top-style: groove;
-    background-color: #496e9a;
+div.rule_box{
+    border: solid;
 }
 div.solution_box{
-    border-right-style: groove;
-    border-left-style: groove;
-    border-bottom-style: groove;
-    border-top-style: groove;
-    padding-left: 40px;
-    background-color: #b0c9e6;
-}
-div.rule_box h2{
-    color:black;
+    margin-left:10px;
+    border: solid;
 }

@@ -1,5 +1,11 @@
 class RulesController < ApplicationController
-    before_filter :find_project
+  before_filter :find_project, :except=>:index
+  before_filter :require_admin,:only=>"index"
+  layout "base"
+  def index
+    @rules = Rule.find :all, :order=>"name"
+  end
+
   def new
     @issue = @project.issues.find params[:id]
     @rules = flash[:invalid_rules]
