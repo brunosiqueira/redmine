@@ -1,0 +1,14 @@
+<h2><%=l(:label_solution)%></h2> 
+<p>
+  <b><%= l "field_name" %>:</b>
+  <%=h @solution.name %>
+</p>
+
+<p>
+  <b><%= l "field_message" %>:</b>
+  <%=h @solution.message %>
+</p>
+
+
+<%= link_to l(:button_edit), edit_solution_path(@solution) %> |
+<%= link_to l(:button_back), solutions_path %>

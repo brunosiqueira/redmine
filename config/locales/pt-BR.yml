@@ -894,3 +894,7 @@ pt-BR:
   label_rule_new: Nova Regra
   label_solution_plural: Soluções
   label_rule_edit: Editar Regra
+  label_rule: Regra
+  label_solution: Solução
+  label_solution_new: Nova Solução
+  label_solution_edit: Editar Solução

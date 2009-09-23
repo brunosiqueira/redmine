@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :solutions
+
   map.resources :rules
 
   # Add your own custom routes here.

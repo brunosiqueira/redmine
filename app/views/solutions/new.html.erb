@@ -1,0 +1,19 @@
+<h2><%=l(:label_solution_new)%></h2>
+
+<% labelled_tabular_form_for :solution, @solution, :url => { :action => "create" } do |f| %>
+  <%= f.error_messages %>
+
+  <fieldset class="box">
+    <p>
+      <%= f.select :name,Solution.new_solutions,:required=>true %>
+    </p>
+    <p>
+      <%= f.text_field :message,:required=>true %>
+    </p>
+  </fieldset>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to l(:button_back), solutions_path %>

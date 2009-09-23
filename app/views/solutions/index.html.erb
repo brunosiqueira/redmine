@@ -1,0 +1,20 @@
+<div class="contextual">
+  <%= link_to(l(:label_solution_new), new_solution_path, :class => 'icon icon-add') if User.current.allowed_to?(:add_solution, nil, :global => true) %>
+</div>
+<h2><%=l :label_solution_plural%></h2>
+
+<table class="list">
+  <tr>
+    <th><%= l "field_name"%></th>
+    <th><%= l "field_message"%></th>
+  </tr>
+
+<% for solution in @solutions %>
+  <tr>
+    <td><%= link_to h(solution.name), solution %></td>
+    <td><%=h solution.message %></td>
+    <td><%= link_to l(:button_edit), edit_solution_path(solution) %></td>
+    <td><%= link_to l(:button_delete), solution, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>

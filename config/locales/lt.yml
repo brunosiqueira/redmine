@@ -892,3 +892,10 @@ lt:
   field_message: Message
   field_process_type: Process Type
   field_importance: Importance
+  label_rule_new: New Rule
+  label_solution_plural: Solutions
+  label_rule_edit: Edit Rule
+  label_rule: Rule
+  label_solution: Solution
+  label_solution_new: New Solution
+  label_solution_edit: Edit Solution
