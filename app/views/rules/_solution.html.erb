@@ -1,6 +1,6 @@
 <div class="solution_box">
 <br>
-<% form_remote_tag(:url=>{:action=>"create",:project_id=>@project,:id=>@issue,:rule_id=>solution.rule,:solution_id=>solution}, :method=>:put) do %>
+<% form_remote_tag(:url=>{:action=>"execute",:project_id=>@project,:id=>@issue,:rule_id=>solution.rule,:solution_id=>solution}, :method=>:put) do %>
   <%=solution.name.constantize::html(:project=>@project,:issue=>@issue)%>
 <% end  %>
 </div>

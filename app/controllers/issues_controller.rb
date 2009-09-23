@@ -163,7 +163,7 @@ class IssuesController < ApplicationController
               { :action => 'show', :id => @issue })
         else
           flash[:invalid_rules] = @issue.invalid_rules
-          redirect_to(:controller=>"rules",:action=>"new",:id => @issue,:project_id=>@project)
+          redirect_to(:controller=>"rules",:action=>"list",:id => @issue,:project_id=>@project)
         end
         return
       end		

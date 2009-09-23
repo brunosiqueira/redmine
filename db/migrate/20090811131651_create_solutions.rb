@@ -3,6 +3,7 @@ class CreateSolutions < ActiveRecord::Migration
     create_table :solutions do |t|
       t.references :rule,:nil=>false
       t.string :name,:nil=>false
+      t.string :message,:nil=>false
       t.timestamps
     end
     add_index :solutions, [:rule_id,:id]

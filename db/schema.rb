@@ -392,6 +392,7 @@ ActiveRecord::Schema.define(:version => 20090909183515) do
   create_table "solutions", :force => true do |t|
     t.integer  "rule_id"
     t.string   "name"
+    t.string   "message"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

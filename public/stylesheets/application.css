@@ -804,3 +804,13 @@ div.solution_box{
 div.rule_box h2{
     color:black;
 }
+fieldset.check_list ul {
+    text-decoration:none;
+}
+fieldset.check_list label {
+    float:none !important;
+    font-weight:bold !important;
+    margin-left:0px !important;
+    text-align:left !important;
+    width:50px !important;
+}

@@ -14,4 +14,27 @@ class Rule < ActiveRecord::Base
   def to_s
     self.context
   end
+
+  def self.new_rules
+    files = []
+    path = "app/rules/"
+    Dir.glob("#{path}*.rb").each do |f|
+      name = f[path.length,f.length-3-path.length].camelize
+      if Rule.count(:conditions=>{:name=>name}) == 0
+        files << name
+      end
+    end
+    files
+  end
+
+  def self.process_types
+    ["Issue"]
+  end
+  def self.importances
+    ["low","high"]
+  end
+
+  def self.actions
+    ["create","update","all"]
+  end
 end
