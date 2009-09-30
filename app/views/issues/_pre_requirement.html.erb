@@ -1,0 +1,1 @@
+<%=f.select :pre_requirement_id,@issue.possible_pre_requirements(@project).collect { |issue| [issue.subject,issue.id.to_s] }, { :include_blank => true }%>

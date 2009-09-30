@@ -53,6 +53,8 @@ class AddAcademicRoles < ActiveRecord::Migration
 - :edit_bibliographies
 - :add_bibliographies
 - :delete_bibliographies
+- :manage_stories
+- :view_stories
 "],
     ["Aluno","---
 - :manage_versions
@@ -81,6 +83,8 @@ class AddAcademicRoles < ActiveRecord::Migration
 - :commit_access
 - :view_bibliographies
 - :add_bibliographies
+- :manage_stories
+- :view_stories
 "],
     ["Aprendiz","---
 - :add_issues
@@ -100,6 +104,7 @@ class AddAcademicRoles < ActiveRecord::Migration
 - :browse_repository
 - :view_changesets
 - :view_bibliographies
+- :view_stories
 "]]
   def self.up
     ROLES.each { |name,permission|

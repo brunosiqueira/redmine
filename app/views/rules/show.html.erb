@@ -1,0 +1,55 @@
+<h2><%=l(:label_rule)%></h2> 
+<p>
+  <b><%= l "field_name" %> </b>
+  <%=h @rule.name %>
+</p>
+
+<p>
+  <b><%= l "field_context" %></b>
+  <%=h @rule.context %>
+</p>
+
+<p>
+  <b><%= l "field_importance" %></b>
+  <%=h @rule.importance %>
+</p>
+
+<p>
+  <b><%= l "field_action" %></b>
+  <%=h @rule.action %>
+</p>
+
+<p>
+  <b><%= l "field_process_type" %></b>
+  <%=h @rule.process_type %>
+</p>
+
+<h3><%=l(:label_solution_plural)%></h3>
+<table class="list">
+  <tr>
+    <th><%= l "field_name" %></th>
+    <th><%= l "field_message" %></th>
+  </tr>
+  <% @rule.solutions.each{|solution| %>
+  <tr>
+    <td><%= h solution.name %></td>
+    <td><%= h solution.message %></td>
+  </tr>
+  <% } %>
+</table>
+
+<h3><%=l(:label_project_plural)%></h3>
+<table class="list">
+  <tr>
+    <th><%= l "field_name" %></th>
+  </tr>
+  <% @rule.projects.each{|project| %>
+  <tr>
+    <td><%= h project.name %></td>
+  </tr>
+  <% } %>
+</table>
+
+
+<%= link_to l(:button_edit), edit_rule_path(@rule) %> |
+<%= link_to l(:button_back), rules_path %>

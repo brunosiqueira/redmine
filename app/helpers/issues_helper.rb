@@ -76,6 +76,9 @@ module IssuesHelper
       when 'fixed_version_id'
         v = Version.find_by_id(detail.value) and value = v.name if detail.value
         v = Version.find_by_id(detail.old_value) and old_value = v.name if detail.old_value
+      when 'story_id'
+        v = Story.find_by_id(detail.value) and value = v.title if detail.value
+        v = Story.find_by_id(detail.old_value) and old_value = v.title if detail.old_value
       when 'estimated_hours'
         value = "%0.02f" % detail.value.to_f unless detail.value.blank?
         old_value = "%0.02f" % detail.old_value.to_f unless detail.old_value.blank?

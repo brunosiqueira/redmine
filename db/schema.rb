@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090909183515) do
+ActiveRecord::Schema.define(:version => 20090929204001) do
 
   create_table "attachments", :force => true do |t|
     t.integer  "container_id",                 :default => 0,  :null => false
@@ -233,6 +233,7 @@ ActiveRecord::Schema.define(:version => 20090909183515) do
     t.date     "start_date"
     t.integer  "done_ratio",       :default => 0,  :null => false
     t.float    "estimated_hours"
+    t.integer  "story_id"
   end
 
   add_index "issues", ["project_id"], :name => "issues_project_id"
@@ -398,6 +399,17 @@ ActiveRecord::Schema.define(:version => 20090909183515) do
   end
 
   add_index "solutions", ["rule_id", "id"], :name => "index_solutions_on_rule_id_and_id"
+
+  create_table "stories", :force => true do |t|
+    t.integer  "project_id",        :null => false
+    t.integer  "version_id"
+    t.integer  "author_id"
+    t.string   "title"
+    t.text     "description"
+    t.text     "approval_criteria"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "time_entries", :force => true do |t|
     t.integer  "project_id",  :null => false

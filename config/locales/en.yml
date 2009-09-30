@@ -194,6 +194,7 @@ en:
   field_assigned_to: Assigned to
   field_priority: Priority
   field_fixed_version: Target version
+  field_story_id: Story
   field_user: User
   field_role: Role
   field_homepage: Homepage
@@ -386,6 +387,10 @@ en:
   label_project_plural: Projects
   label_solution: Solution
   label_solution_plural: Solutions
+  label_story: Story
+  label_story_plural: Stories
+  label_story_new: New Stories
+  label_story_edit: Edit Stories
   label_x_projects:
     zero:  no projects
     one:   1 project
@@ -855,7 +860,9 @@ en:
   error_no_tracker_in_project: No tracker is associated to this project. Please check the Project settings.
   error_no_default_status_in_project: 'No default issue status is defined. Please check your configuration (Go to "Administration -> Issue statuses").'
   field_pre_requirement: Pre Requirement
-
+  field_story: Story
+  field_approval_criteria: Aproval Criteria
+  
   rules:
     error:
       move_to_finished_version: "A issue can't be moved to a completed version"

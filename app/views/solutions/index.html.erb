@@ -14,7 +14,7 @@
     <td><%= link_to h(solution.name), solution %></td>
     <td><%=h solution.message %></td>
     <td><%= link_to l(:button_edit), edit_solution_path(solution) %></td>
-    <td><%= link_to l(:button_delete), solution, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to l(:button_delete), solution, :confirm => l(:text_are_you_sure), :method => :delete %></td>
   </tr>
 <% end %>
 </table>
