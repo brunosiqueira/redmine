@@ -201,9 +201,9 @@ class ApplicationController < ActionController::Base
         file = attachment['file']
         next unless file && file.size > 0
         a = Attachment.create(:container => obj, 
-                              :file => file,
-                              :description => attachment['description'].to_s.strip,
-                              :author => User.current)
+          :file => file,
+          :description => attachment['description'].to_s.strip,
+          :author => User.current)
         a.new_record? ? (unsaved << a) : (attached << a)
       end
       if unsaved.any?

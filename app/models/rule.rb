@@ -28,7 +28,7 @@ class Rule < ActiveRecord::Base
   end
 
   def self.process_types
-    ["Issue"]
+    ["Issue","Story"]
   end
   def self.importances
     ["low","high"]

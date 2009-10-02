@@ -28,6 +28,9 @@
   <p>
     <%=render :partial=>"pre_requirement",:locals=>{:f=>f}%>
   </p>
+  <p>
+    <%=f.select :story_id,@project.stories.collect { |story| [story.title,story.id.to_s] }, { :include_blank => true }%>
+  </p>
 <% unless @project.issue_categories.empty? %>
 <p><%= f.select :category_id, (@project.issue_categories.collect {|c| [c.name, c.id]}), :include_blank => true %>
 <%= prompt_to_remote(l(:label_issue_category_new),

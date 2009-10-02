@@ -898,3 +898,10 @@ pt-BR:
   label_solution: Solução
   label_solution_new: Nova Solução
   label_solution_edit: Editar Solução
+  label_story_edit: Editar Resultados
+  label_story_plural: Resultados
+  field_approval_criteria: Critérios de Aprovação
+  field_story_id: Resultado
+  label_story: Resultado
+  label_story_new: Novo Resultado
+  field_story: Resultado

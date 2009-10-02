@@ -871,3 +871,10 @@ he:
   label_solution: Solution
   label_solution_new: New Solution
   label_solution_edit: Edit Solution
+  label_story_edit: Edit Stories
+  label_story_plural: Stories
+  field_approval_criteria: Aproval Criteria
+  field_story_id: Story
+  label_story: Story
+  label_story_new: New Stories
+  field_story: Story

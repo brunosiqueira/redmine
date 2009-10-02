@@ -155,16 +155,16 @@ class IssuesController < ApplicationController
       # Check that the user is allowed to apply the requested status
       @issue.status = (@allowed_statuses.include? requested_status) ? requested_status : default_status
       if @issue.save
-        attach_files(@issue, params[:attachments])
-        call_hook(:controller_issues_new_after_save, { :params => params, :issue => @issue})
-        if (@issue.invalid_rules.empty?)
-          flash[:notice] = l(:notice_successful_create)
-          redirect_to(params[:continue] ? { :action => 'new', :tracker_id => @issue.tracker } :
-              { :action => 'show', :id => @issue })
-        else
+        if @issue.valid? && !@issue.invalid_rules.empty?
           flash[:invalid_rules] = @issue.invalid_rules
           redirect_to(:controller=>"rules",:action=>"list",:id => @issue,:project_id=>@project)
+          return
         end
+        attach_files(@issue, params[:attachments])
+        call_hook(:controller_issues_new_after_save, { :params => params, :issue => @issue})
+        flash[:notice] = l(:notice_successful_create)
+        redirect_to(params[:continue] ? { :action => 'new', :tracker_id => @issue.tracker } :
+            { :action => 'show', :id => @issue })
         return
       end		
     end	
@@ -210,14 +210,12 @@ class IssuesController < ApplicationController
           flash[:notice] = l(:notice_successful_update)
         end
         call_hook(:controller_issues_edit_after_save, { :params => params, :issue => @issue, :time_entry => @time_entry, :journal => journal})
-
-        if (@issue.invalid_rules.empty?)
-          redirect_to(params[:back_to] || {:action => 'show', :id => @issue})
-        else
+        if @issue.valid? && !@issue.invalid_rules.empty?
           flash[:invalid_rules] = @issue.invalid_rules
           redirect_to(:controller=>"rules",:action=>"list",:id => @issue,:project_id=>@project)
+          return
         end
-        
+        redirect_to(params[:back_to] || {:action => 'show', :id => @issue})
       end
     end
   rescue ActiveRecord::StaleObjectError

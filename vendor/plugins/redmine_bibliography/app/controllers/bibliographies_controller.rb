@@ -64,7 +64,7 @@ class BibliographiesController < ApplicationController
     @bibliography.projects << @project
     respond_to do |format|
       if @bibliography.save
-        flash[:notice] = 'Bibliography was successfully created.'
+        flash[:notice] = l(:notice_successful_create)
         format.html { redirect_to(:action=>:edit,:id=>@bibliography,:project_id=>@project) }
         format.xml  { render :xml => @bibliography, :status => :created, :location => @bibliography }
       else
@@ -81,7 +81,7 @@ class BibliographiesController < ApplicationController
     @type = @bibliography[:type]
     respond_to do |format|
       if @bibliography.update_attributes(params[:bibliography])
-        flash[:notice] = 'Bibliography was successfully updated.'
+        flash[:notice] = l(:notice_successful_update)
         format.html { redirect_to(:action=>:show,:id=>@bibliography,:project_id=>@project) }
         format.xml  { head :ok }
       else

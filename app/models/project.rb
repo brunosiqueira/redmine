@@ -38,6 +38,7 @@ class Project < ActiveRecord::Base
   has_one :wiki, :dependent => :destroy
   has_many :project_rules
   has_many :rules,:through => :project_rules
+  has_many :stories
   # Custom field for the project issues
   has_and_belongs_to_many :issue_custom_fields, 
                           :class_name => 'IssueCustomField',
