@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class StoryTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  fixtures :stories
+  test "should have opened issues" do
+    assert_equal 2, stories(:one).opened_issues.count
   end
 end

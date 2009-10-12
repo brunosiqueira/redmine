@@ -157,7 +157,7 @@ class IssuesController < ApplicationController
       if @issue.save
         if @issue.valid? && !@issue.invalid_rules.empty?
           flash[:invalid_rules] = @issue.invalid_rules
-          redirect_to(:controller=>"rules",:action=>"list",:id => @issue,:project_id=>@project)
+          redirect_to(:controller=>"rules",:action=>"list",:id => @issue,:project_id=>@project,:type=>"Issue")
           return
         end
         attach_files(@issue, params[:attachments])
@@ -212,7 +212,7 @@ class IssuesController < ApplicationController
         call_hook(:controller_issues_edit_after_save, { :params => params, :issue => @issue, :time_entry => @time_entry, :journal => journal})
         if @issue.valid? && !@issue.invalid_rules.empty?
           flash[:invalid_rules] = @issue.invalid_rules
-          redirect_to(:controller=>"rules",:action=>"list",:id => @issue,:project_id=>@project)
+          redirect_to(:controller=>"rules",:action=>"list",:id => @issue,:project_id=>@project,:type=>"Issue")
           return
         end
         redirect_to(params[:back_to] || {:action => 'show', :id => @issue})

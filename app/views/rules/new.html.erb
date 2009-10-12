@@ -1,6 +1,6 @@
 <h2><%=l(:label_rule_new)%></h2>
 
-<% labelled_tabular_form_for :rule, @rule, :url => { :action => "create" } do |f| %>
+<% labelled_tabular_form_for @rule, @rule, :url => { :action => "create" } do |f| %>
   <%= f.error_messages %>
   <fieldset class="box">
     <p>

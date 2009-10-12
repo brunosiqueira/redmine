@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  title: MyString
+  project_id: 1
+  description: MyString
+  approval_criteria: MyString
+
+two:
+  id: 2
+  title: MyString
+  project_id: 1
+  description: MyString
+  approval_criteria: MyString

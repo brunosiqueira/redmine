@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090929204001) do
+ActiveRecord::Schema.define(:version => 20091012151238) do
 
   create_table "attachments", :force => true do |t|
     t.integer  "container_id",                 :default => 0,  :null => false
@@ -373,6 +373,15 @@ ActiveRecord::Schema.define(:version => 20090929204001) do
     t.text    "permissions"
   end
 
+  create_table "rule_solutions", :force => true do |t|
+    t.integer  "rule_id",     :null => false
+    t.integer  "solution_id", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rule_solutions", ["rule_id", "solution_id"], :name => "index_rule_solutions_on_rule_id_and_solution_id", :unique => true
+
   create_table "rules", :force => true do |t|
     t.string   "name"
     t.text     "context"
@@ -391,14 +400,11 @@ ActiveRecord::Schema.define(:version => 20090929204001) do
   end
 
   create_table "solutions", :force => true do |t|
-    t.integer  "rule_id"
     t.string   "name"
     t.string   "message"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "solutions", ["rule_id", "id"], :name => "index_solutions_on_rule_id_and_id"
 
   create_table "stories", :force => true do |t|
     t.integer  "project_id",        :null => false

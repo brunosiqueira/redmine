@@ -1,0 +1,26 @@
+<h2><%=l(:label_story_new)%></h2>
+
+<% labelled_tabular_form_for([@project,@story],[@project,@story], :url => { :action => "create" }) do |f| %>
+  <%= f.error_messages %>
+  <fieldset class="box">
+    <p>
+      <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.text_area :description %>
+    </p>
+    <p>
+      <%= f.text_area :approval_criteria %>
+    </p>
+    <p>
+      <%=  f.select(:version_id,
+        (@project.versions.sort.collect {|v| [v.name, v.id]}),
+        { :include_blank => true }) %>
+    </p>
+  </fieldset>
+  <p>
+    <%= f.submit l(:button_update) %>
+  </p>
+<% end %>
+
+<%= link_to l(:button_back), project_stories_path(@project) %>

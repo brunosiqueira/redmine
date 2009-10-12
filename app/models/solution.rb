@@ -1,5 +1,6 @@
 class Solution < ActiveRecord::Base
-  belongs_to :rule
+  has_many :rule_solutions,:dependent=>:destroy
+  has_many :rules, :through => :rule_solutions
   validates_uniqueness_of :name
 
   def to_s

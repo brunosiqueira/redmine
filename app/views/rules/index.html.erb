@@ -1,0 +1,25 @@
+<div class="contextual">
+  <%= link_to(l(:label_rule_new), new_rule_path, :class => 'icon icon-add') if User.current.allowed_to?(:add_rule, nil, :global => true) %>
+</div>
+<h2><%=l :label_rule_plural%></h2>
+
+<table class="list">
+  <tr>
+    <th><%= l "field_name"%></th>
+    <th><%= l "field_context"%></th>
+    <th><%= l "field_process_type"%></th>
+  </tr>
+
+<% for rule in @rules %>
+  <tr>
+    <td><%= link_to h(rule.name), rule %></td>
+    <td><%=h rule.context %></td>
+    <td><%=h rule.process_type %></td>
+    <td><%= link_to l(:button_edit), edit_rule_path(rule) %></td>
+    <td><%= link_to l(:button_delete), rule, :confirm => l(:text_are_you_sure), :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

@@ -1,0 +1,35 @@
+<h2><%=l(:label_rule_edit)%></h2>
+
+<% labelled_tabular_form_for @rule, @rule, :url => { :action => "update" } do |f| %>
+  <%= f.error_messages %>
+  <fieldset class="box">
+    <p>
+      <%= f.text_field :name,:disabled=>true %>
+    </p>
+    <p>
+      <%= f.text_field :context,:required=>true %>
+    </p>
+    <p>
+      <%= f.text_field :message,:required=>true %>
+    </p>
+    <p>
+      <%= f.select :importance, Rule.importances,:required=>true %>
+    </p>
+    <p>
+      <%= f.text_field :process_type, :disabled=>true %>
+    </p>
+    <p>
+      <%= f.select :action, Rule.actions,:required=>true %>
+    </p>
+    <h3><%=l(:label_solution_plural)%></h3>
+    <fieldset class="check_list">
+      <%= collection_multiple_select_tag "solutions",Solution.find(:all,:order=>"message"),:id,:to_s,:selected_items=>@rule.solution_ids  %>
+    </fieldset>
+  </fieldset>
+  <p>
+    <%= f.submit l(:button_update) %>
+  </p>
+<% end %>
+
+<%= link_to l(:button_show), @rule %> |
+<%= link_to l(:button_back), rules_path %>

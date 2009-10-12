@@ -1,0 +1,25 @@
+<div class="contextual">
+  <%= link_to(l(:label_story_new), new_project_story_path(@project), :class => 'icon icon-add') %>
+</div>
+<h2><%=l :label_story_plural%></h2>
+
+
+<table class="list">
+  <tr>
+    <th><%= l "field_title"%></th>
+    <th><%= l "field_description"%></th>
+    <th><%= l "field_version"%></th>
+  </tr>
+
+<% for story in @stories %>
+  <tr>
+    <td><%= link_to h(story.title), project_story_path(@project,story) %></td>
+    <td><%=h story.description %></td>
+    <td><%= story.version.nil? ? "-" : story.version %></td>
+    <td><%= link_to l(:button_edit), edit_project_story_path(@project,story) %></td>
+    <td><%= link_to l(:button_delete), project_story_path(@project,story), :confirm => l(:text_are_you_sure), :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+

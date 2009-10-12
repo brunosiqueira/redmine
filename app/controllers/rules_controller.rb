@@ -19,7 +19,7 @@ class RulesController < ApplicationController
     @rule = Rule.new params[:rule]
     @rule.solution_ids = params[:solutions]
     if @rule.save
-      flash[:notice] ="Regra criada com sucesso"
+      flash[:notice] =l(:notice_successful_create)
       redirect_to rule_path(@rule)
     else
       render :action=>:new
@@ -34,7 +34,7 @@ class RulesController < ApplicationController
     @rule = Rule.find params[:id]
     @rule.solution_ids = params[:solutions]
     if @rule.update_attributes(params[:rule])
-      flash[:notice] ="Regra atualizada com sucesso"
+      flash[:notice] =l(:notice_successful_update)
       redirect_to rule_path(@rule)
     else
       render :action=>:edit
@@ -42,16 +42,19 @@ class RulesController < ApplicationController
   end
 
   def list
-    @issue = @project.issues.find params[:id]
+    raise "Parametro não informado" if params[:id].nil? || params[:project_id].nil? || params[:type].nil?
+    @type = params[:type]
+    @object = @project.send(@type.pluralize.downcase).find params[:id]
     @rules = flash[:invalid_rules]
     flash[:invalid_rules] = nil
   end
 
   def execute
-    @issue = @project.issues.find params[:id]
+    @object = @project.send(params[:type].pluralize.downcase).find params[:id]
     @rule = @project.rules.find params[:rule_id]
     @solution = @rule.solutions.find params[:solution_id]
-    @solution.name.constantize::create :project=>@project,:issue=>@issue,:params=>params, :current_user=>User.find(session[:user_id])
+    key = params[:type].downcase.to_sym
+    @solution.name.constantize::create :project=>@project,key=>@object,:params=>params, :current_user=>User.find(session[:user_id])
     render :update do |page|
       page.replace_html "rule_#{@rule.id}","<h2>Resolvido</h2>"
     end
@@ -61,7 +64,7 @@ class RulesController < ApplicationController
   def destroy
     @rule = Rule.find params[:id]
     Rule.destroy(@rule.id)
-    flash[:notice]="Regra excluída com sucesso."
+    flash[:notice]=l(:notice_successful_delete)
     redirect_to :action=>:index
   end
 

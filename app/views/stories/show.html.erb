@@ -1,0 +1,31 @@
+<h2><%=l(:label_story)%></h2>
+<p>
+  <b><%= l "field_title" %>:</b>
+  <%=h @story.title %>
+</p>
+
+<p>
+  <b><%= l "field_description" %>:</b>
+  <%=h @story.description %>
+</p>
+
+<h2><%=l(:label_issue_plural)%></h2>
+<table class="list">
+  <tr>
+    <th><%= l "field_subject"%></th>
+    <th><%= l "field_description"%></th>
+  </tr>
+
+  <% for issue in @story.issues %>
+    <tr>
+      <td>
+        <%= link_to h(truncate(issue.subject, :length => 60)), :controller => 'issues', :action => 'show', :id => issue %> (<%=h issue.status %>)
+      </td>
+      <td><%=h issue.description %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+<%= link_to l(:button_edit), edit_project_story_path(@project,@story) %> |
+<%= link_to l(:button_back), project_stories_path(@project) %>

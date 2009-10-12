@@ -1,0 +1,2551 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'><head><title>/var/lib/gems/1.8/gems/rmagick-2.10.0/lib/RMagick.rb - C0 code coverage information</title>
+    <style type='text/css'>body { background-color: rgb(240, 240, 245); }</style>
+    <style type='text/css'>span.cross-ref-title {
+ font-size: 140%;
+}
+span.cross-ref a {
+ text-decoration: none;
+}
+span.cross-ref {
+ background-color:#f3f7fa;
+ border: 1px dashed #333;
+ margin: 1em;
+ padding: 0.5em;
+ overflow: hidden;
+}
+a.crossref-toggle {
+ text-decoration: none;
+}
+span.marked0 {
+ background-color: rgb(185, 210, 200);
+ display: block;
+}
+span.marked1 {
+ background-color: rgb(190, 215, 205);
+ display: block;
+}
+span.inferred0 {
+ background-color: rgb(175, 200, 200);
+ display: block;
+}
+span.inferred1 {
+ background-color: rgb(180, 205, 205);
+ display: block;
+}
+span.uncovered0 {
+ background-color: rgb(225, 110, 110);
+ display: block;
+}
+span.uncovered1 {
+ background-color: rgb(235, 120, 120);
+ display: block;
+}
+span.overview {
+ border-bottom: 8px solid black;
+}
+div.overview {
+ border-bottom: 8px solid black;
+}
+body {
+ font-family: verdana, arial, helvetica;
+}
+div.footer {
+ font-size: 68%;
+ margin-top: 1.5em;
+}
+h1, h2, h3, h4, h5, h6 {
+ margin-bottom: 0.5em;
+}
+h5 {
+ margin-top: 0.5em;
+}
+.hidden {
+ display: none;
+}
+div.separator {
+ height: 10px;
+}
+/* Commented out for better readability, esp. on IE */
+/*
+table tr td, table tr th {
+ font-size: 68%;
+}
+td.value table tr td {
+ font-size: 11px;
+}
+*/
+table.percent_graph {
+ height: 12px;
+ border: #808080 1px solid;
+ empty-cells: show;
+}
+table.percent_graph td.covered {
+ height: 10px;
+ background: #00f000;
+}
+table.percent_graph td.uncovered {
+ height: 10px;
+ background: #e00000;
+}
+table.percent_graph td.NA {
+ height: 10px;
+ background: #eaeaea;
+}
+table.report {
+ border-collapse: collapse;
+ width: 100%;
+}
+table.report td.heading {
+ background: #dcecff;
+ border: #d0d0d0 1px solid;
+ font-weight: bold;
+ text-align: center;
+}
+table.report td.heading:hover {
+ background: #c0ffc0;
+}
+table.report td.text {
+ border: #d0d0d0 1px solid;
+}
+table.report td.value,
+table.report td.lines_total,
+table.report td.lines_code {
+ text-align: right;
+ border: #d0d0d0 1px solid;
+}
+table.report tr.light {
+ background-color: rgb(240, 240, 245);
+}
+table.report tr.dark {
+ background-color: rgb(230, 230, 235);
+}
+</style>
+    <script type='text/javascript'>
+// <![CDATA[
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make cross-references hidden by default
+  document.writeln( "<style type=\"text/css\">span.cross-ref { display: none }</style>" )
+  // ]]>
+</script>
+    <style type='text/css'>span.run0 {
+  background-color: rgb(178, 204, 255);
+  display: block;
+}
+span.run1 {
+  background-color: rgb(178, 206, 255);
+  display: block;
+}
+span.run2 {
+  background-color: rgb(178, 209, 255);
+  display: block;
+}
+span.run3 {
+  background-color: rgb(178, 211, 255);
+  display: block;
+}
+span.run4 {
+  background-color: rgb(178, 214, 255);
+  display: block;
+}
+span.run5 {
+  background-color: rgb(178, 218, 255);
+  display: block;
+}
+span.run6 {
+  background-color: rgb(178, 220, 255);
+  display: block;
+}
+span.run7 {
+  background-color: rgb(178, 223, 255);
+  display: block;
+}
+span.run8 {
+  background-color: rgb(178, 225, 255);
+  display: block;
+}
+span.run9 {
+  background-color: rgb(178, 228, 255);
+  display: block;
+}
+span.run10 {
+  background-color: rgb(178, 232, 255);
+  display: block;
+}
+span.run11 {
+  background-color: rgb(178, 234, 255);
+  display: block;
+}
+span.run12 {
+  background-color: rgb(178, 237, 255);
+  display: block;
+}
+span.run13 {
+  background-color: rgb(178, 239, 255);
+  display: block;
+}
+span.run14 {
+  background-color: rgb(178, 242, 255);
+  display: block;
+}
+span.run15 {
+  background-color: rgb(178, 246, 255);
+  display: block;
+}
+span.run16 {
+  background-color: rgb(178, 248, 255);
+  display: block;
+}
+span.run17 {
+  background-color: rgb(178, 251, 255);
+  display: block;
+}
+span.run18 {
+  background-color: rgb(178, 253, 255);
+  display: block;
+}
+span.run19 {
+  background-color: rgb(178, 255, 253);
+  display: block;
+}
+span.run20 {
+  background-color: rgb(178, 255, 249);
+  display: block;
+}
+span.run21 {
+  background-color: rgb(178, 255, 247);
+  display: block;
+}
+span.run22 {
+  background-color: rgb(178, 255, 244);
+  display: block;
+}
+span.run23 {
+  background-color: rgb(178, 255, 242);
+  display: block;
+}
+span.run24 {
+  background-color: rgb(178, 255, 239);
+  display: block;
+}
+span.run25 {
+  background-color: rgb(178, 255, 235);
+  display: block;
+}
+span.run26 {
+  background-color: rgb(178, 255, 233);
+  display: block;
+}
+span.run27 {
+  background-color: rgb(178, 255, 230);
+  display: block;
+}
+span.run28 {
+  background-color: rgb(178, 255, 228);
+  display: block;
+}
+span.run29 {
+  background-color: rgb(178, 255, 225);
+  display: block;
+}
+span.run30 {
+  background-color: rgb(178, 255, 221);
+  display: block;
+}
+span.run31 {
+  background-color: rgb(178, 255, 219);
+  display: block;
+}
+span.run32 {
+  background-color: rgb(178, 255, 216);
+  display: block;
+}
+span.run33 {
+  background-color: rgb(178, 255, 214);
+  display: block;
+}
+span.run34 {
+  background-color: rgb(178, 255, 211);
+  display: block;
+}
+span.run35 {
+  background-color: rgb(178, 255, 207);
+  display: block;
+}
+span.run36 {
+  background-color: rgb(178, 255, 205);
+  display: block;
+}
+span.run37 {
+  background-color: rgb(178, 255, 202);
+  display: block;
+}
+span.run38 {
+  background-color: rgb(178, 255, 200);
+  display: block;
+}
+span.run39 {
+  background-color: rgb(178, 255, 197);
+  display: block;
+}
+span.run40 {
+  background-color: rgb(178, 255, 193);
+  display: block;
+}
+span.run41 {
+  background-color: rgb(178, 255, 191);
+  display: block;
+}
+span.run42 {
+  background-color: rgb(178, 255, 188);
+  display: block;
+}
+span.run43 {
+  background-color: rgb(178, 255, 186);
+  display: block;
+}
+span.run44 {
+  background-color: rgb(178, 255, 183);
+  display: block;
+}
+span.run45 {
+  background-color: rgb(178, 255, 179);
+  display: block;
+}
+span.run46 {
+  background-color: rgb(179, 255, 178);
+  display: block;
+}
+span.run47 {
+  background-color: rgb(182, 255, 178);
+  display: block;
+}
+span.run48 {
+  background-color: rgb(184, 255, 178);
+  display: block;
+}
+span.run49 {
+  background-color: rgb(187, 255, 178);
+  display: block;
+}
+span.run50 {
+  background-color: rgb(191, 255, 178);
+  display: block;
+}
+span.run51 {
+  background-color: rgb(193, 255, 178);
+  display: block;
+}
+span.run52 {
+  background-color: rgb(196, 255, 178);
+  display: block;
+}
+span.run53 {
+  background-color: rgb(198, 255, 178);
+  display: block;
+}
+span.run54 {
+  background-color: rgb(201, 255, 178);
+  display: block;
+}
+span.run55 {
+  background-color: rgb(205, 255, 178);
+  display: block;
+}
+span.run56 {
+  background-color: rgb(207, 255, 178);
+  display: block;
+}
+span.run57 {
+  background-color: rgb(210, 255, 178);
+  display: block;
+}
+span.run58 {
+  background-color: rgb(212, 255, 178);
+  display: block;
+}
+span.run59 {
+  background-color: rgb(215, 255, 178);
+  display: block;
+}
+span.run60 {
+  background-color: rgb(219, 255, 178);
+  display: block;
+}
+span.run61 {
+  background-color: rgb(221, 255, 178);
+  display: block;
+}
+span.run62 {
+  background-color: rgb(224, 255, 178);
+  display: block;
+}
+span.run63 {
+  background-color: rgb(226, 255, 178);
+  display: block;
+}
+span.run64 {
+  background-color: rgb(229, 255, 178);
+  display: block;
+}
+span.run65 {
+  background-color: rgb(233, 255, 178);
+  display: block;
+}
+span.run66 {
+  background-color: rgb(235, 255, 178);
+  display: block;
+}
+span.run67 {
+  background-color: rgb(238, 255, 178);
+  display: block;
+}
+span.run68 {
+  background-color: rgb(240, 255, 178);
+  display: block;
+}
+span.run69 {
+  background-color: rgb(243, 255, 178);
+  display: block;
+}
+span.run70 {
+  background-color: rgb(247, 255, 178);
+  display: block;
+}
+span.run71 {
+  background-color: rgb(249, 255, 178);
+  display: block;
+}
+span.run72 {
+  background-color: rgb(252, 255, 178);
+  display: block;
+}
+span.run73 {
+  background-color: rgb(255, 255, 178);
+  display: block;
+}
+span.run74 {
+  background-color: rgb(255, 252, 178);
+  display: block;
+}
+span.run75 {
+  background-color: rgb(255, 248, 178);
+  display: block;
+}
+span.run76 {
+  background-color: rgb(255, 246, 178);
+  display: block;
+}
+span.run77 {
+  background-color: rgb(255, 243, 178);
+  display: block;
+}
+span.run78 {
+  background-color: rgb(255, 240, 178);
+  display: block;
+}
+span.run79 {
+  background-color: rgb(255, 238, 178);
+  display: block;
+}
+span.run80 {
+  background-color: rgb(255, 234, 178);
+  display: block;
+}
+span.run81 {
+  background-color: rgb(255, 232, 178);
+  display: block;
+}
+span.run82 {
+  background-color: rgb(255, 229, 178);
+  display: block;
+}
+span.run83 {
+  background-color: rgb(255, 226, 178);
+  display: block;
+}
+span.run84 {
+  background-color: rgb(255, 224, 178);
+  display: block;
+}
+span.run85 {
+  background-color: rgb(255, 220, 178);
+  display: block;
+}
+span.run86 {
+  background-color: rgb(255, 218, 178);
+  display: block;
+}
+span.run87 {
+  background-color: rgb(255, 215, 178);
+  display: block;
+}
+span.run88 {
+  background-color: rgb(255, 212, 178);
+  display: block;
+}
+span.run89 {
+  background-color: rgb(255, 210, 178);
+  display: block;
+}
+span.run90 {
+  background-color: rgb(255, 206, 178);
+  display: block;
+}
+span.run91 {
+  background-color: rgb(255, 204, 178);
+  display: block;
+}
+span.run92 {
+  background-color: rgb(255, 201, 178);
+  display: block;
+}
+span.run93 {
+  background-color: rgb(255, 198, 178);
+  display: block;
+}
+span.run94 {
+  background-color: rgb(255, 196, 178);
+  display: block;
+}
+span.run95 {
+  background-color: rgb(255, 192, 178);
+  display: block;
+}
+span.run96 {
+  background-color: rgb(255, 189, 178);
+  display: block;
+}
+span.run97 {
+  background-color: rgb(255, 187, 178);
+  display: block;
+}
+span.run98 {
+  background-color: rgb(255, 184, 178);
+  display: block;
+}
+span.run99 {
+  background-color: rgb(255, 182, 178);
+  display: block;
+}
+span.run100 {
+  background-color: rgb(255, 178, 178);
+  display: block;
+}
+</style>
+    </head>
+  <body><h3>C0 code coverage information</h3>
+    <p>Generated on Wed Sep 23 21:32:15 -0300 2009 with <a href='http://eigenclass.org/hiki/rcov'>rcov 0.8.1.2</a>
+      </p>
+    <hr/>
+    <pre><span class='marked0'>Code reported as executed by Ruby looks like this...
+</span><span class='marked1'>and this: this line is also marked as covered.
+</span><span class='inferred0'>Lines considered as run by rcov, but not reported by Ruby, look like this,
+</span><span class='inferred1'>and this: these lines were inferred by rcov (using simple heuristics).
+</span><span class='uncovered0'>Finally, here&apos;s a line marked as not executed.
+</span></pre>                       
+<table class='report'><thead><tr><td class='heading'>Name</td>
+      <td class='heading'>Total lines</td>
+      <td class='heading'>Lines of code</td>
+      <td class='heading'>Total coverage</td>
+      <td class='heading'>Code coverage</td>
+      </tr>
+    </thead>
+  <tbody><tr class='light'><td><a href='-var-lib-gems-1_8-gems-rmagick-2_10_0-lib-RMagick_rb.html'>/var/lib/gems/1.8/gems/rmagick-2.10.0/lib/RMagick.rb</a>
+        </td>
+      <td class='lines_total'><tt>1941</tt>
+        </td>
+      <td class='lines_code'><tt>1490</tt>
+        </td>
+      <td><table cellspacing='0' align='right' cellpadding='0'><tr><td><tt class='coverage_total'>43.7%</tt>
+              &nbsp;</td>
+            <td><table class='percent_graph' cellspacing='0' width='100' cellpadding='0'><tr><td class='covered' width='44'/>
+                  <td class='uncovered' width='56'/>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      <td><table cellspacing='0' align='right' cellpadding='0'><tr><td><tt class='coverage_code'>30.1%</tt>
+              &nbsp;</td>
+            <td><table class='percent_graph' cellspacing='0' width='100' cellpadding='0'><tr><td class='covered' width='30'/>
+                  <td class='uncovered' width='70'/>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<pre><span class="inferred1"><a name="line1"></a>   1 # $Id: RMagick.rb,v 1.81 2009/02/28 23:52:27 rmagick Exp $
+</span><span class="inferred0"><a name="line2"></a>   2 #==============================================================================
+</span><span class="inferred1"><a name="line3"></a>   3 #                  Copyright (C) 2009 by Timothy P. Hunter
+</span><span class="inferred0"><a name="line4"></a>   4 #   Name:       RMagick.rb
+</span><span class="inferred1"><a name="line5"></a>   5 #   Author:     Tim Hunter
+</span><span class="inferred0"><a name="line6"></a>   6 #   Purpose:    Extend Ruby to interface with ImageMagick.
+</span><span class="inferred1"><a name="line7"></a>   7 #   Notes:      RMagick2.so defines the classes. The code below adds methods
+</span><span class="inferred0"><a name="line8"></a>   8 #               to the classes.
+</span><span class="inferred1"><a name="line9"></a>   9 #==============================================================================
+</span><span class="inferred0"><a name="line10"></a>  10 
+</span><span class="marked1"><a name="line11"></a>  11 require 'RMagick2.so'
+</span><span class="inferred0"><a name="line12"></a>  12 
+</span><span class="marked1"><a name="line13"></a>  13 module Magick
+</span><span class="marked0"><a name="line14"></a>  14     @@formats = nil
+</span><span class="inferred1"><a name="line15"></a>  15 
+</span><span class="marked0"><a name="line16"></a>  16 def Magick.formats(&amp;block)
+</span><span class="uncovered1"><a name="line17"></a>  17     @@formats ||= Magick.init_formats
+</span><span class="uncovered0"><a name="line18"></a>  18     if block_given?
+</span><span class="uncovered1"><a name="line19"></a>  19         @@formats.each { |k,v| yield(k,v) }
+</span><span class="uncovered0"><a name="line20"></a>  20         self
+</span><span class="uncovered1"><a name="line21"></a>  21     else
+</span><span class="uncovered0"><a name="line22"></a>  22         @@formats
+</span><span class="uncovered1"><a name="line23"></a>  23     end
+</span><span class="uncovered0"><a name="line24"></a>  24 end
+</span><span class="inferred1"><a name="line25"></a>  25 
+</span><span class="marked0"><a name="line26"></a>  26 class &lt;&lt; self
+</span><span class="marked1"><a name="line27"></a>  27     attr_writer :trace_proc
+</span><span class="inferred0"><a name="line28"></a>  28 end
+</span><span class="inferred1"><a name="line29"></a>  29 
+</span><span class="inferred0"><a name="line30"></a>  30 # Geometry class and related enum constants
+</span><span class="marked1"><a name="line31"></a>  31 class GeometryValue &lt; Enum
+</span><span class="inferred0"><a name="line32"></a>  32     # no methods
+</span><span class="inferred1"><a name="line33"></a>  33 end
+</span><span class="inferred0"><a name="line34"></a>  34 
+</span><span class="marked1"><a name="line35"></a>  35 PercentGeometry  = GeometryValue.new(:PercentGeometry, 1).freeze
+</span><span class="marked0"><a name="line36"></a>  36 AspectGeometry   = GeometryValue.new(:AspectGeometry, 2).freeze
+</span><span class="marked1"><a name="line37"></a>  37 LessGeometry     = GeometryValue.new(:LessGeometry, 3).freeze
+</span><span class="marked0"><a name="line38"></a>  38 GreaterGeometry  = GeometryValue.new(:GreaterGeometry, 4).freeze
+</span><span class="marked1"><a name="line39"></a>  39 AreaGeometry     = GeometryValue.new(:AreaGeometry, 5).freeze
+</span><span class="marked0"><a name="line40"></a>  40 MinimumGeometry  = GeometryValue.new(:MinimumGeometry, 6).freeze
+</span><span class="inferred1"><a name="line41"></a>  41 
+</span><span class="marked0"><a name="line42"></a>  42 class Geometry
+</span><span class="marked1"><a name="line43"></a>  43     FLAGS = ['', '%', '!', '&lt;', '&gt;', '@', '^']
+</span><span class="marked0"><a name="line44"></a>  44     RFLAGS = { '%' =&gt; PercentGeometry,
+</span><span class="inferred1"><a name="line45"></a>  45                '!' =&gt; AspectGeometry,
+</span><span class="inferred0"><a name="line46"></a>  46                '&lt;' =&gt; LessGeometry,
+</span><span class="inferred1"><a name="line47"></a>  47                '&gt;' =&gt; GreaterGeometry,
+</span><span class="inferred0"><a name="line48"></a>  48                '@' =&gt; AreaGeometry,
+</span><span class="inferred1"><a name="line49"></a>  49                '^' =&gt; MinimumGeometry }
+</span><span class="inferred0"><a name="line50"></a>  50 
+</span><span class="marked1"><a name="line51"></a>  51     attr_accessor :width, :height, :x, :y, :flag
+</span><span class="inferred0"><a name="line52"></a>  52 
+</span><span class="marked1"><a name="line53"></a>  53     def initialize(width=nil, height=nil, x=nil, y=nil, flag=nil)
+</span><span class="uncovered0"><a name="line54"></a>  54         raise(ArgumentError, &quot;width set to #{width.to_s}&quot;) if width.is_a? GeometryValue
+</span><span class="uncovered1"><a name="line55"></a>  55         raise(ArgumentError, &quot;height set to #{height.to_s}&quot;) if height.is_a? GeometryValue
+</span><span class="uncovered0"><a name="line56"></a>  56         raise(ArgumentError, &quot;x set to #{x.to_s}&quot;) if x.is_a? GeometryValue
+</span><span class="uncovered1"><a name="line57"></a>  57         raise(ArgumentError, &quot;y set to #{y.to_s}&quot;) if y.is_a? GeometryValue
+</span><span class="uncovered0"><a name="line58"></a>  58 
+</span><span class="uncovered1"><a name="line59"></a>  59         # Support floating-point width and height arguments so Geometry
+</span><span class="uncovered0"><a name="line60"></a>  60         # objects can be used to specify Image#density= arguments.
+</span><span class="uncovered1"><a name="line61"></a>  61         if width == nil
+</span><span class="uncovered0"><a name="line62"></a>  62             @width = 0
+</span><span class="uncovered1"><a name="line63"></a>  63         elsif width.to_f &gt;= 0.0
+</span><span class="uncovered0"><a name="line64"></a>  64             @width = width.to_f
+</span><span class="uncovered1"><a name="line65"></a>  65         else
+</span><span class="uncovered0"><a name="line66"></a>  66             Kernel.raise ArgumentError, &quot;width must be &gt;= 0: #{width}&quot;
+</span><span class="uncovered1"><a name="line67"></a>  67         end
+</span><span class="uncovered0"><a name="line68"></a>  68         if height == nil
+</span><span class="uncovered1"><a name="line69"></a>  69             @height = 0
+</span><span class="uncovered0"><a name="line70"></a>  70         elsif height.to_f &gt;= 0.0
+</span><span class="uncovered1"><a name="line71"></a>  71             @height = height.to_f
+</span><span class="uncovered0"><a name="line72"></a>  72         else
+</span><span class="uncovered1"><a name="line73"></a>  73             Kernel.raise ArgumentError, &quot;height must be &gt;= 0: #{height}&quot;
+</span><span class="uncovered0"><a name="line74"></a>  74         end
+</span><span class="uncovered1"><a name="line75"></a>  75 
+</span><span class="uncovered0"><a name="line76"></a>  76         @x    = x.to_i
+</span><span class="uncovered1"><a name="line77"></a>  77         @y    = y.to_i
+</span><span class="uncovered0"><a name="line78"></a>  78         @flag = flag
+</span><span class="uncovered1"><a name="line79"></a>  79 
+</span><span class="uncovered0"><a name="line80"></a>  80     end
+</span><span class="inferred1"><a name="line81"></a>  81 
+</span><span class="inferred0"><a name="line82"></a>  82     # Construct an object from a geometry string
+</span><span class="marked1"><a name="line83"></a>  83     W = /(\d+\.\d+%?)|(\d*%?)/
+</span><span class="marked0"><a name="line84"></a>  84     H = W
+</span><span class="marked1"><a name="line85"></a>  85     X = /(?:([-+]\d+))?/
+</span><span class="marked0"><a name="line86"></a>  86     Y = X
+</span><span class="marked1"><a name="line87"></a>  87     RE = /\A#{W}x?#{H}#{X}#{Y}([!&lt;&gt;@\^]?)\Z/
+</span><span class="inferred0"><a name="line88"></a>  88 
+</span><span class="marked1"><a name="line89"></a>  89     def Geometry.from_s(str)
+</span><span class="uncovered0"><a name="line90"></a>  90 
+</span><span class="uncovered1"><a name="line91"></a>  91         m = RE.match(str)
+</span><span class="uncovered0"><a name="line92"></a>  92         if m
+</span><span class="uncovered1"><a name="line93"></a>  93             width  = (m[1] || m[2]).to_f
+</span><span class="uncovered0"><a name="line94"></a>  94             height = (m[3] || m[4]).to_f
+</span><span class="uncovered1"><a name="line95"></a>  95             x      = m[5].to_i
+</span><span class="uncovered0"><a name="line96"></a>  96             y      = m[6].to_i
+</span><span class="uncovered1"><a name="line97"></a>  97             flag   = RFLAGS[m[7]]
+</span><span class="uncovered0"><a name="line98"></a>  98         else
+</span><span class="uncovered1"><a name="line99"></a>  99             Kernel.raise ArgumentError, &quot;invalid geometry format&quot;
+</span><span class="uncovered0"><a name="line100"></a> 100         end
+</span><span class="inferred1"><a name="line101"></a> 101         if str['%']
+</span><span class="inferred0"><a name="line102"></a> 102           flag = PercentGeometry
+</span><span class="inferred1"><a name="line103"></a> 103         end
+</span><span class="inferred0"><a name="line104"></a> 104         Geometry.new(width, height, x, y, flag)
+</span><span class="inferred1"><a name="line105"></a> 105     end
+</span><span class="inferred0"><a name="line106"></a> 106 
+</span><span class="inferred1"><a name="line107"></a> 107     # Convert object to a geometry string
+</span><span class="marked0"><a name="line108"></a> 108     def to_s
+</span><span class="inferred1"><a name="line109"></a> 109         str = ''
+</span><span class="uncovered0"><a name="line110"></a> 110         if @width &gt; 0
+</span><span class="uncovered1"><a name="line111"></a> 111           fmt = @width.truncate == @width ? &quot;%d&quot; : &quot;%.2f&quot;
+</span><span class="uncovered0"><a name="line112"></a> 112           str &lt;&lt; sprintf(fmt, @width)
+</span><span class="uncovered1"><a name="line113"></a> 113           str &lt;&lt; '%' if @flag == PercentGeometry
+</span><span class="uncovered0"><a name="line114"></a> 114         end
+</span><span class="uncovered1"><a name="line115"></a> 115 
+</span><span class="uncovered0"><a name="line116"></a> 116         if (@width &gt; 0 &amp;&amp; @flag != PercentGeometry) || (@height &gt; 0)
+</span><span class="uncovered1"><a name="line117"></a> 117           str &lt;&lt; 'x'
+</span><span class="uncovered0"><a name="line118"></a> 118         end
+</span><span class="uncovered1"><a name="line119"></a> 119 
+</span><span class="uncovered0"><a name="line120"></a> 120         if @height &gt; 0
+</span><span class="uncovered1"><a name="line121"></a> 121           fmt = @height.truncate == @height ? &quot;%d&quot; : &quot;%.2f&quot;
+</span><span class="uncovered0"><a name="line122"></a> 122           str &lt;&lt; sprintf(fmt, @height)
+</span><span class="inferred1"><a name="line123"></a> 123           str &lt;&lt; '%' if @flag == PercentGeometry
+</span><span class="inferred0"><a name="line124"></a> 124         end
+</span><span class="inferred1"><a name="line125"></a> 125         str &lt;&lt; sprintf(&quot;%+d%+d&quot;, @x, @y) if (@x != 0 || @y != 0)
+</span><span class="inferred0"><a name="line126"></a> 126         if @flag != PercentGeometry
+</span><span class="inferred1"><a name="line127"></a> 127           str &lt;&lt; FLAGS[@flag.to_i]
+</span><span class="inferred0"><a name="line128"></a> 128         end
+</span><span class="inferred1"><a name="line129"></a> 129         str
+</span><span class="inferred0"><a name="line130"></a> 130     end
+</span><span class="inferred1"><a name="line131"></a> 131 end
+</span><span class="inferred0"><a name="line132"></a> 132 
+</span><span class="inferred1"><a name="line133"></a> 133 
+</span><span class="marked0"><a name="line134"></a> 134 class Draw
+</span><span class="inferred1"><a name="line135"></a> 135 
+</span><span class="inferred0"><a name="line136"></a> 136     # Thse hashes are used to map Magick constant
+</span><span class="inferred1"><a name="line137"></a> 137     # values to the strings used in the primitives.
+</span><span class="marked0"><a name="line138"></a> 138     ALIGN_TYPE_NAMES = {
+</span><span class="inferred1"><a name="line139"></a> 139         LeftAlign.to_i =&gt; 'left',
+</span><span class="inferred0"><a name="line140"></a> 140         RightAlign.to_i =&gt; 'right',
+</span><span class="inferred1"><a name="line141"></a> 141         CenterAlign.to_i =&gt; 'center'
+</span><span class="inferred0"><a name="line142"></a> 142         }.freeze
+</span><span class="marked1"><a name="line143"></a> 143     ANCHOR_TYPE_NAMES = {
+</span><span class="inferred0"><a name="line144"></a> 144         StartAnchor.to_i =&gt; 'start',
+</span><span class="inferred1"><a name="line145"></a> 145         MiddleAnchor.to_i =&gt; 'middle',
+</span><span class="inferred0"><a name="line146"></a> 146         EndAnchor.to_i =&gt; 'end'
+</span><span class="inferred1"><a name="line147"></a> 147         }.freeze
+</span><span class="marked0"><a name="line148"></a> 148     DECORATION_TYPE_NAMES = {
+</span><span class="inferred1"><a name="line149"></a> 149         NoDecoration.to_i =&gt; 'none',
+</span><span class="inferred0"><a name="line150"></a> 150         UnderlineDecoration.to_i =&gt; 'underline',
+</span><span class="inferred1"><a name="line151"></a> 151         OverlineDecoration.to_i =&gt; 'overline',
+</span><span class="inferred0"><a name="line152"></a> 152         LineThroughDecoration.to_i =&gt; 'line-through'
+</span><span class="inferred1"><a name="line153"></a> 153         }.freeze
+</span><span class="marked0"><a name="line154"></a> 154     FONT_WEIGHT_NAMES = {
+</span><span class="inferred1"><a name="line155"></a> 155         AnyWeight.to_i =&gt; 'all',
+</span><span class="inferred0"><a name="line156"></a> 156         NormalWeight.to_i =&gt; 'normal',
+</span><span class="inferred1"><a name="line157"></a> 157         BoldWeight.to_i =&gt; 'bold',
+</span><span class="inferred0"><a name="line158"></a> 158         BolderWeight.to_i =&gt; 'bolder',
+</span><span class="inferred1"><a name="line159"></a> 159         LighterWeight.to_i =&gt; 'lighter',
+</span><span class="inferred0"><a name="line160"></a> 160         }.freeze
+</span><span class="marked1"><a name="line161"></a> 161     GRAVITY_NAMES = {
+</span><span class="inferred0"><a name="line162"></a> 162         NorthWestGravity.to_i =&gt; 'northwest',
+</span><span class="inferred1"><a name="line163"></a> 163         NorthGravity.to_i =&gt; 'north',
+</span><span class="inferred0"><a name="line164"></a> 164         NorthEastGravity.to_i =&gt; 'northeast',
+</span><span class="inferred1"><a name="line165"></a> 165         WestGravity.to_i =&gt; 'west',
+</span><span class="inferred0"><a name="line166"></a> 166         CenterGravity.to_i =&gt; 'center',
+</span><span class="inferred1"><a name="line167"></a> 167         EastGravity.to_i =&gt; 'east',
+</span><span class="inferred0"><a name="line168"></a> 168         SouthWestGravity.to_i =&gt; 'southwest',
+</span><span class="inferred1"><a name="line169"></a> 169         SouthGravity.to_i =&gt; 'south',
+</span><span class="inferred0"><a name="line170"></a> 170         SouthEastGravity.to_i =&gt; 'southeast'
+</span><span class="inferred1"><a name="line171"></a> 171         }.freeze
+</span><span class="marked0"><a name="line172"></a> 172     PAINT_METHOD_NAMES = {
+</span><span class="inferred1"><a name="line173"></a> 173         PointMethod.to_i =&gt; 'point',
+</span><span class="inferred0"><a name="line174"></a> 174         ReplaceMethod.to_i =&gt; 'replace',
+</span><span class="inferred1"><a name="line175"></a> 175         FloodfillMethod.to_i =&gt; 'floodfill',
+</span><span class="inferred0"><a name="line176"></a> 176         FillToBorderMethod.to_i =&gt; 'filltoborder',
+</span><span class="inferred1"><a name="line177"></a> 177         ResetMethod.to_i =&gt; 'reset'
+</span><span class="inferred0"><a name="line178"></a> 178         }.freeze
+</span><span class="marked1"><a name="line179"></a> 179     STRETCH_TYPE_NAMES = {
+</span><span class="inferred0"><a name="line180"></a> 180         NormalStretch.to_i =&gt; 'normal',
+</span><span class="inferred1"><a name="line181"></a> 181         UltraCondensedStretch.to_i =&gt; 'ultra-condensed',
+</span><span class="inferred0"><a name="line182"></a> 182         ExtraCondensedStretch.to_i =&gt; 'extra-condensed',
+</span><span class="inferred1"><a name="line183"></a> 183         CondensedStretch.to_i =&gt; 'condensed',
+</span><span class="inferred0"><a name="line184"></a> 184         SemiCondensedStretch.to_i =&gt; 'semi-condensed',
+</span><span class="inferred1"><a name="line185"></a> 185         SemiExpandedStretch.to_i =&gt; 'semi-expanded',
+</span><span class="inferred0"><a name="line186"></a> 186         ExpandedStretch.to_i =&gt; 'expanded',
+</span><span class="inferred1"><a name="line187"></a> 187         ExtraExpandedStretch.to_i =&gt; 'extra-expanded',
+</span><span class="inferred0"><a name="line188"></a> 188         UltraExpandedStretch.to_i =&gt; 'ultra-expanded',
+</span><span class="inferred1"><a name="line189"></a> 189         AnyStretch.to_i =&gt; 'all'
+</span><span class="inferred0"><a name="line190"></a> 190         }.freeze
+</span><span class="marked1"><a name="line191"></a> 191     STYLE_TYPE_NAMES = {
+</span><span class="inferred0"><a name="line192"></a> 192         NormalStyle.to_i =&gt; 'normal',
+</span><span class="inferred1"><a name="line193"></a> 193         ItalicStyle.to_i =&gt; 'italic',
+</span><span class="inferred0"><a name="line194"></a> 194         ObliqueStyle.to_i =&gt; 'oblique',
+</span><span class="inferred1"><a name="line195"></a> 195         AnyStyle.to_i =&gt; 'all'
+</span><span class="inferred0"><a name="line196"></a> 196         }.freeze
+</span><span class="inferred1"><a name="line197"></a> 197 
+</span><span class="marked0"><a name="line198"></a> 198   private
+</span><span class="marked1"><a name="line199"></a> 199     def enquote(str)
+</span><span class="uncovered0"><a name="line200"></a> 200         if str.length &gt; 2 &amp;&amp; /\A(?:\&quot;[^\&quot;]+\&quot;|\'[^\']+\'|\{[^\}]+\})\z/.match(str)
+</span><span class="uncovered1"><a name="line201"></a> 201             return str
+</span><span class="uncovered0"><a name="line202"></a> 202         else
+</span><span class="uncovered1"><a name="line203"></a> 203             return '&quot;' + str + '&quot;'
+</span><span class="uncovered0"><a name="line204"></a> 204         end
+</span><span class="uncovered1"><a name="line205"></a> 205     end
+</span><span class="inferred0"><a name="line206"></a> 206 
+</span><span class="marked1"><a name="line207"></a> 207   public
+</span><span class="inferred0"><a name="line208"></a> 208 
+</span><span class="inferred1"><a name="line209"></a> 209     # Apply coordinate transformations to support scaling (s), rotation (r),
+</span><span class="inferred0"><a name="line210"></a> 210     # and translation (t). Angles are specified in radians.
+</span><span class="marked1"><a name="line211"></a> 211     def affine(sx, rx, ry, sy, tx, ty)
+</span><span class="inferred0"><a name="line212"></a> 212         primitive &quot;affine &quot; + sprintf(&quot;%g,%g,%g,%g,%g,%g&quot;, sx, rx, ry, sy, tx, ty)
+</span><span class="inferred1"><a name="line213"></a> 213     end
+</span><span class="inferred0"><a name="line214"></a> 214 
+</span><span class="inferred1"><a name="line215"></a> 215     # Draw an arc.
+</span><span class="marked0"><a name="line216"></a> 216     def arc(startX, startY, endX, endY, startDegrees, endDegrees)
+</span><span class="uncovered1"><a name="line217"></a> 217         primitive &quot;arc &quot; + sprintf(&quot;%g,%g %g,%g %g,%g&quot;,
+</span><span class="uncovered0"><a name="line218"></a> 218                     startX, startY, endX, endY, startDegrees, endDegrees)
+</span><span class="uncovered1"><a name="line219"></a> 219     end
+</span><span class="inferred0"><a name="line220"></a> 220 
+</span><span class="inferred1"><a name="line221"></a> 221     # Draw a bezier curve.
+</span><span class="marked0"><a name="line222"></a> 222     def bezier(*points)
+</span><span class="uncovered1"><a name="line223"></a> 223         if points.length == 0
+</span><span class="uncovered0"><a name="line224"></a> 224             Kernel.raise ArgumentError, &quot;no points specified&quot;
+</span><span class="uncovered1"><a name="line225"></a> 225         elsif points.length % 2 != 0
+</span><span class="uncovered0"><a name="line226"></a> 226             Kernel.raise ArgumentError, &quot;odd number of arguments specified&quot;
+</span><span class="uncovered1"><a name="line227"></a> 227         end
+</span><span class="uncovered0"><a name="line228"></a> 228         primitive &quot;bezier &quot; + points.join(',')
+</span><span class="uncovered1"><a name="line229"></a> 229     end
+</span><span class="inferred0"><a name="line230"></a> 230 
+</span><span class="inferred1"><a name="line231"></a> 231     # Draw a circle
+</span><span class="marked0"><a name="line232"></a> 232     def circle(originX, originY, perimX, perimY)
+</span><span class="uncovered1"><a name="line233"></a> 233         primitive &quot;circle &quot; + sprintf(&quot;%g,%g %g,%g&quot;, originX, originY, perimX, perimY)
+</span><span class="uncovered0"><a name="line234"></a> 234     end
+</span><span class="inferred1"><a name="line235"></a> 235 
+</span><span class="inferred0"><a name="line236"></a> 236     # Invoke a clip-path defined by def_clip_path.
+</span><span class="marked1"><a name="line237"></a> 237     def clip_path(name)
+</span><span class="uncovered0"><a name="line238"></a> 238         primitive &quot;clip-path #{name}&quot;
+</span><span class="uncovered1"><a name="line239"></a> 239     end
+</span><span class="inferred0"><a name="line240"></a> 240 
+</span><span class="inferred1"><a name="line241"></a> 241     # Define the clipping rule.
+</span><span class="marked0"><a name="line242"></a> 242     def clip_rule(rule)
+</span><span class="uncovered1"><a name="line243"></a> 243         if ( not [&quot;evenodd&quot;, &quot;nonzero&quot;].include?(rule.downcase) )
+</span><span class="uncovered0"><a name="line244"></a> 244             Kernel.raise ArgumentError, &quot;Unknown clipping rule #{rule}&quot;
+</span><span class="uncovered1"><a name="line245"></a> 245         end
+</span><span class="uncovered0"><a name="line246"></a> 246         primitive &quot;clip-rule #{rule}&quot;
+</span><span class="uncovered1"><a name="line247"></a> 247     end
+</span><span class="inferred0"><a name="line248"></a> 248 
+</span><span class="inferred1"><a name="line249"></a> 249     # Define the clip units
+</span><span class="marked0"><a name="line250"></a> 250     def clip_units(unit)
+</span><span class="uncovered1"><a name="line251"></a> 251         if ( not [&quot;userspace&quot;, &quot;userspaceonuse&quot;, &quot;objectboundingbox&quot;].include?(unit.downcase) )
+</span><span class="uncovered0"><a name="line252"></a> 252             Kernel.raise ArgumentError, &quot;Unknown clip unit #{unit}&quot;
+</span><span class="uncovered1"><a name="line253"></a> 253         end
+</span><span class="uncovered0"><a name="line254"></a> 254         primitive &quot;clip-units #{unit}&quot;
+</span><span class="uncovered1"><a name="line255"></a> 255     end
+</span><span class="inferred0"><a name="line256"></a> 256 
+</span><span class="inferred1"><a name="line257"></a> 257     # Set color in image according to specified colorization rule. Rule is one of
+</span><span class="inferred0"><a name="line258"></a> 258     # point, replace, floodfill, filltoborder,reset
+</span><span class="marked1"><a name="line259"></a> 259     def color(x, y, method)
+</span><span class="uncovered0"><a name="line260"></a> 260         if ( not PAINT_METHOD_NAMES.has_key?(method.to_i) )
+</span><span class="uncovered1"><a name="line261"></a> 261             Kernel.raise ArgumentError, &quot;Unknown PaintMethod: #{method}&quot;
+</span><span class="uncovered0"><a name="line262"></a> 262         end
+</span><span class="uncovered1"><a name="line263"></a> 263         primitive &quot;color #{x},#{y},#{PAINT_METHOD_NAMES[method.to_i]}&quot;
+</span><span class="uncovered0"><a name="line264"></a> 264     end
+</span><span class="inferred1"><a name="line265"></a> 265 
+</span><span class="inferred0"><a name="line266"></a> 266     # Specify EITHER the text decoration (none, underline, overline,
+</span><span class="inferred1"><a name="line267"></a> 267     # line-through) OR the text solid background color (any color name or spec)
+</span><span class="marked0"><a name="line268"></a> 268     def decorate(decoration)
+</span><span class="uncovered1"><a name="line269"></a> 269         if ( DECORATION_TYPE_NAMES.has_key?(decoration.to_i) )
+</span><span class="uncovered0"><a name="line270"></a> 270             primitive &quot;decorate #{DECORATION_TYPE_NAMES[decoration.to_i]}&quot;
+</span><span class="uncovered1"><a name="line271"></a> 271         else
+</span><span class="uncovered0"><a name="line272"></a> 272             primitive &quot;decorate #{enquote(decoration)}&quot;
+</span><span class="uncovered1"><a name="line273"></a> 273         end
+</span><span class="uncovered0"><a name="line274"></a> 274     end
+</span><span class="inferred1"><a name="line275"></a> 275 
+</span><span class="inferred0"><a name="line276"></a> 276     # Define a clip-path. A clip-path is a sequence of primitives
+</span><span class="inferred1"><a name="line277"></a> 277     # bracketed by the &quot;push clip-path &lt;name&gt;&quot; and &quot;pop clip-path&quot;
+</span><span class="inferred0"><a name="line278"></a> 278     # primitives. Upon advice from the IM guys, we also bracket
+</span><span class="inferred1"><a name="line279"></a> 279     # the clip-path primitives with &quot;push(pop) defs&quot; and &quot;push
+</span><span class="inferred0"><a name="line280"></a> 280     # (pop) graphic-context&quot;.
+</span><span class="marked1"><a name="line281"></a> 281     def define_clip_path(name)
+</span><span class="uncovered0"><a name="line282"></a> 282         begin
+</span><span class="uncovered1"><a name="line283"></a> 283             push('defs')
+</span><span class="uncovered0"><a name="line284"></a> 284             push('clip-path', name)
+</span><span class="uncovered1"><a name="line285"></a> 285             push('graphic-context')
+</span><span class="uncovered0"><a name="line286"></a> 286             yield
+</span><span class="uncovered1"><a name="line287"></a> 287         ensure
+</span><span class="uncovered0"><a name="line288"></a> 288             pop('graphic-context')
+</span><span class="uncovered1"><a name="line289"></a> 289             pop('clip-path')
+</span><span class="uncovered0"><a name="line290"></a> 290             pop('defs')
+</span><span class="uncovered1"><a name="line291"></a> 291         end
+</span><span class="uncovered0"><a name="line292"></a> 292     end
+</span><span class="inferred1"><a name="line293"></a> 293 
+</span><span class="inferred0"><a name="line294"></a> 294     # Draw an ellipse
+</span><span class="marked1"><a name="line295"></a> 295     def ellipse(originX, originY, width, height, arcStart, arcEnd)
+</span><span class="uncovered0"><a name="line296"></a> 296         primitive &quot;ellipse &quot; + sprintf(&quot;%g,%g %g,%g %g,%g&quot;,
+</span><span class="uncovered1"><a name="line297"></a> 297                         originX, originY, width, height, arcStart, arcEnd)
+</span><span class="uncovered0"><a name="line298"></a> 298     end
+</span><span class="inferred1"><a name="line299"></a> 299 
+</span><span class="inferred0"><a name="line300"></a> 300     # Let anything through, but the only defined argument
+</span><span class="inferred1"><a name="line301"></a> 301     # is &quot;UTF-8&quot;. All others are apparently ignored.
+</span><span class="marked0"><a name="line302"></a> 302     def encoding(encoding)
+</span><span class="uncovered1"><a name="line303"></a> 303         primitive &quot;encoding #{encoding}&quot;
+</span><span class="uncovered0"><a name="line304"></a> 304     end
+</span><span class="inferred1"><a name="line305"></a> 305 
+</span><span class="inferred0"><a name="line306"></a> 306     # Specify object fill, a color name or pattern name
+</span><span class="marked1"><a name="line307"></a> 307     def fill(colorspec)
+</span><span class="uncovered0"><a name="line308"></a> 308         primitive &quot;fill #{enquote(colorspec)}&quot;
+</span><span class="uncovered1"><a name="line309"></a> 309     end
+</span><span class="marked0"><a name="line310"></a> 310     alias fill_color fill
+</span><span class="marked1"><a name="line311"></a> 311     alias fill_pattern fill
+</span><span class="inferred0"><a name="line312"></a> 312 
+</span><span class="inferred1"><a name="line313"></a> 313     # Specify fill opacity (use &quot;xx%&quot; to indicate percentage)
+</span><span class="marked0"><a name="line314"></a> 314     def fill_opacity(opacity)
+</span><span class="uncovered1"><a name="line315"></a> 315         primitive &quot;fill-opacity #{opacity}&quot;
+</span><span class="uncovered0"><a name="line316"></a> 316     end
+</span><span class="inferred1"><a name="line317"></a> 317 
+</span><span class="marked0"><a name="line318"></a> 318     def fill_rule(rule)
+</span><span class="uncovered1"><a name="line319"></a> 319         if ( not [&quot;evenodd&quot;, &quot;nonzero&quot;].include?(rule.downcase) )
+</span><span class="uncovered0"><a name="line320"></a> 320             Kernel.raise ArgumentError, &quot;Unknown fill rule #{rule}&quot;
+</span><span class="uncovered1"><a name="line321"></a> 321         end
+</span><span class="uncovered0"><a name="line322"></a> 322         primitive &quot;fill-rule #{rule}&quot;
+</span><span class="uncovered1"><a name="line323"></a> 323     end
+</span><span class="inferred0"><a name="line324"></a> 324 
+</span><span class="inferred1"><a name="line325"></a> 325     # Specify text drawing font
+</span><span class="marked0"><a name="line326"></a> 326     def font(name)
+</span><span class="uncovered1"><a name="line327"></a> 327         primitive &quot;font #{name}&quot;
+</span><span class="uncovered0"><a name="line328"></a> 328     end
+</span><span class="inferred1"><a name="line329"></a> 329 
+</span><span class="marked0"><a name="line330"></a> 330     def font_family(name)
+</span><span class="uncovered1"><a name="line331"></a> 331         primitive &quot;font-family \'#{name}\'&quot;
+</span><span class="uncovered0"><a name="line332"></a> 332     end
+</span><span class="inferred1"><a name="line333"></a> 333 
+</span><span class="marked0"><a name="line334"></a> 334     def font_stretch(stretch)
+</span><span class="uncovered1"><a name="line335"></a> 335         if ( not STRETCH_TYPE_NAMES.has_key?(stretch.to_i) )
+</span><span class="uncovered0"><a name="line336"></a> 336             Kernel.raise ArgumentError, &quot;Unknown stretch type&quot;
+</span><span class="uncovered1"><a name="line337"></a> 337         end
+</span><span class="uncovered0"><a name="line338"></a> 338         primitive &quot;font-stretch #{STRETCH_TYPE_NAMES[stretch.to_i]}&quot;
+</span><span class="uncovered1"><a name="line339"></a> 339     end
+</span><span class="inferred0"><a name="line340"></a> 340 
+</span><span class="marked1"><a name="line341"></a> 341     def font_style(style)
+</span><span class="uncovered0"><a name="line342"></a> 342         if ( not STYLE_TYPE_NAMES.has_key?(style.to_i) )
+</span><span class="uncovered1"><a name="line343"></a> 343             Kernel.raise ArgumentError, &quot;Unknown style type&quot;
+</span><span class="uncovered0"><a name="line344"></a> 344         end
+</span><span class="uncovered1"><a name="line345"></a> 345         primitive &quot;font-style #{STYLE_TYPE_NAMES[style.to_i]}&quot;
+</span><span class="uncovered0"><a name="line346"></a> 346     end
+</span><span class="inferred1"><a name="line347"></a> 347 
+</span><span class="inferred0"><a name="line348"></a> 348     # The font weight argument can be either a font weight
+</span><span class="inferred1"><a name="line349"></a> 349     # constant or [100,200,...,900]
+</span><span class="marked0"><a name="line350"></a> 350     def font_weight(weight)
+</span><span class="uncovered1"><a name="line351"></a> 351         if ( FONT_WEIGHT_NAMES.has_key?(weight.to_i) )
+</span><span class="uncovered0"><a name="line352"></a> 352             primitive &quot;font-weight #{FONT_WEIGHT_NAMES[weight.to_i]}&quot;
+</span><span class="uncovered1"><a name="line353"></a> 353         else
+</span><span class="uncovered0"><a name="line354"></a> 354             primitive &quot;font-weight #{weight}&quot;
+</span><span class="uncovered1"><a name="line355"></a> 355         end
+</span><span class="uncovered0"><a name="line356"></a> 356     end
+</span><span class="inferred1"><a name="line357"></a> 357 
+</span><span class="inferred0"><a name="line358"></a> 358     # Specify the text positioning gravity, one of:
+</span><span class="inferred1"><a name="line359"></a> 359     # NorthWest, North, NorthEast, West, Center, East, SouthWest, South, SouthEast
+</span><span class="marked0"><a name="line360"></a> 360     def gravity(grav)
+</span><span class="uncovered1"><a name="line361"></a> 361         if ( not GRAVITY_NAMES.has_key?(grav.to_i) )
+</span><span class="uncovered0"><a name="line362"></a> 362             Kernel.raise ArgumentError, &quot;Unknown text positioning gravity&quot;
+</span><span class="uncovered1"><a name="line363"></a> 363         end
+</span><span class="uncovered0"><a name="line364"></a> 364         primitive &quot;gravity #{GRAVITY_NAMES[grav.to_i]}&quot;
+</span><span class="uncovered1"><a name="line365"></a> 365     end
+</span><span class="inferred0"><a name="line366"></a> 366 
+</span><span class="inferred1"><a name="line367"></a> 367     # IM 6.4.8-3 and later
+</span><span class="marked0"><a name="line368"></a> 368     def interword_spacing(space)
+</span><span class="uncovered1"><a name="line369"></a> 369         begin
+</span><span class="uncovered0"><a name="line370"></a> 370             Float(space)
+</span><span class="uncovered1"><a name="line371"></a> 371         rescue ArgumentError
+</span><span class="uncovered0"><a name="line372"></a> 372             Kernel.raise ArgumentError, &quot;invalid value for interword_spacing&quot;
+</span><span class="uncovered1"><a name="line373"></a> 373         rescue TypeError
+</span><span class="uncovered0"><a name="line374"></a> 374             Kernel.raise TypeError, &quot;can't convert #{space.class} into Float&quot;
+</span><span class="uncovered1"><a name="line375"></a> 375         end
+</span><span class="uncovered0"><a name="line376"></a> 376         primitive &quot;interword-spacing #{space}&quot;
+</span><span class="uncovered1"><a name="line377"></a> 377     end
+</span><span class="inferred0"><a name="line378"></a> 378 
+</span><span class="inferred1"><a name="line379"></a> 379     # IM 6.4.8-3 and later
+</span><span class="marked0"><a name="line380"></a> 380     def kerning(space)
+</span><span class="uncovered1"><a name="line381"></a> 381         begin
+</span><span class="uncovered0"><a name="line382"></a> 382             Float(space)
+</span><span class="uncovered1"><a name="line383"></a> 383         rescue ArgumentError
+</span><span class="uncovered0"><a name="line384"></a> 384             Kernel.raise ArgumentError, &quot;invalid value for kerning&quot;
+</span><span class="uncovered1"><a name="line385"></a> 385         rescue TypeError
+</span><span class="uncovered0"><a name="line386"></a> 386             Kernel.raise TypeError, &quot;can't convert #{space.class} into Float&quot;
+</span><span class="uncovered1"><a name="line387"></a> 387         end
+</span><span class="uncovered0"><a name="line388"></a> 388         primitive &quot;kerning #{space}&quot;
+</span><span class="uncovered1"><a name="line389"></a> 389     end
+</span><span class="inferred0"><a name="line390"></a> 390 
+</span><span class="inferred1"><a name="line391"></a> 391     # Draw a line
+</span><span class="marked0"><a name="line392"></a> 392     def line(startX, startY, endX, endY)
+</span><span class="inferred1"><a name="line393"></a> 393         primitive &quot;line &quot; + sprintf(&quot;%g,%g %g,%g&quot;, startX, startY, endX, endY)
+</span><span class="inferred0"><a name="line394"></a> 394     end
+</span><span class="inferred1"><a name="line395"></a> 395 
+</span><span class="inferred0"><a name="line396"></a> 396     # Set matte (make transparent) in image according to the specified
+</span><span class="inferred1"><a name="line397"></a> 397     # colorization rule
+</span><span class="marked0"><a name="line398"></a> 398     def matte(x, y, method)
+</span><span class="uncovered1"><a name="line399"></a> 399         if ( not PAINT_METHOD_NAMES.has_key?(method.to_i) )
+</span><span class="uncovered0"><a name="line400"></a> 400             Kernel.raise ArgumentError, &quot;Unknown paint method&quot;
+</span><span class="uncovered1"><a name="line401"></a> 401         end
+</span><span class="uncovered0"><a name="line402"></a> 402         primitive &quot;matte #{x},#{y} #{PAINT_METHOD_NAMES[method.to_i]}&quot;
+</span><span class="uncovered1"><a name="line403"></a> 403     end
+</span><span class="inferred0"><a name="line404"></a> 404 
+</span><span class="inferred1"><a name="line405"></a> 405     # Specify drawing fill and stroke opacities. If the value is a string
+</span><span class="inferred0"><a name="line406"></a> 406     # ending with a %, the number will be multiplied by 0.01.
+</span><span class="marked1"><a name="line407"></a> 407     def opacity(opacity)
+</span><span class="uncovered0"><a name="line408"></a> 408         if (Numeric === opacity)
+</span><span class="uncovered1"><a name="line409"></a> 409             if (opacity &lt; 0 || opacity &gt; 1.0)
+</span><span class="uncovered0"><a name="line410"></a> 410                 Kernel.raise ArgumentError, &quot;opacity must be &gt;= 0 and &lt;= 1.0&quot;
+</span><span class="uncovered1"><a name="line411"></a> 411             end
+</span><span class="uncovered0"><a name="line412"></a> 412         end
+</span><span class="uncovered1"><a name="line413"></a> 413         primitive &quot;opacity #{opacity}&quot;
+</span><span class="uncovered0"><a name="line414"></a> 414     end
+</span><span class="inferred1"><a name="line415"></a> 415 
+</span><span class="inferred0"><a name="line416"></a> 416     # Draw using SVG-compatible path drawing commands. Note that the
+</span><span class="inferred1"><a name="line417"></a> 417     # primitive requires that the commands be surrounded by quotes or
+</span><span class="inferred0"><a name="line418"></a> 418     # apostrophes. Here we simply use apostrophes.
+</span><span class="marked1"><a name="line419"></a> 419     def path(cmds)
+</span><span class="uncovered0"><a name="line420"></a> 420         primitive &quot;path '&quot; + cmds + &quot;'&quot;
+</span><span class="uncovered1"><a name="line421"></a> 421     end
+</span><span class="inferred0"><a name="line422"></a> 422 
+</span><span class="inferred1"><a name="line423"></a> 423     # Define a pattern. In the block, call primitive methods to
+</span><span class="inferred0"><a name="line424"></a> 424     # draw the pattern. Reference the pattern by using its name
+</span><span class="inferred1"><a name="line425"></a> 425     # as the argument to the 'fill' or 'stroke' methods
+</span><span class="marked0"><a name="line426"></a> 426     def pattern(name, x, y, width, height)
+</span><span class="uncovered1"><a name="line427"></a> 427         begin
+</span><span class="uncovered0"><a name="line428"></a> 428             push('defs')
+</span><span class="uncovered1"><a name="line429"></a> 429             push(&quot;pattern #{name} #{x} #{y} #{width} #{height}&quot;)
+</span><span class="uncovered0"><a name="line430"></a> 430             push('graphic-context')
+</span><span class="uncovered1"><a name="line431"></a> 431             yield
+</span><span class="uncovered0"><a name="line432"></a> 432         ensure
+</span><span class="uncovered1"><a name="line433"></a> 433             pop('graphic-context')
+</span><span class="uncovered0"><a name="line434"></a> 434             pop('pattern')
+</span><span class="uncovered1"><a name="line435"></a> 435             pop('defs')
+</span><span class="uncovered0"><a name="line436"></a> 436         end
+</span><span class="uncovered1"><a name="line437"></a> 437     end
+</span><span class="inferred0"><a name="line438"></a> 438 
+</span><span class="inferred1"><a name="line439"></a> 439     # Set point to fill color.
+</span><span class="marked0"><a name="line440"></a> 440     def point(x, y)
+</span><span class="uncovered1"><a name="line441"></a> 441         primitive &quot;point #{x},#{y}&quot;
+</span><span class="uncovered0"><a name="line442"></a> 442     end
+</span><span class="inferred1"><a name="line443"></a> 443 
+</span><span class="inferred0"><a name="line444"></a> 444     # Specify the font size in points. Yes, the primitive is &quot;font-size&quot; but
+</span><span class="inferred1"><a name="line445"></a> 445     # in other places this value is called the &quot;pointsize&quot;. Give it both names.
+</span><span class="marked0"><a name="line446"></a> 446     def pointsize(points)
+</span><span class="uncovered1"><a name="line447"></a> 447         primitive &quot;font-size #{points}&quot;
+</span><span class="uncovered0"><a name="line448"></a> 448     end
+</span><span class="marked1"><a name="line449"></a> 449     alias font_size pointsize
+</span><span class="inferred0"><a name="line450"></a> 450 
+</span><span class="inferred1"><a name="line451"></a> 451     # Draw a polygon
+</span><span class="marked0"><a name="line452"></a> 452     def polygon(*points)
+</span><span class="uncovered1"><a name="line453"></a> 453         if points.length == 0
+</span><span class="uncovered0"><a name="line454"></a> 454             Kernel.raise ArgumentError, &quot;no points specified&quot;
+</span><span class="uncovered1"><a name="line455"></a> 455         elsif points.length % 2 != 0
+</span><span class="uncovered0"><a name="line456"></a> 456             Kernel.raise ArgumentError, &quot;odd number of points specified&quot;
+</span><span class="uncovered1"><a name="line457"></a> 457         end
+</span><span class="uncovered0"><a name="line458"></a> 458         primitive &quot;polygon &quot; + points.join(',')
+</span><span class="uncovered1"><a name="line459"></a> 459     end
+</span><span class="inferred0"><a name="line460"></a> 460 
+</span><span class="inferred1"><a name="line461"></a> 461     # Draw a polyline
+</span><span class="marked0"><a name="line462"></a> 462     def polyline(*points)
+</span><span class="uncovered1"><a name="line463"></a> 463         if points.length == 0
+</span><span class="uncovered0"><a name="line464"></a> 464             Kernel.raise ArgumentError, &quot;no points specified&quot;
+</span><span class="uncovered1"><a name="line465"></a> 465         elsif points.length % 2 != 0
+</span><span class="uncovered0"><a name="line466"></a> 466             Kernel.raise ArgumentError, &quot;odd number of points specified&quot;
+</span><span class="uncovered1"><a name="line467"></a> 467         end
+</span><span class="uncovered0"><a name="line468"></a> 468         primitive &quot;polyline &quot; + points.join(',')
+</span><span class="uncovered1"><a name="line469"></a> 469     end
+</span><span class="inferred0"><a name="line470"></a> 470 
+</span><span class="inferred1"><a name="line471"></a> 471     # Return to the previously-saved set of whatever
+</span><span class="inferred0"><a name="line472"></a> 472     # pop('graphic-context') (the default if no arguments)
+</span><span class="inferred1"><a name="line473"></a> 473     # pop('defs')
+</span><span class="inferred0"><a name="line474"></a> 474     # pop('gradient')
+</span><span class="inferred1"><a name="line475"></a> 475     # pop('pattern')
+</span><span class="inferred0"><a name="line476"></a> 476 
+</span><span class="marked1"><a name="line477"></a> 477     def pop(*what)
+</span><span class="uncovered0"><a name="line478"></a> 478         if what.length == 0
+</span><span class="uncovered1"><a name="line479"></a> 479             primitive &quot;pop graphic-context&quot;
+</span><span class="uncovered0"><a name="line480"></a> 480         else
+</span><span class="uncovered1"><a name="line481"></a> 481             # to_s allows a Symbol to be used instead of a String
+</span><span class="uncovered0"><a name="line482"></a> 482             primitive &quot;pop &quot; + what.map {|w| w.to_s}.join(' ')
+</span><span class="uncovered1"><a name="line483"></a> 483         end
+</span><span class="uncovered0"><a name="line484"></a> 484     end
+</span><span class="inferred1"><a name="line485"></a> 485 
+</span><span class="inferred0"><a name="line486"></a> 486     # Push the current set of drawing options. Also you can use
+</span><span class="inferred1"><a name="line487"></a> 487     # push('graphic-context') (the default if no arguments)
+</span><span class="inferred0"><a name="line488"></a> 488     # push('defs')
+</span><span class="inferred1"><a name="line489"></a> 489     # push('gradient')
+</span><span class="inferred0"><a name="line490"></a> 490     # push('pattern')
+</span><span class="marked1"><a name="line491"></a> 491     def push(*what)
+</span><span class="uncovered0"><a name="line492"></a> 492         if what.length == 0
+</span><span class="uncovered1"><a name="line493"></a> 493             primitive &quot;push graphic-context&quot;
+</span><span class="uncovered0"><a name="line494"></a> 494         else
+</span><span class="uncovered1"><a name="line495"></a> 495             # to_s allows a Symbol to be used instead of a String
+</span><span class="uncovered0"><a name="line496"></a> 496             primitive &quot;push &quot; + what.map {|w| w.to_s}.join(' ')
+</span><span class="uncovered1"><a name="line497"></a> 497         end
+</span><span class="uncovered0"><a name="line498"></a> 498     end
+</span><span class="inferred1"><a name="line499"></a> 499 
+</span><span class="inferred0"><a name="line500"></a> 500     # Draw a rectangle
+</span><span class="marked1"><a name="line501"></a> 501     def rectangle(upper_left_x, upper_left_y, lower_right_x, lower_right_y)
+</span><span class="uncovered0"><a name="line502"></a> 502         primitive &quot;rectangle &quot; + sprintf(&quot;%g,%g %g,%g&quot;,
+</span><span class="uncovered1"><a name="line503"></a> 503                 upper_left_x, upper_left_y, lower_right_x, lower_right_y)
+</span><span class="uncovered0"><a name="line504"></a> 504     end
+</span><span class="inferred1"><a name="line505"></a> 505 
+</span><span class="inferred0"><a name="line506"></a> 506     # Specify coordinate space rotation. &quot;angle&quot; is measured in degrees
+</span><span class="marked1"><a name="line507"></a> 507     def rotate(angle)
+</span><span class="uncovered0"><a name="line508"></a> 508         primitive &quot;rotate #{angle}&quot;
+</span><span class="uncovered1"><a name="line509"></a> 509     end
+</span><span class="inferred0"><a name="line510"></a> 510 
+</span><span class="inferred1"><a name="line511"></a> 511     # Draw a rectangle with rounded corners
+</span><span class="marked0"><a name="line512"></a> 512     def roundrectangle(center_x, center_y, width, height, corner_width, corner_height)
+</span><span class="uncovered1"><a name="line513"></a> 513         primitive &quot;roundrectangle &quot; + sprintf(&quot;%g,%g,%g,%g,%g,%g&quot;,
+</span><span class="uncovered0"><a name="line514"></a> 514             center_x, center_y, width, height, corner_width, corner_height)
+</span><span class="uncovered1"><a name="line515"></a> 515     end
+</span><span class="inferred0"><a name="line516"></a> 516 
+</span><span class="inferred1"><a name="line517"></a> 517     # Specify scaling to be applied to coordinate space on subsequent drawing commands.
+</span><span class="marked0"><a name="line518"></a> 518     def scale(x, y)
+</span><span class="uncovered1"><a name="line519"></a> 519         primitive &quot;scale #{x},#{y}&quot;
+</span><span class="uncovered0"><a name="line520"></a> 520     end
+</span><span class="inferred1"><a name="line521"></a> 521 
+</span><span class="marked0"><a name="line522"></a> 522     def skewx(angle)
+</span><span class="uncovered1"><a name="line523"></a> 523         primitive &quot;skewX #{angle}&quot;
+</span><span class="uncovered0"><a name="line524"></a> 524     end
+</span><span class="inferred1"><a name="line525"></a> 525 
+</span><span class="marked0"><a name="line526"></a> 526     def skewy(angle)
+</span><span class="uncovered1"><a name="line527"></a> 527         primitive &quot;skewY #{angle}&quot;
+</span><span class="uncovered0"><a name="line528"></a> 528     end
+</span><span class="inferred1"><a name="line529"></a> 529 
+</span><span class="inferred0"><a name="line530"></a> 530     # Specify the object stroke, a color name or pattern name.
+</span><span class="marked1"><a name="line531"></a> 531     def stroke(colorspec)
+</span><span class="uncovered0"><a name="line532"></a> 532         primitive &quot;stroke #{enquote(colorspec)}&quot;
+</span><span class="uncovered1"><a name="line533"></a> 533     end
+</span><span class="marked0"><a name="line534"></a> 534     alias stroke_color stroke
+</span><span class="marked1"><a name="line535"></a> 535     alias stroke_pattern stroke
+</span><span class="inferred0"><a name="line536"></a> 536 
+</span><span class="inferred1"><a name="line537"></a> 537     # Specify if stroke should be antialiased or not
+</span><span class="marked0"><a name="line538"></a> 538     def stroke_antialias(bool)
+</span><span class="uncovered1"><a name="line539"></a> 539         bool = bool ? '1' : '0'
+</span><span class="uncovered0"><a name="line540"></a> 540         primitive &quot;stroke-antialias #{bool}&quot;
+</span><span class="uncovered1"><a name="line541"></a> 541     end
+</span><span class="inferred0"><a name="line542"></a> 542 
+</span><span class="inferred1"><a name="line543"></a> 543     # Specify a stroke dash pattern
+</span><span class="marked0"><a name="line544"></a> 544     def stroke_dasharray(*list)
+</span><span class="uncovered1"><a name="line545"></a> 545         if list.length == 0
+</span><span class="uncovered0"><a name="line546"></a> 546             primitive &quot;stroke-dasharray none&quot;
+</span><span class="uncovered1"><a name="line547"></a> 547         else
+</span><span class="uncovered0"><a name="line548"></a> 548             list.each { |x|
+</span><span class="uncovered1"><a name="line549"></a> 549                 if x &lt;= 0 then
+</span><span class="uncovered0"><a name="line550"></a> 550                     Kernel.raise ArgumentError, &quot;dash array elements must be &gt; 0 (#{x} given)&quot;
+</span><span class="uncovered1"><a name="line551"></a> 551                 end
+</span><span class="uncovered0"><a name="line552"></a> 552             }
+</span><span class="uncovered1"><a name="line553"></a> 553             primitive &quot;stroke-dasharray #{list.join(',')}&quot;
+</span><span class="uncovered0"><a name="line554"></a> 554         end
+</span><span class="uncovered1"><a name="line555"></a> 555     end
+</span><span class="inferred0"><a name="line556"></a> 556 
+</span><span class="inferred1"><a name="line557"></a> 557     # Specify the initial offset in the dash pattern
+</span><span class="marked0"><a name="line558"></a> 558     def stroke_dashoffset(value=0)
+</span><span class="uncovered1"><a name="line559"></a> 559         primitive &quot;stroke-dashoffset #{value}&quot;
+</span><span class="uncovered0"><a name="line560"></a> 560     end
+</span><span class="inferred1"><a name="line561"></a> 561 
+</span><span class="marked0"><a name="line562"></a> 562     def stroke_linecap(value)
+</span><span class="uncovered1"><a name="line563"></a> 563         if ( not [&quot;butt&quot;, &quot;round&quot;, &quot;square&quot;].include?(value.downcase) )
+</span><span class="uncovered0"><a name="line564"></a> 564             Kernel.raise ArgumentError, &quot;Unknown linecap type: #{value}&quot;
+</span><span class="uncovered1"><a name="line565"></a> 565         end
+</span><span class="uncovered0"><a name="line566"></a> 566         primitive &quot;stroke-linecap #{value}&quot;
+</span><span class="uncovered1"><a name="line567"></a> 567     end
+</span><span class="inferred0"><a name="line568"></a> 568 
+</span><span class="marked1"><a name="line569"></a> 569     def stroke_linejoin(value)
+</span><span class="uncovered0"><a name="line570"></a> 570         if ( not [&quot;round&quot;, &quot;miter&quot;, &quot;bevel&quot;].include?(value.downcase) )
+</span><span class="uncovered1"><a name="line571"></a> 571             Kernel.raise ArgumentError, &quot;Unknown linejoin type: #{value}&quot;
+</span><span class="uncovered0"><a name="line572"></a> 572         end
+</span><span class="uncovered1"><a name="line573"></a> 573         primitive &quot;stroke-linejoin #{value}&quot;
+</span><span class="uncovered0"><a name="line574"></a> 574     end
+</span><span class="inferred1"><a name="line575"></a> 575 
+</span><span class="marked0"><a name="line576"></a> 576     def stroke_miterlimit(value)
+</span><span class="uncovered1"><a name="line577"></a> 577         if (value &lt; 1)
+</span><span class="uncovered0"><a name="line578"></a> 578             Kernel.raise ArgumentError, &quot;miterlimit must be &gt;= 1&quot;
+</span><span class="uncovered1"><a name="line579"></a> 579         end
+</span><span class="uncovered0"><a name="line580"></a> 580         primitive &quot;stroke-miterlimit #{value}&quot;
+</span><span class="uncovered1"><a name="line581"></a> 581     end
+</span><span class="inferred0"><a name="line582"></a> 582 
+</span><span class="inferred1"><a name="line583"></a> 583     # Specify opacity of stroke drawing color
+</span><span class="inferred0"><a name="line584"></a> 584     #  (use &quot;xx%&quot; to indicate percentage)
+</span><span class="marked1"><a name="line585"></a> 585     def stroke_opacity(value)
+</span><span class="uncovered0"><a name="line586"></a> 586         primitive &quot;stroke-opacity #{value}&quot;
+</span><span class="uncovered1"><a name="line587"></a> 587     end
+</span><span class="inferred0"><a name="line588"></a> 588 
+</span><span class="inferred1"><a name="line589"></a> 589     # Specify stroke (outline) width in pixels.
+</span><span class="marked0"><a name="line590"></a> 590     def stroke_width(pixels)
+</span><span class="uncovered1"><a name="line591"></a> 591         primitive &quot;stroke-width #{pixels}&quot;
+</span><span class="uncovered0"><a name="line592"></a> 592     end
+</span><span class="inferred1"><a name="line593"></a> 593 
+</span><span class="inferred0"><a name="line594"></a> 594     # Draw text at position x,y. Add quotes to text that is not already quoted.
+</span><span class="marked1"><a name="line595"></a> 595     def text(x, y, text)
+</span><span class="uncovered0"><a name="line596"></a> 596         if text.to_s.empty?
+</span><span class="uncovered1"><a name="line597"></a> 597             Kernel.raise ArgumentError, &quot;missing text argument&quot;
+</span><span class="uncovered0"><a name="line598"></a> 598         end
+</span><span class="uncovered1"><a name="line599"></a> 599         if text.length &gt; 2 &amp;&amp; /\A(?:\&quot;[^\&quot;]+\&quot;|\'[^\']+\'|\{[^\}]+\})\z/.match(text)
+</span><span class="uncovered0"><a name="line600"></a> 600             ; # text already quoted
+</span><span class="uncovered1"><a name="line601"></a> 601         elsif !text['\'']
+</span><span class="uncovered0"><a name="line602"></a> 602             text = '\''+text+'\''
+</span><span class="uncovered1"><a name="line603"></a> 603         elsif !text['&quot;']
+</span><span class="uncovered0"><a name="line604"></a> 604             text = '&quot;'+text+'&quot;'
+</span><span class="uncovered1"><a name="line605"></a> 605         elsif !(text['{'] || text['}'])
+</span><span class="uncovered0"><a name="line606"></a> 606             text = '{'+text+'}'
+</span><span class="uncovered1"><a name="line607"></a> 607         else
+</span><span class="uncovered0"><a name="line608"></a> 608             # escape existing braces, surround with braces
+</span><span class="uncovered1"><a name="line609"></a> 609             text = '{' +  text.gsub(/[}]/) { |b| '\\' + b } + '}'
+</span><span class="uncovered0"><a name="line610"></a> 610         end
+</span><span class="uncovered1"><a name="line611"></a> 611         primitive &quot;text #{x},#{y} #{text}&quot;
+</span><span class="uncovered0"><a name="line612"></a> 612     end
+</span><span class="inferred1"><a name="line613"></a> 613 
+</span><span class="inferred0"><a name="line614"></a> 614     # Specify text alignment relative to a given point
+</span><span class="marked1"><a name="line615"></a> 615     def text_align(alignment)
+</span><span class="uncovered0"><a name="line616"></a> 616         if ( not ALIGN_TYPE_NAMES.has_key?(alignment.to_i) )
+</span><span class="uncovered1"><a name="line617"></a> 617             Kernel.raise ArgumentError, &quot;Unknown alignment constant: #{alignment}&quot;
+</span><span class="uncovered0"><a name="line618"></a> 618         end
+</span><span class="uncovered1"><a name="line619"></a> 619         primitive &quot;text-align #{ALIGN_TYPE_NAMES[alignment.to_i]}&quot;
+</span><span class="uncovered0"><a name="line620"></a> 620     end
+</span><span class="inferred1"><a name="line621"></a> 621 
+</span><span class="inferred0"><a name="line622"></a> 622     # SVG-compatible version of text_align
+</span><span class="marked1"><a name="line623"></a> 623     def text_anchor(anchor)
+</span><span class="uncovered0"><a name="line624"></a> 624         if ( not ANCHOR_TYPE_NAMES.has_key?(anchor.to_i) )
+</span><span class="uncovered1"><a name="line625"></a> 625             Kernel.raise ArgumentError, &quot;Unknown anchor constant: #{anchor}&quot;
+</span><span class="uncovered0"><a name="line626"></a> 626         end
+</span><span class="uncovered1"><a name="line627"></a> 627         primitive &quot;text-anchor #{ANCHOR_TYPE_NAMES[anchor.to_i]}&quot;
+</span><span class="uncovered0"><a name="line628"></a> 628     end
+</span><span class="inferred1"><a name="line629"></a> 629 
+</span><span class="inferred0"><a name="line630"></a> 630     # Specify if rendered text is to be antialiased.
+</span><span class="marked1"><a name="line631"></a> 631     def text_antialias(boolean)
+</span><span class="uncovered0"><a name="line632"></a> 632         boolean = boolean ? '1' : '0'
+</span><span class="uncovered1"><a name="line633"></a> 633         primitive &quot;text-antialias #{boolean}&quot;
+</span><span class="uncovered0"><a name="line634"></a> 634     end
+</span><span class="inferred1"><a name="line635"></a> 635 
+</span><span class="inferred0"><a name="line636"></a> 636     # Specify color underneath text
+</span><span class="marked1"><a name="line637"></a> 637     def text_undercolor(color)
+</span><span class="uncovered0"><a name="line638"></a> 638         primitive &quot;text-undercolor #{enquote(color)}&quot;
+</span><span class="uncovered1"><a name="line639"></a> 639     end
+</span><span class="inferred0"><a name="line640"></a> 640 
+</span><span class="inferred1"><a name="line641"></a> 641     # Specify center of coordinate space to use for subsequent drawing
+</span><span class="inferred0"><a name="line642"></a> 642     # commands.
+</span><span class="marked1"><a name="line643"></a> 643     def translate(x, y)
+</span><span class="uncovered0"><a name="line644"></a> 644         primitive &quot;translate #{x},#{y}&quot;
+</span><span class="uncovered1"><a name="line645"></a> 645     end
+</span><span class="uncovered0"><a name="line646"></a> 646 end # class Magick::Draw
+</span><span class="inferred1"><a name="line647"></a> 647 
+</span><span class="inferred0"><a name="line648"></a> 648 
+</span><span class="inferred1"><a name="line649"></a> 649 # Define IPTC record number:dataset tags for use with Image#get_iptc_dataset
+</span><span class="marked0"><a name="line650"></a> 650 module IPTC
+</span><span class="marked1"><a name="line651"></a> 651     module Envelope
+</span><span class="marked0"><a name="line652"></a> 652         Model_Version                          = &quot;1:00&quot;
+</span><span class="marked1"><a name="line653"></a> 653         Destination                            = &quot;1:05&quot;
+</span><span class="marked0"><a name="line654"></a> 654         File_Format                            = &quot;1:20&quot;
+</span><span class="marked1"><a name="line655"></a> 655         File_Format_Version                    = &quot;1:22&quot;
+</span><span class="marked0"><a name="line656"></a> 656         Service_Identifier                     = &quot;1:30&quot;
+</span><span class="marked1"><a name="line657"></a> 657         Envelope_Number                        = &quot;1:40&quot;
+</span><span class="marked0"><a name="line658"></a> 658         Product_ID                             = &quot;1:50&quot;
+</span><span class="marked1"><a name="line659"></a> 659         Envelope_Priority                      = &quot;1:60&quot;
+</span><span class="marked0"><a name="line660"></a> 660         Date_Sent                              = &quot;1:70&quot;
+</span><span class="marked1"><a name="line661"></a> 661         Time_Sent                              = &quot;1:80&quot;
+</span><span class="marked0"><a name="line662"></a> 662         Coded_Character_Set                    = &quot;1:90&quot;
+</span><span class="marked1"><a name="line663"></a> 663         UNO                                    = &quot;1:100&quot;
+</span><span class="marked0"><a name="line664"></a> 664         Unique_Name_of_Object                  = &quot;1:100&quot;
+</span><span class="marked1"><a name="line665"></a> 665         ARM_Identifier                         = &quot;1:120&quot;
+</span><span class="marked0"><a name="line666"></a> 666         ARM_Version                            = &quot;1:122&quot;
+</span><span class="inferred1"><a name="line667"></a> 667     end
+</span><span class="inferred0"><a name="line668"></a> 668 
+</span><span class="marked1"><a name="line669"></a> 669     module Application
+</span><span class="marked0"><a name="line670"></a> 670         Record_Version                         = &quot;2:00&quot;
+</span><span class="marked1"><a name="line671"></a> 671         Object_Type_Reference                  = &quot;2:03&quot;
+</span><span class="marked0"><a name="line672"></a> 672         Object_Name                            = &quot;2:05&quot;
+</span><span class="marked1"><a name="line673"></a> 673         Title                                  = &quot;2:05&quot;
+</span><span class="marked0"><a name="line674"></a> 674         Edit_Status                            = &quot;2:07&quot;
+</span><span class="marked1"><a name="line675"></a> 675         Editorial_Update                       = &quot;2:08&quot;
+</span><span class="marked0"><a name="line676"></a> 676         Urgency                                = &quot;2:10&quot;
+</span><span class="marked1"><a name="line677"></a> 677         Subject_Reference                      = &quot;2:12&quot;
+</span><span class="marked0"><a name="line678"></a> 678         Category                               = &quot;2:15&quot;
+</span><span class="marked1"><a name="line679"></a> 679         Supplemental_Category                  = &quot;2:20&quot;
+</span><span class="marked0"><a name="line680"></a> 680         Fixture_Identifier                     = &quot;2:22&quot;
+</span><span class="marked1"><a name="line681"></a> 681         Keywords                               = &quot;2:25&quot;
+</span><span class="marked0"><a name="line682"></a> 682         Content_Location_Code                  = &quot;2:26&quot;
+</span><span class="marked1"><a name="line683"></a> 683         Content_Location_Name                  = &quot;2:27&quot;
+</span><span class="marked0"><a name="line684"></a> 684         Release_Date                           = &quot;2:30&quot;
+</span><span class="marked1"><a name="line685"></a> 685         Release_Time                           = &quot;2:35&quot;
+</span><span class="marked0"><a name="line686"></a> 686         Expiration_Date                        = &quot;2:37&quot;
+</span><span class="marked1"><a name="line687"></a> 687         Expiration_Time                        = &quot;2:35&quot;
+</span><span class="marked0"><a name="line688"></a> 688         Special_Instructions                   = &quot;2:40&quot;
+</span><span class="marked1"><a name="line689"></a> 689         Action_Advised                         = &quot;2:42&quot;
+</span><span class="marked0"><a name="line690"></a> 690         Reference_Service                      = &quot;2:45&quot;
+</span><span class="marked1"><a name="line691"></a> 691         Reference_Date                         = &quot;2:47&quot;
+</span><span class="marked0"><a name="line692"></a> 692         Reference_Number                       = &quot;2:50&quot;
+</span><span class="marked1"><a name="line693"></a> 693         Date_Created                           = &quot;2:55&quot;
+</span><span class="marked0"><a name="line694"></a> 694         Time_Created                           = &quot;2:60&quot;
+</span><span class="marked1"><a name="line695"></a> 695         Digital_Creation_Date                  = &quot;2:62&quot;
+</span><span class="marked0"><a name="line696"></a> 696         Digital_Creation_Time                  = &quot;2:63&quot;
+</span><span class="marked1"><a name="line697"></a> 697         Originating_Program                    = &quot;2:65&quot;
+</span><span class="marked0"><a name="line698"></a> 698         Program_Version                        = &quot;2:70&quot;
+</span><span class="marked1"><a name="line699"></a> 699         Object_Cycle                           = &quot;2:75&quot;
+</span><span class="marked0"><a name="line700"></a> 700         By_Line                                = &quot;2:80&quot;
+</span><span class="marked1"><a name="line701"></a> 701         Author                                 = &quot;2:80&quot;
+</span><span class="marked0"><a name="line702"></a> 702         By_Line_Title                          = &quot;2:85&quot;
+</span><span class="marked1"><a name="line703"></a> 703         Author_Position                        = &quot;2:85&quot;
+</span><span class="marked0"><a name="line704"></a> 704         City                                   = &quot;2:90&quot;
+</span><span class="marked1"><a name="line705"></a> 705         Sub_Location                           = &quot;2:92&quot;
+</span><span class="marked0"><a name="line706"></a> 706         Province                               = &quot;2:95&quot;
+</span><span class="marked1"><a name="line707"></a> 707         State                                  = &quot;2:95&quot;
+</span><span class="marked0"><a name="line708"></a> 708         Country_Primary_Location_Code          = &quot;2:100&quot;
+</span><span class="marked1"><a name="line709"></a> 709         Country_Primary_Location_Name          = &quot;2:101&quot;
+</span><span class="marked0"><a name="line710"></a> 710         Original_Transmission_Reference        = &quot;2:103&quot;
+</span><span class="marked1"><a name="line711"></a> 711         Headline                               = &quot;2:105&quot;
+</span><span class="marked0"><a name="line712"></a> 712         Credit                                 = &quot;2:110&quot;
+</span><span class="marked1"><a name="line713"></a> 713         Source                                 = &quot;2:115&quot;
+</span><span class="marked0"><a name="line714"></a> 714         Copyright_Notice                       = &quot;2:116&quot;
+</span><span class="marked1"><a name="line715"></a> 715         Contact                                = &quot;2:118&quot;
+</span><span class="marked0"><a name="line716"></a> 716         Abstract                               = &quot;2:120&quot;
+</span><span class="marked1"><a name="line717"></a> 717         Caption                                = &quot;2:120&quot;
+</span><span class="marked0"><a name="line718"></a> 718         Editor                                 = &quot;2:122&quot;
+</span><span class="marked1"><a name="line719"></a> 719         Caption_Writer                         = &quot;2:122&quot;
+</span><span class="marked0"><a name="line720"></a> 720         Rasterized_Caption                     = &quot;2:125&quot;
+</span><span class="marked1"><a name="line721"></a> 721         Image_Type                             = &quot;2:130&quot;
+</span><span class="marked0"><a name="line722"></a> 722         Image_Orientation                      = &quot;2:131&quot;
+</span><span class="marked1"><a name="line723"></a> 723         Language_Identifier                    = &quot;2:135&quot;
+</span><span class="marked0"><a name="line724"></a> 724         Audio_Type                             = &quot;2:150&quot;
+</span><span class="marked1"><a name="line725"></a> 725         Audio_Sampling_Rate                    = &quot;2:151&quot;
+</span><span class="marked0"><a name="line726"></a> 726         Audio_Sampling_Resolution              = &quot;2:152&quot;
+</span><span class="marked1"><a name="line727"></a> 727         Audio_Duration                         = &quot;2:153&quot;
+</span><span class="marked0"><a name="line728"></a> 728         Audio_Outcue                           = &quot;2:154&quot;
+</span><span class="marked1"><a name="line729"></a> 729         ObjectData_Preview_File_Format         = &quot;2:200&quot;
+</span><span class="marked0"><a name="line730"></a> 730         ObjectData_Preview_File_Format_Version = &quot;2:201&quot;
+</span><span class="marked1"><a name="line731"></a> 731         ObjectData_Preview_Data                = &quot;2:202&quot;
+</span><span class="inferred0"><a name="line732"></a> 732     end
+</span><span class="inferred1"><a name="line733"></a> 733 
+</span><span class="marked0"><a name="line734"></a> 734     module Pre_ObjectData_Descriptor
+</span><span class="marked1"><a name="line735"></a> 735         Size_Mode                              = &quot;7:10&quot;
+</span><span class="marked0"><a name="line736"></a> 736         Max_Subfile_Size                       = &quot;7:20&quot;
+</span><span class="marked1"><a name="line737"></a> 737         ObjectData_Size_Announced              = &quot;7:90&quot;
+</span><span class="marked0"><a name="line738"></a> 738         Maximum_ObjectData_Size                = &quot;7:95&quot;
+</span><span class="inferred1"><a name="line739"></a> 739     end
+</span><span class="inferred0"><a name="line740"></a> 740 
+</span><span class="marked1"><a name="line741"></a> 741     module ObjectData
+</span><span class="marked0"><a name="line742"></a> 742         Subfile                                = &quot;8:10&quot;
+</span><span class="inferred1"><a name="line743"></a> 743     end
+</span><span class="inferred0"><a name="line744"></a> 744 
+</span><span class="marked1"><a name="line745"></a> 745     module Post_ObjectData_Descriptor
+</span><span class="marked0"><a name="line746"></a> 746         Confirmed_ObjectData_Size              = &quot;9:10&quot;
+</span><span class="inferred1"><a name="line747"></a> 747     end
+</span><span class="inferred0"><a name="line748"></a> 748 
+</span><span class="inferred1"><a name="line749"></a> 749     # Make all constants above immutable
+</span><span class="marked0"><a name="line750"></a> 750     constants.each do |record|
+</span><span class="marked1"><a name="line751"></a> 751         rec = const_get(record)
+</span><span class="marked0"><a name="line752"></a> 752         rec.constants.each { |ds| rec.const_get(ds).freeze }
+</span><span class="inferred1"><a name="line753"></a> 753     end
+</span><span class="inferred0"><a name="line754"></a> 754 
+</span><span class="inferred1"><a name="line755"></a> 755 end # module Magick::IPTC
+</span><span class="inferred0"><a name="line756"></a> 756 
+</span><span class="inferred1"><a name="line757"></a> 757 # Ruby-level Magick::Image methods
+</span><span class="marked0"><a name="line758"></a> 758 class Image
+</span><span class="marked1"><a name="line759"></a> 759     include Comparable
+</span><span class="inferred0"><a name="line760"></a> 760 
+</span><span class="marked1"><a name="line761"></a> 761     alias_method :affinity, :remap
+</span><span class="inferred0"><a name="line762"></a> 762 
+</span><span class="inferred1"><a name="line763"></a> 763     # Provide an alternate version of Draw#annotate, for folks who
+</span><span class="inferred0"><a name="line764"></a> 764     # want to find it in this class.
+</span><span class="marked1"><a name="line765"></a> 765     def annotate(draw, width, height, x, y, text, &amp;block)
+</span><span class="uncovered0"><a name="line766"></a> 766       check_destroyed
+</span><span class="uncovered1"><a name="line767"></a> 767       draw.annotate(self, width, height, x, y, text, &amp;block)
+</span><span class="uncovered0"><a name="line768"></a> 768       self
+</span><span class="uncovered1"><a name="line769"></a> 769     end
+</span><span class="inferred0"><a name="line770"></a> 770 
+</span><span class="inferred1"><a name="line771"></a> 771     # Set the color at x,y
+</span><span class="marked0"><a name="line772"></a> 772     def color_point(x, y, fill)
+</span><span class="uncovered1"><a name="line773"></a> 773         f = copy
+</span><span class="uncovered0"><a name="line774"></a> 774         f.pixel_color(x, y, fill)
+</span><span class="uncovered1"><a name="line775"></a> 775         return f
+</span><span class="uncovered0"><a name="line776"></a> 776     end
+</span><span class="inferred1"><a name="line777"></a> 777 
+</span><span class="inferred0"><a name="line778"></a> 778     # Set all pixels that have the same color as the pixel at x,y and
+</span><span class="inferred1"><a name="line779"></a> 779     # are neighbors to the fill color
+</span><span class="marked0"><a name="line780"></a> 780     def color_floodfill(x, y, fill)
+</span><span class="uncovered1"><a name="line781"></a> 781         target = pixel_color(x, y)
+</span><span class="uncovered0"><a name="line782"></a> 782         color_flood_fill(target, fill, x, y, Magick::FloodfillMethod)
+</span><span class="uncovered1"><a name="line783"></a> 783     end
+</span><span class="inferred0"><a name="line784"></a> 784 
+</span><span class="inferred1"><a name="line785"></a> 785     # Set all pixels that are neighbors of x,y and are not the border color
+</span><span class="inferred0"><a name="line786"></a> 786     # to the fill color
+</span><span class="marked1"><a name="line787"></a> 787     def color_fill_to_border(x, y, fill)
+</span><span class="uncovered0"><a name="line788"></a> 788         color_flood_fill(border_color, fill, x, y, Magick::FillToBorderMethod)
+</span><span class="uncovered1"><a name="line789"></a> 789     end
+</span><span class="inferred0"><a name="line790"></a> 790 
+</span><span class="inferred1"><a name="line791"></a> 791     # Set all pixels to the fill color. Very similar to Image#erase!
+</span><span class="inferred0"><a name="line792"></a> 792     # Accepts either String or Pixel arguments
+</span><span class="marked1"><a name="line793"></a> 793     def color_reset!(fill)
+</span><span class="uncovered0"><a name="line794"></a> 794         save = background_color
+</span><span class="uncovered1"><a name="line795"></a> 795         # Change the background color _outside_ the begin block
+</span><span class="uncovered0"><a name="line796"></a> 796         # so that if this object is frozen the exeception will be
+</span><span class="uncovered1"><a name="line797"></a> 797         # raised before we have to handle it explicitly.
+</span><span class="uncovered0"><a name="line798"></a> 798         self.background_color = fill
+</span><span class="uncovered1"><a name="line799"></a> 799         begin
+</span><span class="uncovered0"><a name="line800"></a> 800             erase!
+</span><span class="uncovered1"><a name="line801"></a> 801         ensure
+</span><span class="uncovered0"><a name="line802"></a> 802             self.background_color = save
+</span><span class="uncovered1"><a name="line803"></a> 803         end
+</span><span class="uncovered0"><a name="line804"></a> 804         self
+</span><span class="uncovered1"><a name="line805"></a> 805     end
+</span><span class="inferred0"><a name="line806"></a> 806 
+</span><span class="inferred1"><a name="line807"></a> 807     # Used by ImageList methods - see ImageList#cur_image
+</span><span class="marked0"><a name="line808"></a> 808     def cur_image
+</span><span class="uncovered1"><a name="line809"></a> 809         self
+</span><span class="uncovered0"><a name="line810"></a> 810     end
+</span><span class="inferred1"><a name="line811"></a> 811 
+</span><span class="inferred0"><a name="line812"></a> 812     # Thanks to Russell Norris!
+</span><span class="marked1"><a name="line813"></a> 813     def each_pixel
+</span><span class="uncovered0"><a name="line814"></a> 814       get_pixels(0, 0, columns, rows).each_with_index do |p, n|
+</span><span class="uncovered1"><a name="line815"></a> 815         yield(p, n%columns, n/columns)
+</span><span class="uncovered0"><a name="line816"></a> 816       end
+</span><span class="uncovered1"><a name="line817"></a> 817       self
+</span><span class="uncovered0"><a name="line818"></a> 818     end
+</span><span class="inferred1"><a name="line819"></a> 819 
+</span><span class="inferred0"><a name="line820"></a> 820     # Retrieve EXIF data by entry or all. If one or more entry names specified,
+</span><span class="inferred1"><a name="line821"></a> 821     # return the values associated with the entries. If no entries specified,
+</span><span class="inferred0"><a name="line822"></a> 822     # return all entries and values. The return value is an array of [name,value]
+</span><span class="inferred1"><a name="line823"></a> 823     # arrays.
+</span><span class="marked0"><a name="line824"></a> 824     def get_exif_by_entry(*entry)
+</span><span class="uncovered1"><a name="line825"></a> 825         ary = Array.new
+</span><span class="uncovered0"><a name="line826"></a> 826         if entry.length == 0
+</span><span class="uncovered1"><a name="line827"></a> 827             exif_data = self['EXIF:*']
+</span><span class="uncovered0"><a name="line828"></a> 828             if exif_data
+</span><span class="uncovered1"><a name="line829"></a> 829                 exif_data.split(&quot;\n&quot;).each { |exif| ary.push(exif.split('=')) }
+</span><span class="uncovered0"><a name="line830"></a> 830             end
+</span><span class="uncovered1"><a name="line831"></a> 831         else
+</span><span class="uncovered0"><a name="line832"></a> 832             get_exif_by_entry()     # ensure properties is populated with exif data
+</span><span class="uncovered1"><a name="line833"></a> 833             entry.each do |name|
+</span><span class="uncovered0"><a name="line834"></a> 834                 rval = self[&quot;EXIF:#{name}&quot;]
+</span><span class="uncovered1"><a name="line835"></a> 835                 ary.push([name, rval])
+</span><span class="uncovered0"><a name="line836"></a> 836             end
+</span><span class="uncovered1"><a name="line837"></a> 837         end
+</span><span class="uncovered0"><a name="line838"></a> 838         return ary
+</span><span class="uncovered1"><a name="line839"></a> 839     end
+</span><span class="inferred0"><a name="line840"></a> 840 
+</span><span class="inferred1"><a name="line841"></a> 841     # Retrieve EXIF data by tag number or all tag/value pairs. The return value is a hash.
+</span><span class="marked0"><a name="line842"></a> 842     def get_exif_by_number(*tag)
+</span><span class="uncovered1"><a name="line843"></a> 843         hash = Hash.new
+</span><span class="uncovered0"><a name="line844"></a> 844         if tag.length == 0
+</span><span class="uncovered1"><a name="line845"></a> 845             exif_data = self['EXIF:!']
+</span><span class="uncovered0"><a name="line846"></a> 846             if exif_data
+</span><span class="uncovered1"><a name="line847"></a> 847                 exif_data.split(&quot;\n&quot;).each do |exif|
+</span><span class="uncovered0"><a name="line848"></a> 848                     tag, value = exif.split('=')
+</span><span class="uncovered1"><a name="line849"></a> 849                     tag = tag[1,4].hex
+</span><span class="uncovered0"><a name="line850"></a> 850                     hash[tag] = value
+</span><span class="uncovered1"><a name="line851"></a> 851                 end
+</span><span class="uncovered0"><a name="line852"></a> 852             end
+</span><span class="uncovered1"><a name="line853"></a> 853         else
+</span><span class="uncovered0"><a name="line854"></a> 854             get_exif_by_number()    # ensure properties is populated with exif data
+</span><span class="uncovered1"><a name="line855"></a> 855             tag.each do |num|
+</span><span class="uncovered0"><a name="line856"></a> 856                 rval = self['#%04X' % num.to_i]
+</span><span class="uncovered1"><a name="line857"></a> 857                 hash[num] = rval == 'unknown' ? nil : rval
+</span><span class="uncovered0"><a name="line858"></a> 858             end
+</span><span class="uncovered1"><a name="line859"></a> 859         end
+</span><span class="uncovered0"><a name="line860"></a> 860         return hash
+</span><span class="uncovered1"><a name="line861"></a> 861     end
+</span><span class="inferred0"><a name="line862"></a> 862 
+</span><span class="inferred1"><a name="line863"></a> 863     # Retrieve IPTC information by record number:dataset tag constant defined in
+</span><span class="inferred0"><a name="line864"></a> 864     # Magick::IPTC, above.
+</span><span class="marked1"><a name="line865"></a> 865     def get_iptc_dataset(ds)
+</span><span class="uncovered0"><a name="line866"></a> 866         self['IPTC:'+ds]
+</span><span class="uncovered1"><a name="line867"></a> 867     end
+</span><span class="inferred0"><a name="line868"></a> 868 
+</span><span class="inferred1"><a name="line869"></a> 869     # Iterate over IPTC record number:dataset tags, yield for each non-nil dataset
+</span><span class="marked0"><a name="line870"></a> 870     def each_iptc_dataset
+</span><span class="uncovered1"><a name="line871"></a> 871         Magick::IPTC.constants.each do |record|
+</span><span class="uncovered0"><a name="line872"></a> 872             rec = Magick::IPTC.const_get(record)
+</span><span class="uncovered1"><a name="line873"></a> 873             rec.constants.each do |dataset|
+</span><span class="uncovered0"><a name="line874"></a> 874                 data_field = get_iptc_dataset(rec.const_get(dataset))
+</span><span class="uncovered1"><a name="line875"></a> 875                 yield(dataset, data_field) unless data_field.nil?
+</span><span class="uncovered0"><a name="line876"></a> 876             end
+</span><span class="uncovered1"><a name="line877"></a> 877         end
+</span><span class="uncovered0"><a name="line878"></a> 878         nil
+</span><span class="uncovered1"><a name="line879"></a> 879     end
+</span><span class="inferred0"><a name="line880"></a> 880 
+</span><span class="inferred1"><a name="line881"></a> 881     # Patches problematic change to the order of arguments in 1.11.0.
+</span><span class="inferred0"><a name="line882"></a> 882     # Before this release, the order was
+</span><span class="inferred1"><a name="line883"></a> 883     #       black_point, gamma, white_point
+</span><span class="inferred0"><a name="line884"></a> 884     # RMagick 1.11.0 changed this to
+</span><span class="inferred1"><a name="line885"></a> 885     #       black_point, white_point, gamma
+</span><span class="inferred0"><a name="line886"></a> 886     # This fix tries to determine if the arguments are in the old order and
+</span><span class="inferred1"><a name="line887"></a> 887     # if so, swaps the gamma and white_point arguments.  Then it calls
+</span><span class="inferred0"><a name="line888"></a> 888     # level2, which simply accepts the arguments as given.
+</span><span class="inferred1"><a name="line889"></a> 889 
+</span><span class="inferred0"><a name="line890"></a> 890     # Inspect the gamma and white point values and swap them if they
+</span><span class="inferred1"><a name="line891"></a> 891     # look like they're in the old order.
+</span><span class="inferred0"><a name="line892"></a> 892 
+</span><span class="inferred1"><a name="line893"></a> 893     # (Thanks to Al Evans for the suggestion.)
+</span><span class="marked0"><a name="line894"></a> 894     def level(black_point=0.0, white_point=nil, gamma=nil)
+</span><span class="uncovered1"><a name="line895"></a> 895         black_point = Float(black_point)
+</span><span class="uncovered0"><a name="line896"></a> 896 
+</span><span class="uncovered1"><a name="line897"></a> 897         white_point ||= Magick::QuantumRange - black_point
+</span><span class="uncovered0"><a name="line898"></a> 898         white_point = Float(white_point)
+</span><span class="uncovered1"><a name="line899"></a> 899 
+</span><span class="uncovered0"><a name="line900"></a> 900         gamma_arg = gamma
+</span><span class="uncovered1"><a name="line901"></a> 901         gamma ||= 1.0
+</span><span class="uncovered0"><a name="line902"></a> 902         gamma = Float(gamma)
+</span><span class="uncovered1"><a name="line903"></a> 903 
+</span><span class="uncovered0"><a name="line904"></a> 904         if gamma.abs &gt; 10.0 || white_point.abs &lt;= 10.0 || white_point.abs &lt; gamma.abs
+</span><span class="uncovered1"><a name="line905"></a> 905             gamma, white_point = white_point, gamma
+</span><span class="uncovered0"><a name="line906"></a> 906             unless gamma_arg
+</span><span class="uncovered1"><a name="line907"></a> 907                 white_point = Magick::QuantumRange - black_point
+</span><span class="uncovered0"><a name="line908"></a> 908             end
+</span><span class="uncovered1"><a name="line909"></a> 909         end
+</span><span class="uncovered0"><a name="line910"></a> 910 
+</span><span class="uncovered1"><a name="line911"></a> 911         return level2(black_point, white_point, gamma)
+</span><span class="uncovered0"><a name="line912"></a> 912     end
+</span><span class="inferred1"><a name="line913"></a> 913 
+</span><span class="inferred0"><a name="line914"></a> 914     # These four methods are equivalent to the Draw#matte method
+</span><span class="inferred1"><a name="line915"></a> 915     # with the &quot;Point&quot;, &quot;Replace&quot;, &quot;Floodfill&quot;, &quot;FilltoBorder&quot;, and
+</span><span class="inferred0"><a name="line916"></a> 916     # &quot;Replace&quot; arguments, respectively.
+</span><span class="inferred1"><a name="line917"></a> 917 
+</span><span class="inferred0"><a name="line918"></a> 918     # Make the pixel at (x,y) transparent.
+</span><span class="marked1"><a name="line919"></a> 919     def matte_point(x, y)
+</span><span class="uncovered0"><a name="line920"></a> 920         f = copy
+</span><span class="uncovered1"><a name="line921"></a> 921         f.opacity = OpaqueOpacity unless f.matte
+</span><span class="uncovered0"><a name="line922"></a> 922         pixel = f.pixel_color(x,y)
+</span><span class="uncovered1"><a name="line923"></a> 923         pixel.opacity = TransparentOpacity
+</span><span class="uncovered0"><a name="line924"></a> 924         f.pixel_color(x, y, pixel)
+</span><span class="uncovered1"><a name="line925"></a> 925         return f
+</span><span class="uncovered0"><a name="line926"></a> 926     end
+</span><span class="inferred1"><a name="line927"></a> 927 
+</span><span class="inferred0"><a name="line928"></a> 928     # Make transparent all pixels that are the same color as the
+</span><span class="inferred1"><a name="line929"></a> 929     # pixel at (x, y).
+</span><span class="marked0"><a name="line930"></a> 930     def matte_replace(x, y)
+</span><span class="uncovered1"><a name="line931"></a> 931         f = copy
+</span><span class="uncovered0"><a name="line932"></a> 932         f.opacity = OpaqueOpacity unless f.matte
+</span><span class="uncovered1"><a name="line933"></a> 933         target = f.pixel_color(x, y)
+</span><span class="uncovered0"><a name="line934"></a> 934         f.transparent(target)
+</span><span class="uncovered1"><a name="line935"></a> 935     end
+</span><span class="inferred0"><a name="line936"></a> 936 
+</span><span class="inferred1"><a name="line937"></a> 937     # Make transparent any pixel that matches the color of the pixel
+</span><span class="inferred0"><a name="line938"></a> 938     # at (x,y) and is a neighbor.
+</span><span class="marked1"><a name="line939"></a> 939     def matte_floodfill(x, y)
+</span><span class="uncovered0"><a name="line940"></a> 940         f = copy
+</span><span class="uncovered1"><a name="line941"></a> 941         f.opacity = OpaqueOpacity unless f.matte
+</span><span class="uncovered0"><a name="line942"></a> 942         target = f.pixel_color(x, y)
+</span><span class="uncovered1"><a name="line943"></a> 943         f.matte_flood_fill(target, TransparentOpacity,
+</span><span class="uncovered0"><a name="line944"></a> 944                            x, y, FloodfillMethod)
+</span><span class="uncovered1"><a name="line945"></a> 945     end
+</span><span class="inferred0"><a name="line946"></a> 946 
+</span><span class="inferred1"><a name="line947"></a> 947     # Make transparent any neighbor pixel that is not the border color.
+</span><span class="marked0"><a name="line948"></a> 948     def matte_fill_to_border(x, y)
+</span><span class="uncovered1"><a name="line949"></a> 949         f = copy
+</span><span class="uncovered0"><a name="line950"></a> 950         f.opacity = Magick::OpaqueOpacity unless f.matte
+</span><span class="uncovered1"><a name="line951"></a> 951         f.matte_flood_fill(border_color, TransparentOpacity,
+</span><span class="uncovered0"><a name="line952"></a> 952                            x, y, FillToBorderMethod)
+</span><span class="uncovered1"><a name="line953"></a> 953     end
+</span><span class="inferred0"><a name="line954"></a> 954 
+</span><span class="inferred1"><a name="line955"></a> 955     # Make all pixels transparent.
+</span><span class="marked0"><a name="line956"></a> 956     def matte_reset!
+</span><span class="uncovered1"><a name="line957"></a> 957         self.opacity = Magick::TransparentOpacity
+</span><span class="uncovered0"><a name="line958"></a> 958         self
+</span><span class="uncovered1"><a name="line959"></a> 959     end
+</span><span class="inferred0"><a name="line960"></a> 960 
+</span><span class="inferred1"><a name="line961"></a> 961     # Corresponds to ImageMagick's -resample option
+</span><span class="marked0"><a name="line962"></a> 962     def resample(x_res=72.0, y_res=nil)
+</span><span class="uncovered1"><a name="line963"></a> 963         y_res ||= x_res
+</span><span class="uncovered0"><a name="line964"></a> 964         width = x_res * columns / x_resolution + 0.5
+</span><span class="uncovered1"><a name="line965"></a> 965         height = y_res * rows / y_resolution + 0.5
+</span><span class="uncovered0"><a name="line966"></a> 966         self.x_resolution = x_res
+</span><span class="uncovered1"><a name="line967"></a> 967         self.y_resolution = y_res
+</span><span class="uncovered0"><a name="line968"></a> 968         resize(width, height)
+</span><span class="uncovered1"><a name="line969"></a> 969     end
+</span><span class="inferred0"><a name="line970"></a> 970 
+</span><span class="inferred1"><a name="line971"></a> 971     # Force an image to exact dimensions without changing the aspect ratio.
+</span><span class="inferred0"><a name="line972"></a> 972     # Resize and crop if necessary. (Thanks to Jerett Taylor!)
+</span><span class="marked1"><a name="line973"></a> 973     def resize_to_fill(ncols, nrows=nil, gravity=CenterGravity)
+</span><span class="uncovered0"><a name="line974"></a> 974         copy.resize_to_fill!(ncols, nrows, gravity)
+</span><span class="uncovered1"><a name="line975"></a> 975     end
+</span><span class="inferred0"><a name="line976"></a> 976 
+</span><span class="marked1"><a name="line977"></a> 977     def resize_to_fill!(ncols, nrows=nil, gravity=CenterGravity)
+</span><span class="uncovered0"><a name="line978"></a> 978         nrows ||= ncols
+</span><span class="uncovered1"><a name="line979"></a> 979         if ncols != columns || nrows != rows
+</span><span class="uncovered0"><a name="line980"></a> 980             scale = [ncols/columns.to_f, nrows/rows.to_f].max
+</span><span class="uncovered1"><a name="line981"></a> 981             resize!(scale*columns+0.5, scale*rows+0.5)
+</span><span class="uncovered0"><a name="line982"></a> 982         end
+</span><span class="uncovered1"><a name="line983"></a> 983         crop!(gravity, ncols, nrows, true) if ncols != columns || nrows != rows
+</span><span class="uncovered0"><a name="line984"></a> 984         self
+</span><span class="uncovered1"><a name="line985"></a> 985     end
+</span><span class="inferred0"><a name="line986"></a> 986 
+</span><span class="inferred1"><a name="line987"></a> 987     # Preserve aliases used &lt; RMagick 2.0.1
+</span><span class="marked0"><a name="line988"></a> 988     alias_method :crop_resized, :resize_to_fill
+</span><span class="marked1"><a name="line989"></a> 989     alias_method :crop_resized!, :resize_to_fill!
+</span><span class="inferred0"><a name="line990"></a> 990 
+</span><span class="inferred1"><a name="line991"></a> 991     # Convenience method to resize retaining the aspect ratio.
+</span><span class="inferred0"><a name="line992"></a> 992     # (Thanks to Robert Manni!)
+</span><span class="marked1"><a name="line993"></a> 993     def resize_to_fit(cols, rows=nil)
+</span><span class="uncovered0"><a name="line994"></a> 994         rows ||= cols
+</span><span class="uncovered1"><a name="line995"></a> 995         change_geometry(Geometry.new(cols, rows)) do |ncols, nrows|
+</span><span class="uncovered0"><a name="line996"></a> 996             resize(ncols, nrows)
+</span><span class="uncovered1"><a name="line997"></a> 997         end
+</span><span class="uncovered0"><a name="line998"></a> 998     end
+</span><span class="inferred1"><a name="line999"></a> 999 
+</span><span class="marked0"><a name="line1000"></a>1000     def resize_to_fit!(cols, rows=nil)
+</span><span class="uncovered1"><a name="line1001"></a>1001         rows ||= cols
+</span><span class="uncovered0"><a name="line1002"></a>1002         change_geometry(Geometry.new(cols, rows)) do |ncols, nrows|
+</span><span class="uncovered1"><a name="line1003"></a>1003             resize!(ncols, nrows)
+</span><span class="uncovered0"><a name="line1004"></a>1004         end
+</span><span class="uncovered1"><a name="line1005"></a>1005     end
+</span><span class="inferred0"><a name="line1006"></a>1006 
+</span><span class="inferred1"><a name="line1007"></a>1007     # Replace matching neighboring pixels with texture pixels
+</span><span class="marked0"><a name="line1008"></a>1008     def texture_floodfill(x, y, texture)
+</span><span class="uncovered1"><a name="line1009"></a>1009         target = pixel_color(x, y)
+</span><span class="uncovered0"><a name="line1010"></a>1010         texture_flood_fill(target, texture, x, y, FloodfillMethod)
+</span><span class="uncovered1"><a name="line1011"></a>1011     end
+</span><span class="inferred0"><a name="line1012"></a>1012 
+</span><span class="inferred1"><a name="line1013"></a>1013     # Replace neighboring pixels to border color with texture pixels
+</span><span class="marked0"><a name="line1014"></a>1014     def texture_fill_to_border(x, y, texture)
+</span><span class="uncovered1"><a name="line1015"></a>1015         texture_flood_fill(border_color, texture, x, y, FillToBorderMethod)
+</span><span class="uncovered0"><a name="line1016"></a>1016     end
+</span><span class="inferred1"><a name="line1017"></a>1017 
+</span><span class="inferred0"><a name="line1018"></a>1018     # Construct a view. If a block is present, yield and pass the view
+</span><span class="inferred1"><a name="line1019"></a>1019     # object, otherwise return the view object.
+</span><span class="marked0"><a name="line1020"></a>1020     def view(x, y, width, height)
+</span><span class="uncovered1"><a name="line1021"></a>1021         view = View.new(self, x, y, width, height)
+</span><span class="uncovered0"><a name="line1022"></a>1022 
+</span><span class="uncovered1"><a name="line1023"></a>1023         if block_given?
+</span><span class="uncovered0"><a name="line1024"></a>1024             begin
+</span><span class="uncovered1"><a name="line1025"></a>1025                 yield(view)
+</span><span class="uncovered0"><a name="line1026"></a>1026             ensure
+</span><span class="uncovered1"><a name="line1027"></a>1027                 view.sync
+</span><span class="uncovered0"><a name="line1028"></a>1028             end
+</span><span class="uncovered1"><a name="line1029"></a>1029             return nil
+</span><span class="uncovered0"><a name="line1030"></a>1030         else
+</span><span class="uncovered1"><a name="line1031"></a>1031             return view
+</span><span class="uncovered0"><a name="line1032"></a>1032         end
+</span><span class="uncovered1"><a name="line1033"></a>1033     end
+</span><span class="inferred0"><a name="line1034"></a>1034 
+</span><span class="inferred1"><a name="line1035"></a>1035     # Magick::Image::View class
+</span><span class="marked0"><a name="line1036"></a>1036     class View
+</span><span class="marked1"><a name="line1037"></a>1037         attr_reader :x, :y, :width, :height
+</span><span class="marked0"><a name="line1038"></a>1038         attr_accessor :dirty
+</span><span class="inferred1"><a name="line1039"></a>1039 
+</span><span class="marked0"><a name="line1040"></a>1040         def initialize(img, x, y, width, height)
+</span><span class="uncovered1"><a name="line1041"></a>1041             img.check_destroyed
+</span><span class="uncovered0"><a name="line1042"></a>1042             if width &lt;= 0 || height &lt;= 0
+</span><span class="uncovered1"><a name="line1043"></a>1043                 Kernel.raise ArgumentError, &quot;invalid geometry (#{width}x#{height}+#{x}+#{y})&quot;
+</span><span class="uncovered0"><a name="line1044"></a>1044             end
+</span><span class="uncovered1"><a name="line1045"></a>1045             if x &lt; 0 || y &lt; 0 || (x+width) &gt; img.columns || (y+height) &gt; img.rows
+</span><span class="uncovered0"><a name="line1046"></a>1046                 Kernel.raise RangeError, &quot;geometry (#{width}x#{height}+#{x}+#{y}) exceeds image boundary&quot;
+</span><span class="uncovered1"><a name="line1047"></a>1047             end
+</span><span class="uncovered0"><a name="line1048"></a>1048             @view = img.get_pixels(x, y, width, height)
+</span><span class="uncovered1"><a name="line1049"></a>1049             @img = img
+</span><span class="uncovered0"><a name="line1050"></a>1050             @x = x
+</span><span class="uncovered1"><a name="line1051"></a>1051             @y = y
+</span><span class="uncovered0"><a name="line1052"></a>1052             @width = width
+</span><span class="uncovered1"><a name="line1053"></a>1053             @height = height
+</span><span class="uncovered0"><a name="line1054"></a>1054             @dirty = false
+</span><span class="uncovered1"><a name="line1055"></a>1055         end
+</span><span class="inferred0"><a name="line1056"></a>1056 
+</span><span class="marked1"><a name="line1057"></a>1057         def [](*args)
+</span><span class="uncovered0"><a name="line1058"></a>1058             rows = Rows.new(@view, @width, @height, args)
+</span><span class="uncovered1"><a name="line1059"></a>1059             rows.add_observer(self)
+</span><span class="uncovered0"><a name="line1060"></a>1060             return rows
+</span><span class="uncovered1"><a name="line1061"></a>1061         end
+</span><span class="inferred0"><a name="line1062"></a>1062 
+</span><span class="inferred1"><a name="line1063"></a>1063         # Store changed pixels back to image
+</span><span class="marked0"><a name="line1064"></a>1064         def sync(force=false)
+</span><span class="uncovered1"><a name="line1065"></a>1065             @img.store_pixels(x, y, width, height, @view) if (@dirty || force)
+</span><span class="uncovered0"><a name="line1066"></a>1066             return (@dirty || force)
+</span><span class="uncovered1"><a name="line1067"></a>1067         end
+</span><span class="inferred0"><a name="line1068"></a>1068 
+</span><span class="inferred1"><a name="line1069"></a>1069         # Get update from Rows - if @dirty ever becomes
+</span><span class="inferred0"><a name="line1070"></a>1070         # true, don't change it back to false!
+</span><span class="marked1"><a name="line1071"></a>1071         def update(rows)
+</span><span class="uncovered0"><a name="line1072"></a>1072             @dirty = true
+</span><span class="uncovered1"><a name="line1073"></a>1073             rows.delete_observer(self)      # No need to tell us again.
+</span><span class="uncovered0"><a name="line1074"></a>1074             nil
+</span><span class="uncovered1"><a name="line1075"></a>1075         end
+</span><span class="inferred0"><a name="line1076"></a>1076 
+</span><span class="inferred1"><a name="line1077"></a>1077         # Magick::Image::View::Pixels
+</span><span class="inferred0"><a name="line1078"></a>1078         # Defines channel attribute getters/setters
+</span><span class="marked1"><a name="line1079"></a>1079         class Pixels &lt; Array
+</span><span class="marked0"><a name="line1080"></a>1080             include Observable
+</span><span class="inferred1"><a name="line1081"></a>1081 
+</span><span class="inferred0"><a name="line1082"></a>1082             # Define a getter and a setter for each channel.
+</span><span class="marked1"><a name="line1083"></a>1083             [:red, :green, :blue, :opacity].each do |c|
+</span><span class="marked0"><a name="line1084"></a>1084                 module_eval &lt;&lt;-END_EVAL
+</span><span class="inferred1"><a name="line1085"></a>1085                     def #{c}
+</span><span class="inferred0"><a name="line1086"></a>1086                         return collect { |p| p.#{c} }
+</span><span class="inferred1"><a name="line1087"></a>1087                     end
+</span><span class="inferred0"><a name="line1088"></a>1088                     def #{c}=(v)
+</span><span class="inferred1"><a name="line1089"></a>1089                         each { |p| p.#{c} = v }
+</span><span class="inferred0"><a name="line1090"></a>1090                         changed
+</span><span class="inferred1"><a name="line1091"></a>1091                         notify_observers(self)
+</span><span class="inferred0"><a name="line1092"></a>1092                         nil
+</span><span class="inferred1"><a name="line1093"></a>1093                     end
+</span><span class="inferred0"><a name="line1094"></a>1094                 END_EVAL
+</span><span class="inferred1"><a name="line1095"></a>1095             end
+</span><span class="inferred0"><a name="line1096"></a>1096 
+</span><span class="inferred1"><a name="line1097"></a>1097         end # class Magick::Image::View::Pixels
+</span><span class="inferred0"><a name="line1098"></a>1098 
+</span><span class="inferred1"><a name="line1099"></a>1099         # Magick::Image::View::Rows
+</span><span class="marked0"><a name="line1100"></a>1100         class Rows
+</span><span class="marked1"><a name="line1101"></a>1101             include Observable
+</span><span class="inferred0"><a name="line1102"></a>1102 
+</span><span class="marked1"><a name="line1103"></a>1103             def initialize(view, width, height, rows)
+</span><span class="uncovered0"><a name="line1104"></a>1104                 @view = view
+</span><span class="uncovered1"><a name="line1105"></a>1105                 @width = width
+</span><span class="uncovered0"><a name="line1106"></a>1106                 @height = height
+</span><span class="uncovered1"><a name="line1107"></a>1107                 @rows = rows
+</span><span class="uncovered0"><a name="line1108"></a>1108             end
+</span><span class="inferred1"><a name="line1109"></a>1109 
+</span><span class="marked0"><a name="line1110"></a>1110             def [](*args)
+</span><span class="uncovered1"><a name="line1111"></a>1111                 cols(args)
+</span><span class="uncovered0"><a name="line1112"></a>1112 
+</span><span class="uncovered1"><a name="line1113"></a>1113                 # Both View::Pixels and Magick::Pixel implement Observable
+</span><span class="uncovered0"><a name="line1114"></a>1114                 if @unique
+</span><span class="uncovered1"><a name="line1115"></a>1115                     pixels = @view[@rows[0]*@width + @cols[0]]
+</span><span class="uncovered0"><a name="line1116"></a>1116                     pixels.add_observer(self)
+</span><span class="uncovered1"><a name="line1117"></a>1117                 else
+</span><span class="uncovered0"><a name="line1118"></a>1118                     pixels = View::Pixels.new
+</span><span class="uncovered1"><a name="line1119"></a>1119                     each do |x|
+</span><span class="uncovered0"><a name="line1120"></a>1120                         p = @view[x]
+</span><span class="uncovered1"><a name="line1121"></a>1121                         p.add_observer(self)
+</span><span class="uncovered0"><a name="line1122"></a>1122                         pixels &lt;&lt; p
+</span><span class="uncovered1"><a name="line1123"></a>1123                     end
+</span><span class="uncovered0"><a name="line1124"></a>1124                 end
+</span><span class="uncovered1"><a name="line1125"></a>1125                 pixels
+</span><span class="uncovered0"><a name="line1126"></a>1126             end
+</span><span class="inferred1"><a name="line1127"></a>1127 
+</span><span class="marked0"><a name="line1128"></a>1128             def []=(*args)
+</span><span class="uncovered1"><a name="line1129"></a>1129                 rv = args.delete_at(-1)     # get rvalue
+</span><span class="uncovered0"><a name="line1130"></a>1130                 if ! rv.is_a?(Pixel)        # must be a Pixel or a color name
+</span><span class="uncovered1"><a name="line1131"></a>1131                     begin
+</span><span class="uncovered0"><a name="line1132"></a>1132                         rv = Pixel.from_color(rv)
+</span><span class="uncovered1"><a name="line1133"></a>1133                     rescue TypeError
+</span><span class="uncovered0"><a name="line1134"></a>1134                         Kernel.raise TypeError, &quot;cannot convert #{rv.class} into Pixel&quot;
+</span><span class="uncovered1"><a name="line1135"></a>1135                     end
+</span><span class="uncovered0"><a name="line1136"></a>1136                 end
+</span><span class="uncovered1"><a name="line1137"></a>1137                 cols(args)
+</span><span class="uncovered0"><a name="line1138"></a>1138                 each { |x| @view[x] = rv.dup }
+</span><span class="uncovered1"><a name="line1139"></a>1139                 changed
+</span><span class="uncovered0"><a name="line1140"></a>1140                 notify_observers(self)
+</span><span class="uncovered1"><a name="line1141"></a>1141                 nil
+</span><span class="uncovered0"><a name="line1142"></a>1142             end
+</span><span class="inferred1"><a name="line1143"></a>1143 
+</span><span class="inferred0"><a name="line1144"></a>1144             # A pixel has been modified. Tell the view.
+</span><span class="marked1"><a name="line1145"></a>1145             def update(pixel)
+</span><span class="uncovered0"><a name="line1146"></a>1146                 changed
+</span><span class="uncovered1"><a name="line1147"></a>1147                 notify_observers(self)
+</span><span class="uncovered0"><a name="line1148"></a>1148                 pixel.delete_observer(self) # Don't need to hear again.
+</span><span class="uncovered1"><a name="line1149"></a>1149                 nil
+</span><span class="uncovered0"><a name="line1150"></a>1150             end
+</span><span class="inferred1"><a name="line1151"></a>1151 
+</span><span class="marked0"><a name="line1152"></a>1152         private
+</span><span class="inferred1"><a name="line1153"></a>1153 
+</span><span class="marked0"><a name="line1154"></a>1154             def cols(*args)
+</span><span class="uncovered1"><a name="line1155"></a>1155                 @cols = args[0]     # remove the outermost array
+</span><span class="uncovered0"><a name="line1156"></a>1156                 @unique = false
+</span><span class="uncovered1"><a name="line1157"></a>1157 
+</span><span class="uncovered0"><a name="line1158"></a>1158                 # Convert @rows to an Enumerable object
+</span><span class="uncovered1"><a name="line1159"></a>1159                 case @rows.length
+</span><span class="uncovered0"><a name="line1160"></a>1160                     when 0                      # Create a Range for all the rows
+</span><span class="uncovered1"><a name="line1161"></a>1161                         @rows = Range.new(0, @height, true)
+</span><span class="uncovered0"><a name="line1162"></a>1162                     when 1                      # Range, Array, or a single integer
+</span><span class="uncovered1"><a name="line1163"></a>1163                         # if the single element is already an Enumerable
+</span><span class="uncovered0"><a name="line1164"></a>1164                         # object, get it.
+</span><span class="uncovered1"><a name="line1165"></a>1165                         if @rows.first.respond_to? :each
+</span><span class="uncovered0"><a name="line1166"></a>1166                             @rows = @rows.first
+</span><span class="uncovered1"><a name="line1167"></a>1167                         else
+</span><span class="uncovered0"><a name="line1168"></a>1168                             @rows = Integer(@rows.first)
+</span><span class="uncovered1"><a name="line1169"></a>1169                             if @rows &lt; 0
+</span><span class="uncovered0"><a name="line1170"></a>1170                                 @rows += @height
+</span><span class="uncovered1"><a name="line1171"></a>1171                             end
+</span><span class="uncovered0"><a name="line1172"></a>1172                             if @rows &lt; 0 || @rows &gt; @height-1
+</span><span class="uncovered1"><a name="line1173"></a>1173                                 Kernel.raise IndexError, &quot;index [#{@rows}] out of range&quot;
+</span><span class="uncovered0"><a name="line1174"></a>1174                             end
+</span><span class="uncovered1"><a name="line1175"></a>1175                             # Convert back to an array
+</span><span class="uncovered0"><a name="line1176"></a>1176                             @rows = Array.new(1, @rows)
+</span><span class="uncovered1"><a name="line1177"></a>1177                             @unique = true
+</span><span class="uncovered0"><a name="line1178"></a>1178                         end
+</span><span class="uncovered1"><a name="line1179"></a>1179                     when 2
+</span><span class="uncovered0"><a name="line1180"></a>1180                         # A pair of integers representing the starting column and the number of columns
+</span><span class="uncovered1"><a name="line1181"></a>1181                         start = Integer(@rows[0])
+</span><span class="uncovered0"><a name="line1182"></a>1182                         length = Integer(@rows[1])
+</span><span class="uncovered1"><a name="line1183"></a>1183 
+</span><span class="uncovered0"><a name="line1184"></a>1184                         # Negative start -&gt; start from last row
+</span><span class="uncovered1"><a name="line1185"></a>1185                         if start &lt; 0
+</span><span class="uncovered0"><a name="line1186"></a>1186                             start += @height
+</span><span class="uncovered1"><a name="line1187"></a>1187                         end
+</span><span class="uncovered0"><a name="line1188"></a>1188 
+</span><span class="uncovered1"><a name="line1189"></a>1189                         if start &gt; @height || start &lt; 0 || length &lt; 0
+</span><span class="uncovered0"><a name="line1190"></a>1190                                 Kernel.raise IndexError, &quot;index [#{@rows.first}] out of range&quot;
+</span><span class="uncovered1"><a name="line1191"></a>1191                         else
+</span><span class="uncovered0"><a name="line1192"></a>1192                             if start + length &gt; @height
+</span><span class="uncovered1"><a name="line1193"></a>1193                                 length = @height - length
+</span><span class="uncovered0"><a name="line1194"></a>1194                                 length = [length, 0].max
+</span><span class="uncovered1"><a name="line1195"></a>1195                             end
+</span><span class="uncovered0"><a name="line1196"></a>1196                         end
+</span><span class="uncovered1"><a name="line1197"></a>1197                         # Create a Range for the specified set of rows
+</span><span class="uncovered0"><a name="line1198"></a>1198                         @rows = Range.new(start, start+length, true)
+</span><span class="uncovered1"><a name="line1199"></a>1199                 end
+</span><span class="uncovered0"><a name="line1200"></a>1200 
+</span><span class="uncovered1"><a name="line1201"></a>1201                 case @cols.length
+</span><span class="uncovered0"><a name="line1202"></a>1202                     when 0                  # all rows
+</span><span class="uncovered1"><a name="line1203"></a>1203                         @cols = Range.new(0, @width, true)  # convert to range
+</span><span class="uncovered0"><a name="line1204"></a>1204                         @unique = false
+</span><span class="uncovered1"><a name="line1205"></a>1205                     when 1                  # Range, Array, or a single integer
+</span><span class="uncovered0"><a name="line1206"></a>1206                         # if the single element is already an Enumerable
+</span><span class="uncovered1"><a name="line1207"></a>1207                         # object, get it.
+</span><span class="uncovered0"><a name="line1208"></a>1208                         if @cols.first.respond_to? :each
+</span><span class="uncovered1"><a name="line1209"></a>1209                             @cols = @cols.first
+</span><span class="uncovered0"><a name="line1210"></a>1210                             @unique = false
+</span><span class="uncovered1"><a name="line1211"></a>1211                         else
+</span><span class="uncovered0"><a name="line1212"></a>1212                             @cols = Integer(@cols.first)
+</span><span class="uncovered1"><a name="line1213"></a>1213                             if @cols &lt; 0
+</span><span class="uncovered0"><a name="line1214"></a>1214                                 @cols += @width
+</span><span class="uncovered1"><a name="line1215"></a>1215                             end
+</span><span class="uncovered0"><a name="line1216"></a>1216                             if @cols &lt; 0 || @cols &gt; @width-1
+</span><span class="uncovered1"><a name="line1217"></a>1217                                 Kernel.raise IndexError, &quot;index [#{@cols}] out of range&quot;
+</span><span class="uncovered0"><a name="line1218"></a>1218                             end
+</span><span class="uncovered1"><a name="line1219"></a>1219                             # Convert back to array
+</span><span class="uncovered0"><a name="line1220"></a>1220                             @cols = Array.new(1, @cols)
+</span><span class="uncovered1"><a name="line1221"></a>1221                             @unique &amp;&amp;= true
+</span><span class="uncovered0"><a name="line1222"></a>1222                         end
+</span><span class="uncovered1"><a name="line1223"></a>1223                     when 2
+</span><span class="uncovered0"><a name="line1224"></a>1224                         # A pair of integers representing the starting column and the number of columns
+</span><span class="uncovered1"><a name="line1225"></a>1225                         start = Integer(@cols[0])
+</span><span class="uncovered0"><a name="line1226"></a>1226                         length = Integer(@cols[1])
+</span><span class="uncovered1"><a name="line1227"></a>1227 
+</span><span class="uncovered0"><a name="line1228"></a>1228                         # Negative start -&gt; start from last row
+</span><span class="uncovered1"><a name="line1229"></a>1229                         if start &lt; 0
+</span><span class="uncovered0"><a name="line1230"></a>1230                             start += @width
+</span><span class="uncovered1"><a name="line1231"></a>1231                         end
+</span><span class="uncovered0"><a name="line1232"></a>1232 
+</span><span class="uncovered1"><a name="line1233"></a>1233                         if start &gt; @width || start &lt; 0 || length &lt; 0
+</span><span class="uncovered0"><a name="line1234"></a>1234                             ; #nop
+</span><span class="uncovered1"><a name="line1235"></a>1235                         else
+</span><span class="uncovered0"><a name="line1236"></a>1236                             if start + length &gt; @width
+</span><span class="uncovered1"><a name="line1237"></a>1237                                 length = @width - length
+</span><span class="uncovered0"><a name="line1238"></a>1238                                 length = [length, 0].max
+</span><span class="uncovered1"><a name="line1239"></a>1239                             end
+</span><span class="uncovered0"><a name="line1240"></a>1240                         end
+</span><span class="uncovered1"><a name="line1241"></a>1241                         # Create a Range for the specified set of columns
+</span><span class="uncovered0"><a name="line1242"></a>1242                         @cols = Range.new(start, start+length, true)
+</span><span class="uncovered1"><a name="line1243"></a>1243                         @unique = false
+</span><span class="uncovered0"><a name="line1244"></a>1244                 end
+</span><span class="uncovered1"><a name="line1245"></a>1245 
+</span><span class="uncovered0"><a name="line1246"></a>1246             end
+</span><span class="inferred1"><a name="line1247"></a>1247 
+</span><span class="inferred0"><a name="line1248"></a>1248             # iterator called from subscript methods
+</span><span class="marked1"><a name="line1249"></a>1249             def each
+</span><span class="uncovered0"><a name="line1250"></a>1250                 maxrows = @height - 1
+</span><span class="uncovered1"><a name="line1251"></a>1251                 maxcols = @width - 1
+</span><span class="uncovered0"><a name="line1252"></a>1252 
+</span><span class="uncovered1"><a name="line1253"></a>1253                 @rows.each do |j|
+</span><span class="uncovered0"><a name="line1254"></a>1254                     if j &gt; maxrows
+</span><span class="uncovered1"><a name="line1255"></a>1255                         Kernel.raise IndexError, &quot;index [#{j}] out of range&quot;
+</span><span class="uncovered0"><a name="line1256"></a>1256                     end
+</span><span class="uncovered1"><a name="line1257"></a>1257                     @cols.each do |i|
+</span><span class="uncovered0"><a name="line1258"></a>1258                         if i &gt; maxcols
+</span><span class="uncovered1"><a name="line1259"></a>1259                             Kernel.raise IndexError, &quot;index [#{i}] out of range&quot;
+</span><span class="uncovered0"><a name="line1260"></a>1260                         end
+</span><span class="uncovered1"><a name="line1261"></a>1261                         yield j*@width + i
+</span><span class="uncovered0"><a name="line1262"></a>1262                     end
+</span><span class="uncovered1"><a name="line1263"></a>1263                 end
+</span><span class="uncovered0"><a name="line1264"></a>1264                 nil    # useless return value
+</span><span class="uncovered1"><a name="line1265"></a>1265             end
+</span><span class="uncovered0"><a name="line1266"></a>1266 
+</span><span class="uncovered1"><a name="line1267"></a>1267         end # class Magick::Image::View::Rows
+</span><span class="uncovered0"><a name="line1268"></a>1268 
+</span><span class="uncovered1"><a name="line1269"></a>1269     end     # class Magick::Image::View
+</span><span class="uncovered0"><a name="line1270"></a>1270 
+</span><span class="uncovered1"><a name="line1271"></a>1271 end # class Magick::Image
+</span><span class="inferred0"><a name="line1272"></a>1272 
+</span><span class="marked1"><a name="line1273"></a>1273 class ImageList
+</span><span class="inferred0"><a name="line1274"></a>1274 
+</span><span class="marked1"><a name="line1275"></a>1275     include Comparable
+</span><span class="marked0"><a name="line1276"></a>1276     include Enumerable
+</span><span class="marked1"><a name="line1277"></a>1277     attr_reader :scene
+</span><span class="inferred0"><a name="line1278"></a>1278 
+</span><span class="marked1"><a name="line1279"></a>1279 private
+</span><span class="inferred0"><a name="line1280"></a>1280 
+</span><span class="marked1"><a name="line1281"></a>1281     def get_current()
+</span><span class="uncovered0"><a name="line1282"></a>1282         return @images[@scene].__id__ rescue nil
+</span><span class="uncovered1"><a name="line1283"></a>1283     end
+</span><span class="inferred0"><a name="line1284"></a>1284 
+</span><span class="marked1"><a name="line1285"></a>1285 protected
+</span><span class="inferred0"><a name="line1286"></a>1286 
+</span><span class="marked1"><a name="line1287"></a>1287     def is_an_image(obj)
+</span><span class="uncovered0"><a name="line1288"></a>1288         unless obj.kind_of? Magick::Image
+</span><span class="uncovered1"><a name="line1289"></a>1289             Kernel.raise ArgumentError, &quot;Magick::Image required (#{obj.class} given)&quot;
+</span><span class="uncovered0"><a name="line1290"></a>1290         end
+</span><span class="uncovered1"><a name="line1291"></a>1291         true
+</span><span class="uncovered0"><a name="line1292"></a>1292     end
+</span><span class="inferred1"><a name="line1293"></a>1293 
+</span><span class="inferred0"><a name="line1294"></a>1294     # Ensure array is always an array of Magick::Image objects
+</span><span class="marked1"><a name="line1295"></a>1295     def is_an_image_array(ary)
+</span><span class="uncovered0"><a name="line1296"></a>1296         unless ary.respond_to? :each
+</span><span class="uncovered1"><a name="line1297"></a>1297             Kernel.raise ArgumentError, &quot;Magick::ImageList or array of Magick::Images required (#{ary.class} given)&quot;
+</span><span class="uncovered0"><a name="line1298"></a>1298         end
+</span><span class="uncovered1"><a name="line1299"></a>1299         ary.each { |obj| is_an_image obj }
+</span><span class="uncovered0"><a name="line1300"></a>1300         true
+</span><span class="uncovered1"><a name="line1301"></a>1301     end
+</span><span class="inferred0"><a name="line1302"></a>1302 
+</span><span class="inferred1"><a name="line1303"></a>1303     # Find old current image, update scene number
+</span><span class="inferred0"><a name="line1304"></a>1304     # current is the id of the old current image.
+</span><span class="marked1"><a name="line1305"></a>1305     def set_current(current)
+</span><span class="uncovered0"><a name="line1306"></a>1306         if length() == 0
+</span><span class="uncovered1"><a name="line1307"></a>1307             self.scene = nil
+</span><span class="uncovered0"><a name="line1308"></a>1308             return
+</span><span class="uncovered1"><a name="line1309"></a>1309         # Don't bother looking for current image
+</span><span class="uncovered0"><a name="line1310"></a>1310         elsif scene() == nil || scene() &gt;= length()
+</span><span class="uncovered1"><a name="line1311"></a>1311             self.scene = length() - 1
+</span><span class="uncovered0"><a name="line1312"></a>1312             return
+</span><span class="uncovered1"><a name="line1313"></a>1313         elsif current != nil
+</span><span class="uncovered0"><a name="line1314"></a>1314             # Find last instance of &quot;current&quot; in the list.
+</span><span class="uncovered1"><a name="line1315"></a>1315             # If &quot;current&quot; isn't in the list, set current to last image.
+</span><span class="uncovered0"><a name="line1316"></a>1316             self.scene = length() - 1
+</span><span class="uncovered1"><a name="line1317"></a>1317             each_with_index do |f,i|
+</span><span class="uncovered0"><a name="line1318"></a>1318                 if f.__id__ == current
+</span><span class="uncovered1"><a name="line1319"></a>1319                     self.scene = i
+</span><span class="uncovered0"><a name="line1320"></a>1320                 end
+</span><span class="uncovered1"><a name="line1321"></a>1321             end
+</span><span class="uncovered0"><a name="line1322"></a>1322             return
+</span><span class="uncovered1"><a name="line1323"></a>1323         end
+</span><span class="uncovered0"><a name="line1324"></a>1324         self.scene = length() - 1
+</span><span class="uncovered1"><a name="line1325"></a>1325     end
+</span><span class="inferred0"><a name="line1326"></a>1326 
+</span><span class="marked1"><a name="line1327"></a>1327 public
+</span><span class="inferred0"><a name="line1328"></a>1328 
+</span><span class="inferred1"><a name="line1329"></a>1329     # Allow scene to be set to nil
+</span><span class="marked0"><a name="line1330"></a>1330     def scene=(n)
+</span><span class="uncovered1"><a name="line1331"></a>1331         if n.nil?
+</span><span class="uncovered0"><a name="line1332"></a>1332             Kernel.raise IndexError, &quot;scene number out of bounds&quot; unless @images.length == 0
+</span><span class="uncovered1"><a name="line1333"></a>1333             @scene = nil
+</span><span class="uncovered0"><a name="line1334"></a>1334             return @scene
+</span><span class="uncovered1"><a name="line1335"></a>1335         elsif @images.length == 0
+</span><span class="uncovered0"><a name="line1336"></a>1336             Kernel.raise IndexError, &quot;scene number out of bounds&quot;
+</span><span class="uncovered1"><a name="line1337"></a>1337         end
+</span><span class="uncovered0"><a name="line1338"></a>1338 
+</span><span class="uncovered1"><a name="line1339"></a>1339         n = Integer(n)
+</span><span class="uncovered0"><a name="line1340"></a>1340         if n &lt; 0 || n &gt; length - 1
+</span><span class="uncovered1"><a name="line1341"></a>1341             Kernel.raise IndexError, &quot;scene number out of bounds&quot;
+</span><span class="uncovered0"><a name="line1342"></a>1342         end
+</span><span class="uncovered1"><a name="line1343"></a>1343         @scene = n
+</span><span class="uncovered0"><a name="line1344"></a>1344         return @scene
+</span><span class="uncovered1"><a name="line1345"></a>1345     end
+</span><span class="inferred0"><a name="line1346"></a>1346 
+</span><span class="inferred1"><a name="line1347"></a>1347     # All the binary operators work the same way.
+</span><span class="inferred0"><a name="line1348"></a>1348     # 'other' should be either an ImageList or an Array
+</span><span class="marked1"><a name="line1349"></a>1349     %w{&amp; + - |}.each do |op|
+</span><span class="marked0"><a name="line1350"></a>1350         module_eval &lt;&lt;-END_BINOPS
+</span><span class="inferred1"><a name="line1351"></a>1351             def #{op}(other)
+</span><span class="inferred0"><a name="line1352"></a>1352                 ilist = self.class.new
+</span><span class="inferred1"><a name="line1353"></a>1353                 begin
+</span><span class="inferred0"><a name="line1354"></a>1354                     a = other #{op} @images
+</span><span class="inferred1"><a name="line1355"></a>1355                 rescue TypeError
+</span><span class="inferred0"><a name="line1356"></a>1356                     Kernel.raise ArgumentError, &quot;Magick::ImageList expected, got &quot; + other.class.to_s
+</span><span class="inferred1"><a name="line1357"></a>1357                 end
+</span><span class="inferred0"><a name="line1358"></a>1358                 current = get_current()
+</span><span class="inferred1"><a name="line1359"></a>1359                 a.each do |image|
+</span><span class="inferred0"><a name="line1360"></a>1360                     is_an_image image
+</span><span class="inferred1"><a name="line1361"></a>1361                     ilist &lt;&lt; image
+</span><span class="inferred0"><a name="line1362"></a>1362                 end
+</span><span class="inferred1"><a name="line1363"></a>1363                 ilist.set_current current
+</span><span class="inferred0"><a name="line1364"></a>1364                 return ilist
+</span><span class="inferred1"><a name="line1365"></a>1365             end
+</span><span class="inferred0"><a name="line1366"></a>1366         END_BINOPS
+</span><span class="inferred1"><a name="line1367"></a>1367     end
+</span><span class="inferred0"><a name="line1368"></a>1368 
+</span><span class="marked1"><a name="line1369"></a>1369     def *(n)
+</span><span class="uncovered0"><a name="line1370"></a>1370         unless n.kind_of? Integer
+</span><span class="uncovered1"><a name="line1371"></a>1371             Kernel.raise ArgumentError, &quot;Integer required (#{n.class} given)&quot;
+</span><span class="uncovered0"><a name="line1372"></a>1372         end
+</span><span class="uncovered1"><a name="line1373"></a>1373         current = get_current()
+</span><span class="uncovered0"><a name="line1374"></a>1374         ilist = self.class.new
+</span><span class="uncovered1"><a name="line1375"></a>1375         (@images * n).each {|image| ilist &lt;&lt; image}
+</span><span class="uncovered0"><a name="line1376"></a>1376         ilist.set_current current
+</span><span class="uncovered1"><a name="line1377"></a>1377         return ilist
+</span><span class="uncovered0"><a name="line1378"></a>1378     end
+</span><span class="inferred1"><a name="line1379"></a>1379 
+</span><span class="marked0"><a name="line1380"></a>1380     def &lt;&lt;(obj)
+</span><span class="uncovered1"><a name="line1381"></a>1381         is_an_image obj
+</span><span class="uncovered0"><a name="line1382"></a>1382         @images &lt;&lt; obj
+</span><span class="uncovered1"><a name="line1383"></a>1383         @scene = @images.length - 1
+</span><span class="uncovered0"><a name="line1384"></a>1384         self
+</span><span class="uncovered1"><a name="line1385"></a>1385     end
+</span><span class="inferred0"><a name="line1386"></a>1386 
+</span><span class="inferred1"><a name="line1387"></a>1387     # Compare ImageLists
+</span><span class="inferred0"><a name="line1388"></a>1388     # Compare each image in turn until the result of a comparison
+</span><span class="inferred1"><a name="line1389"></a>1389     # is not 0. If all comparisons return 0, then
+</span><span class="inferred0"><a name="line1390"></a>1390     #   return if A.scene != B.scene
+</span><span class="inferred1"><a name="line1391"></a>1391     #   return A.length &lt;=&gt; B.length
+</span><span class="marked0"><a name="line1392"></a>1392     def &lt;=&gt;(other)
+</span><span class="uncovered1"><a name="line1393"></a>1393         unless other.kind_of? self.class
+</span><span class="uncovered0"><a name="line1394"></a>1394            Kernel.raise TypeError, &quot;#{self.class} required (#{other.class} given)&quot;
+</span><span class="uncovered1"><a name="line1395"></a>1395         end
+</span><span class="uncovered0"><a name="line1396"></a>1396         size = [self.length, other.length].min
+</span><span class="uncovered1"><a name="line1397"></a>1397         size.times do |x|
+</span><span class="uncovered0"><a name="line1398"></a>1398             r = self[x] &lt;=&gt; other[x]
+</span><span class="uncovered1"><a name="line1399"></a>1399             return r unless r == 0
+</span><span class="uncovered0"><a name="line1400"></a>1400         end
+</span><span class="uncovered1"><a name="line1401"></a>1401         if @scene.nil? &amp;&amp; other.scene.nil?
+</span><span class="uncovered0"><a name="line1402"></a>1402             return 0
+</span><span class="uncovered1"><a name="line1403"></a>1403         elsif @scene.nil? &amp;&amp; ! other.scene.nil?
+</span><span class="uncovered0"><a name="line1404"></a>1404             Kernel.raise TypeError, &quot;cannot convert nil into #{other.scene.class}&quot;
+</span><span class="uncovered1"><a name="line1405"></a>1405         elsif ! @scene.nil? &amp;&amp; other.scene.nil?
+</span><span class="uncovered0"><a name="line1406"></a>1406             Kernel.raise TypeError, &quot;cannot convert nil into #{self.scene.class}&quot;
+</span><span class="uncovered1"><a name="line1407"></a>1407         end
+</span><span class="uncovered0"><a name="line1408"></a>1408         r = self.scene &lt;=&gt; other.scene
+</span><span class="uncovered1"><a name="line1409"></a>1409         return r unless r == 0
+</span><span class="uncovered0"><a name="line1410"></a>1410         return self.length &lt;=&gt; other.length
+</span><span class="uncovered1"><a name="line1411"></a>1411     end
+</span><span class="inferred0"><a name="line1412"></a>1412 
+</span><span class="marked1"><a name="line1413"></a>1413     def [](*args)
+</span><span class="uncovered0"><a name="line1414"></a>1414         a = @images[*args]
+</span><span class="uncovered1"><a name="line1415"></a>1415         if a.respond_to?(:each) then
+</span><span class="uncovered0"><a name="line1416"></a>1416             ilist = self.class.new
+</span><span class="uncovered1"><a name="line1417"></a>1417             a.each {|image| ilist &lt;&lt; image}
+</span><span class="uncovered0"><a name="line1418"></a>1418             a = ilist
+</span><span class="uncovered1"><a name="line1419"></a>1419         end
+</span><span class="uncovered0"><a name="line1420"></a>1420         return a
+</span><span class="uncovered1"><a name="line1421"></a>1421     end
+</span><span class="inferred0"><a name="line1422"></a>1422 
+</span><span class="marked1"><a name="line1423"></a>1423     def []=(*args)
+</span><span class="uncovered0"><a name="line1424"></a>1424         obj = @images.[]=(*args)
+</span><span class="uncovered1"><a name="line1425"></a>1425         if obj &amp;&amp; obj.respond_to?(:each) then
+</span><span class="uncovered0"><a name="line1426"></a>1426             is_an_image_array(obj)
+</span><span class="uncovered1"><a name="line1427"></a>1427             set_current obj.last.__id__
+</span><span class="uncovered0"><a name="line1428"></a>1428         elsif obj
+</span><span class="uncovered1"><a name="line1429"></a>1429             is_an_image(obj)
+</span><span class="uncovered0"><a name="line1430"></a>1430             set_current obj.__id__
+</span><span class="uncovered1"><a name="line1431"></a>1431         else
+</span><span class="uncovered0"><a name="line1432"></a>1432             set_current nil
+</span><span class="uncovered1"><a name="line1433"></a>1433         end
+</span><span class="uncovered0"><a name="line1434"></a>1434         return obj
+</span><span class="uncovered1"><a name="line1435"></a>1435     end
+</span><span class="inferred0"><a name="line1436"></a>1436 
+</span><span class="marked1"><a name="line1437"></a>1437     [:at, :each, :each_index, :empty?, :fetch,
+</span><span class="inferred0"><a name="line1438"></a>1438      :first, :hash, :include?, :index, :length, :rindex, :sort!].each do |mth|
+</span><span class="marked1"><a name="line1439"></a>1439         module_eval &lt;&lt;-END_SIMPLE_DELEGATES
+</span><span class="inferred0"><a name="line1440"></a>1440             def #{mth}(*args, &amp;block)
+</span><span class="inferred1"><a name="line1441"></a>1441                 @images.#{mth}(*args, &amp;block)
+</span><span class="inferred0"><a name="line1442"></a>1442             end
+</span><span class="inferred1"><a name="line1443"></a>1443         END_SIMPLE_DELEGATES
+</span><span class="inferred0"><a name="line1444"></a>1444     end
+</span><span class="marked1"><a name="line1445"></a>1445     alias_method :size, :length
+</span><span class="inferred0"><a name="line1446"></a>1446 
+</span><span class="inferred1"><a name="line1447"></a>1447     # Array#nitems is not available in 1.9
+</span><span class="marked0"><a name="line1448"></a>1448     if Array.instance_methods.include?(&quot;nitems&quot;)
+</span><span class="marked1"><a name="line1449"></a>1449        def nitems()
+</span><span class="uncovered0"><a name="line1450"></a>1450           @images.nitems()
+</span><span class="uncovered1"><a name="line1451"></a>1451        end
+</span><span class="uncovered0"><a name="line1452"></a>1452     end
+</span><span class="inferred1"><a name="line1453"></a>1453 
+</span><span class="marked0"><a name="line1454"></a>1454     def clear
+</span><span class="uncovered1"><a name="line1455"></a>1455         @scene = nil
+</span><span class="uncovered0"><a name="line1456"></a>1456         @images.clear
+</span><span class="uncovered1"><a name="line1457"></a>1457     end
+</span><span class="inferred0"><a name="line1458"></a>1458 
+</span><span class="marked1"><a name="line1459"></a>1459     def clone
+</span><span class="uncovered0"><a name="line1460"></a>1460         ditto = dup
+</span><span class="uncovered1"><a name="line1461"></a>1461         ditto.freeze if frozen?
+</span><span class="uncovered0"><a name="line1462"></a>1462         return ditto
+</span><span class="uncovered1"><a name="line1463"></a>1463     end
+</span><span class="inferred0"><a name="line1464"></a>1464 
+</span><span class="inferred1"><a name="line1465"></a>1465     # override Enumerable#collect
+</span><span class="marked0"><a name="line1466"></a>1466     def collect(&amp;block)
+</span><span class="uncovered1"><a name="line1467"></a>1467         current = get_current()
+</span><span class="uncovered0"><a name="line1468"></a>1468         a = @images.collect(&amp;block)
+</span><span class="uncovered1"><a name="line1469"></a>1469         ilist = self.class.new
+</span><span class="uncovered0"><a name="line1470"></a>1470         a.each {|image| ilist &lt;&lt; image}
+</span><span class="uncovered1"><a name="line1471"></a>1471         ilist.set_current current
+</span><span class="uncovered0"><a name="line1472"></a>1472         return ilist
+</span><span class="uncovered1"><a name="line1473"></a>1473     end
+</span><span class="inferred0"><a name="line1474"></a>1474 
+</span><span class="marked1"><a name="line1475"></a>1475     def collect!(&amp;block)
+</span><span class="uncovered0"><a name="line1476"></a>1476         @images.collect!(&amp;block)
+</span><span class="uncovered1"><a name="line1477"></a>1477         is_an_image_array @images
+</span><span class="uncovered0"><a name="line1478"></a>1478         self
+</span><span class="uncovered1"><a name="line1479"></a>1479     end
+</span><span class="inferred0"><a name="line1480"></a>1480 
+</span><span class="inferred1"><a name="line1481"></a>1481     # Make a deep copy
+</span><span class="marked0"><a name="line1482"></a>1482     def copy
+</span><span class="uncovered1"><a name="line1483"></a>1483         ditto = self.class.new
+</span><span class="uncovered0"><a name="line1484"></a>1484         @images.each { |f| ditto &lt;&lt; f.copy }
+</span><span class="uncovered1"><a name="line1485"></a>1485         ditto.scene = @scene
+</span><span class="uncovered0"><a name="line1486"></a>1486         ditto.taint if tainted?
+</span><span class="uncovered1"><a name="line1487"></a>1487         return ditto
+</span><span class="uncovered0"><a name="line1488"></a>1488     end
+</span><span class="inferred1"><a name="line1489"></a>1489 
+</span><span class="inferred0"><a name="line1490"></a>1490     # Return the current image
+</span><span class="marked1"><a name="line1491"></a>1491     def cur_image
+</span><span class="uncovered0"><a name="line1492"></a>1492         if ! @scene
+</span><span class="uncovered1"><a name="line1493"></a>1493             Kernel.raise IndexError, &quot;no images in this list&quot;
+</span><span class="uncovered0"><a name="line1494"></a>1494         end
+</span><span class="uncovered1"><a name="line1495"></a>1495         @images[@scene]
+</span><span class="uncovered0"><a name="line1496"></a>1496     end
+</span><span class="inferred1"><a name="line1497"></a>1497 
+</span><span class="inferred0"><a name="line1498"></a>1498     # ImageList#map took over the &quot;map&quot; name. Use alternatives.
+</span><span class="marked1"><a name="line1499"></a>1499     alias_method :__map__, :collect
+</span><span class="marked0"><a name="line1500"></a>1500     alias_method :map!, :collect!
+</span><span class="marked1"><a name="line1501"></a>1501     alias_method :__map__!, :collect!
+</span><span class="inferred0"><a name="line1502"></a>1502 
+</span><span class="inferred1"><a name="line1503"></a>1503     # ImageMagic used affinity in 6.4.3, switch to remap in 6.4.4.
+</span><span class="marked0"><a name="line1504"></a>1504     alias_method :affinity, :remap
+</span><span class="inferred1"><a name="line1505"></a>1505 
+</span><span class="marked0"><a name="line1506"></a>1506     def compact
+</span><span class="uncovered1"><a name="line1507"></a>1507         current = get_current()
+</span><span class="uncovered0"><a name="line1508"></a>1508         ilist = self.class.new
+</span><span class="uncovered1"><a name="line1509"></a>1509         a = @images.compact
+</span><span class="uncovered0"><a name="line1510"></a>1510         a.each {|image| ilist &lt;&lt; image}
+</span><span class="uncovered1"><a name="line1511"></a>1511         ilist.set_current current
+</span><span class="uncovered0"><a name="line1512"></a>1512         return ilist
+</span><span class="uncovered1"><a name="line1513"></a>1513     end
+</span><span class="inferred0"><a name="line1514"></a>1514 
+</span><span class="marked1"><a name="line1515"></a>1515     def compact!
+</span><span class="uncovered0"><a name="line1516"></a>1516         current = get_current()
+</span><span class="uncovered1"><a name="line1517"></a>1517         a = @images.compact!    # returns nil if no changes were made
+</span><span class="uncovered0"><a name="line1518"></a>1518         set_current current
+</span><span class="uncovered1"><a name="line1519"></a>1519         return a.nil? ? nil : self
+</span><span class="uncovered0"><a name="line1520"></a>1520     end
+</span><span class="inferred1"><a name="line1521"></a>1521 
+</span><span class="marked0"><a name="line1522"></a>1522     def concat(other)
+</span><span class="uncovered1"><a name="line1523"></a>1523         is_an_image_array other
+</span><span class="uncovered0"><a name="line1524"></a>1524         other.each {|image| @images &lt;&lt; image}
+</span><span class="uncovered1"><a name="line1525"></a>1525         @scene = length-1
+</span><span class="uncovered0"><a name="line1526"></a>1526         return self
+</span><span class="uncovered1"><a name="line1527"></a>1527     end
+</span><span class="inferred0"><a name="line1528"></a>1528 
+</span><span class="inferred1"><a name="line1529"></a>1529     # Set same delay for all images
+</span><span class="marked0"><a name="line1530"></a>1530     def delay=(d)
+</span><span class="uncovered1"><a name="line1531"></a>1531         if Integer(d) &lt; 0
+</span><span class="uncovered0"><a name="line1532"></a>1532             raise ArgumentError, &quot;delay must be greater than or equal to 0&quot;
+</span><span class="uncovered1"><a name="line1533"></a>1533         end
+</span><span class="uncovered0"><a name="line1534"></a>1534         @images.each { |f| f.delay = Integer(d) }
+</span><span class="uncovered1"><a name="line1535"></a>1535     end
+</span><span class="inferred0"><a name="line1536"></a>1536 
+</span><span class="marked1"><a name="line1537"></a>1537     def delete(obj, &amp;block)
+</span><span class="uncovered0"><a name="line1538"></a>1538         is_an_image obj
+</span><span class="uncovered1"><a name="line1539"></a>1539         current = get_current()
+</span><span class="uncovered0"><a name="line1540"></a>1540         a = @images.delete(obj, &amp;block)
+</span><span class="uncovered1"><a name="line1541"></a>1541         set_current current
+</span><span class="uncovered0"><a name="line1542"></a>1542         return a
+</span><span class="uncovered1"><a name="line1543"></a>1543     end
+</span><span class="inferred0"><a name="line1544"></a>1544 
+</span><span class="marked1"><a name="line1545"></a>1545     def delete_at(ndx)
+</span><span class="uncovered0"><a name="line1546"></a>1546         current = get_current()
+</span><span class="uncovered1"><a name="line1547"></a>1547         a = @images.delete_at(ndx)
+</span><span class="uncovered0"><a name="line1548"></a>1548         set_current current
+</span><span class="uncovered1"><a name="line1549"></a>1549         return a
+</span><span class="uncovered0"><a name="line1550"></a>1550     end
+</span><span class="inferred1"><a name="line1551"></a>1551 
+</span><span class="marked0"><a name="line1552"></a>1552     def delete_if(&amp;block)
+</span><span class="uncovered1"><a name="line1553"></a>1553         current = get_current()
+</span><span class="uncovered0"><a name="line1554"></a>1554         @images.delete_if(&amp;block)
+</span><span class="uncovered1"><a name="line1555"></a>1555         set_current current
+</span><span class="uncovered0"><a name="line1556"></a>1556         self
+</span><span class="uncovered1"><a name="line1557"></a>1557     end
+</span><span class="inferred0"><a name="line1558"></a>1558 
+</span><span class="marked1"><a name="line1559"></a>1559     def dup
+</span><span class="uncovered0"><a name="line1560"></a>1560         ditto = self.class.new
+</span><span class="uncovered1"><a name="line1561"></a>1561         @images.each {|img| ditto &lt;&lt; img}
+</span><span class="uncovered0"><a name="line1562"></a>1562         ditto.scene = @scene
+</span><span class="uncovered1"><a name="line1563"></a>1563         ditto.taint if tainted?
+</span><span class="uncovered0"><a name="line1564"></a>1564         return ditto
+</span><span class="uncovered1"><a name="line1565"></a>1565     end
+</span><span class="inferred0"><a name="line1566"></a>1566 
+</span><span class="marked1"><a name="line1567"></a>1567     def eql?(other)
+</span><span class="uncovered0"><a name="line1568"></a>1568       is_an_image_array other
+</span><span class="uncovered1"><a name="line1569"></a>1569       eql = other.eql?(@images)
+</span><span class="uncovered0"><a name="line1570"></a>1570       begin # &quot;other&quot; is another ImageList
+</span><span class="uncovered1"><a name="line1571"></a>1571         eql &amp;&amp;= @scene == other.scene
+</span><span class="uncovered0"><a name="line1572"></a>1572       rescue NoMethodError
+</span><span class="uncovered1"><a name="line1573"></a>1573         # &quot;other&quot; is a plain Array
+</span><span class="uncovered0"><a name="line1574"></a>1574       end
+</span><span class="uncovered1"><a name="line1575"></a>1575       return eql
+</span><span class="uncovered0"><a name="line1576"></a>1576     end
+</span><span class="inferred1"><a name="line1577"></a>1577 
+</span><span class="marked0"><a name="line1578"></a>1578     def fill(*args, &amp;block)
+</span><span class="uncovered1"><a name="line1579"></a>1579         is_an_image args[0] unless block_given?
+</span><span class="uncovered0"><a name="line1580"></a>1580         current = get_current()
+</span><span class="uncovered1"><a name="line1581"></a>1581         @images.fill(*args, &amp;block)
+</span><span class="uncovered0"><a name="line1582"></a>1582         is_an_image_array self
+</span><span class="uncovered1"><a name="line1583"></a>1583         set_current current
+</span><span class="uncovered0"><a name="line1584"></a>1584         self
+</span><span class="uncovered1"><a name="line1585"></a>1585     end
+</span><span class="inferred0"><a name="line1586"></a>1586 
+</span><span class="inferred1"><a name="line1587"></a>1587     # Override Enumerable's find_all
+</span><span class="marked0"><a name="line1588"></a>1588     def find_all(&amp;block)
+</span><span class="uncovered1"><a name="line1589"></a>1589         current = get_current()
+</span><span class="uncovered0"><a name="line1590"></a>1590         a = @images.find_all(&amp;block)
+</span><span class="uncovered1"><a name="line1591"></a>1591         ilist = self.class.new
+</span><span class="uncovered0"><a name="line1592"></a>1592         a.each {|image| ilist &lt;&lt; image}
+</span><span class="uncovered1"><a name="line1593"></a>1593         ilist.set_current current
+</span><span class="uncovered0"><a name="line1594"></a>1594         return ilist
+</span><span class="uncovered1"><a name="line1595"></a>1595     end
+</span><span class="marked0"><a name="line1596"></a>1596     alias_method :select, :find_all
+</span><span class="inferred1"><a name="line1597"></a>1597 
+</span><span class="marked0"><a name="line1598"></a>1598     def from_blob(*blobs, &amp;block)
+</span><span class="uncovered1"><a name="line1599"></a>1599         if (blobs.length == 0)
+</span><span class="uncovered0"><a name="line1600"></a>1600             Kernel.raise ArgumentError, &quot;no blobs given&quot;
+</span><span class="uncovered1"><a name="line1601"></a>1601         end
+</span><span class="uncovered0"><a name="line1602"></a>1602         blobs.each { |b|
+</span><span class="uncovered1"><a name="line1603"></a>1603             Magick::Image.from_blob(b, &amp;block).each { |n| @images &lt;&lt; n  }
+</span><span class="uncovered0"><a name="line1604"></a>1604             }
+</span><span class="uncovered1"><a name="line1605"></a>1605         @scene = length - 1
+</span><span class="uncovered0"><a name="line1606"></a>1606         self
+</span><span class="uncovered1"><a name="line1607"></a>1607     end
+</span><span class="inferred0"><a name="line1608"></a>1608 
+</span><span class="inferred1"><a name="line1609"></a>1609     # Initialize new instances
+</span><span class="marked0"><a name="line1610"></a>1610     def initialize(*filenames, &amp;block)
+</span><span class="uncovered1"><a name="line1611"></a>1611         @images = []
+</span><span class="uncovered0"><a name="line1612"></a>1612         @scene = nil
+</span><span class="uncovered1"><a name="line1613"></a>1613         filenames.each { |f|
+</span><span class="uncovered0"><a name="line1614"></a>1614             Magick::Image.read(f, &amp;block).each { |n| @images &lt;&lt; n }
+</span><span class="uncovered1"><a name="line1615"></a>1615             }
+</span><span class="uncovered0"><a name="line1616"></a>1616         if length &gt; 0
+</span><span class="uncovered1"><a name="line1617"></a>1617             @scene = length - 1     # last image in array
+</span><span class="uncovered0"><a name="line1618"></a>1618         end
+</span><span class="uncovered1"><a name="line1619"></a>1619         self
+</span><span class="uncovered0"><a name="line1620"></a>1620     end
+</span><span class="inferred1"><a name="line1621"></a>1621 
+</span><span class="marked0"><a name="line1622"></a>1622     def insert(index, *args)
+</span><span class="uncovered1"><a name="line1623"></a>1623         args.each {|image| is_an_image image}
+</span><span class="uncovered0"><a name="line1624"></a>1624         current = get_current()
+</span><span class="uncovered1"><a name="line1625"></a>1625         @images.insert(index, *args)
+</span><span class="uncovered0"><a name="line1626"></a>1626         set_current current
+</span><span class="uncovered1"><a name="line1627"></a>1627         return self
+</span><span class="uncovered0"><a name="line1628"></a>1628     end
+</span><span class="inferred1"><a name="line1629"></a>1629 
+</span><span class="inferred0"><a name="line1630"></a>1630     # Call inspect for all the images
+</span><span class="marked1"><a name="line1631"></a>1631     def inspect
+</span><span class="uncovered0"><a name="line1632"></a>1632         img = []
+</span><span class="uncovered1"><a name="line1633"></a>1633         @images.each {|image| img &lt;&lt; image.inspect }
+</span><span class="uncovered0"><a name="line1634"></a>1634         img = &quot;[&quot; + img.join(&quot;,\n&quot;) + &quot;]\nscene=#{@scene}&quot;
+</span><span class="uncovered1"><a name="line1635"></a>1635     end
+</span><span class="inferred0"><a name="line1636"></a>1636 
+</span><span class="inferred1"><a name="line1637"></a>1637     # Set the number of iterations of an animated GIF
+</span><span class="marked0"><a name="line1638"></a>1638     def iterations=(n)
+</span><span class="uncovered1"><a name="line1639"></a>1639         n = Integer(n)
+</span><span class="uncovered0"><a name="line1640"></a>1640         if n &lt; 0 || n &gt; 65535
+</span><span class="uncovered1"><a name="line1641"></a>1641             Kernel.raise ArgumentError, &quot;iterations must be between 0 and 65535&quot;
+</span><span class="uncovered0"><a name="line1642"></a>1642         end
+</span><span class="uncovered1"><a name="line1643"></a>1643         @images.each {|f| f.iterations=n}
+</span><span class="uncovered0"><a name="line1644"></a>1644         self
+</span><span class="uncovered1"><a name="line1645"></a>1645     end
+</span><span class="inferred0"><a name="line1646"></a>1646 
+</span><span class="marked1"><a name="line1647"></a>1647     def last(*args)
+</span><span class="uncovered0"><a name="line1648"></a>1648         if args.length == 0
+</span><span class="uncovered1"><a name="line1649"></a>1649           a = @images.last
+</span><span class="uncovered0"><a name="line1650"></a>1650         else
+</span><span class="uncovered1"><a name="line1651"></a>1651           a = @images.last(*args)
+</span><span class="uncovered0"><a name="line1652"></a>1652           ilist = self.class.new
+</span><span class="uncovered1"><a name="line1653"></a>1653           a.each {|img| ilist &lt;&lt; img}
+</span><span class="uncovered0"><a name="line1654"></a>1654           @scene = a.length - 1
+</span><span class="uncovered1"><a name="line1655"></a>1655           a = ilist
+</span><span class="uncovered0"><a name="line1656"></a>1656         end
+</span><span class="uncovered1"><a name="line1657"></a>1657         return a
+</span><span class="uncovered0"><a name="line1658"></a>1658     end
+</span><span class="inferred1"><a name="line1659"></a>1659 
+</span><span class="inferred0"><a name="line1660"></a>1660     # Custom marshal/unmarshal for Ruby 1.8.
+</span><span class="marked1"><a name="line1661"></a>1661     def marshal_dump()
+</span><span class="uncovered0"><a name="line1662"></a>1662        ary = [@scene]
+</span><span class="uncovered1"><a name="line1663"></a>1663        @images.each {|i| ary &lt;&lt; Marshal.dump(i)}
+</span><span class="uncovered0"><a name="line1664"></a>1664        ary
+</span><span class="uncovered1"><a name="line1665"></a>1665     end
+</span><span class="inferred0"><a name="line1666"></a>1666 
+</span><span class="marked1"><a name="line1667"></a>1667     def marshal_load(ary)
+</span><span class="uncovered0"><a name="line1668"></a>1668        @scene = ary.shift
+</span><span class="uncovered1"><a name="line1669"></a>1669        @images = []
+</span><span class="uncovered0"><a name="line1670"></a>1670        ary.each {|a| @images &lt;&lt; Marshal.load(a)}
+</span><span class="uncovered1"><a name="line1671"></a>1671     end
+</span><span class="inferred0"><a name="line1672"></a>1672 
+</span><span class="inferred1"><a name="line1673"></a>1673     # The ImageList class supports the Magick::Image class methods by simply sending
+</span><span class="inferred0"><a name="line1674"></a>1674     # the method to the current image. If the method isn't explicitly supported,
+</span><span class="inferred1"><a name="line1675"></a>1675     # send it to the current image in the array. If there are no images, send
+</span><span class="inferred0"><a name="line1676"></a>1676     # it up the line. Catch a NameError and emit a useful message.
+</span><span class="marked1"><a name="line1677"></a>1677     def method_missing(methID, *args, &amp;block)
+</span><span class="uncovered0"><a name="line1678"></a>1678         begin
+</span><span class="uncovered1"><a name="line1679"></a>1679             if @scene
+</span><span class="uncovered0"><a name="line1680"></a>1680                 @images[@scene].send(methID, *args, &amp;block)
+</span><span class="uncovered1"><a name="line1681"></a>1681             else
+</span><span class="uncovered0"><a name="line1682"></a>1682                 super
+</span><span class="uncovered1"><a name="line1683"></a>1683             end
+</span><span class="uncovered0"><a name="line1684"></a>1684         rescue NoMethodError
+</span><span class="uncovered1"><a name="line1685"></a>1685           Kernel.raise NoMethodError, &quot;undefined method `#{methID.id2name}' for #{self.class}&quot;
+</span><span class="uncovered0"><a name="line1686"></a>1686         rescue Exception
+</span><span class="uncovered1"><a name="line1687"></a>1687             $@.delete_if { |s| /:in `send'$/.match(s) || /:in `method_missing'$/.match(s) }
+</span><span class="uncovered0"><a name="line1688"></a>1688             Kernel.raise
+</span><span class="uncovered1"><a name="line1689"></a>1689         end
+</span><span class="uncovered0"><a name="line1690"></a>1690     end
+</span><span class="inferred1"><a name="line1691"></a>1691 
+</span><span class="inferred0"><a name="line1692"></a>1692     # Create a new image and add it to the end
+</span><span class="marked1"><a name="line1693"></a>1693     def new_image(cols, rows, *fill, &amp;info_blk)
+</span><span class="uncovered0"><a name="line1694"></a>1694         self &lt;&lt; Magick::Image.new(cols, rows, *fill, &amp;info_blk)
+</span><span class="uncovered1"><a name="line1695"></a>1695     end
+</span><span class="inferred0"><a name="line1696"></a>1696 
+</span><span class="marked1"><a name="line1697"></a>1697     def partition(&amp;block)
+</span><span class="uncovered0"><a name="line1698"></a>1698       a = @images.partition(&amp;block)
+</span><span class="uncovered1"><a name="line1699"></a>1699       t = self.class.new
+</span><span class="uncovered0"><a name="line1700"></a>1700       a[0].each { |img| t &lt;&lt; img}
+</span><span class="uncovered1"><a name="line1701"></a>1701       t.set_current nil
+</span><span class="uncovered0"><a name="line1702"></a>1702       f = self.class.new
+</span><span class="uncovered1"><a name="line1703"></a>1703       a[1].each { |img| f &lt;&lt; img}
+</span><span class="uncovered0"><a name="line1704"></a>1704       f.set_current nil
+</span><span class="uncovered1"><a name="line1705"></a>1705       [t, f]
+</span><span class="uncovered0"><a name="line1706"></a>1706     end
+</span><span class="inferred1"><a name="line1707"></a>1707 
+</span><span class="inferred0"><a name="line1708"></a>1708     # Ping files and concatenate the new images
+</span><span class="marked1"><a name="line1709"></a>1709     def ping(*files, &amp;block)
+</span><span class="uncovered0"><a name="line1710"></a>1710         if (files.length == 0)
+</span><span class="uncovered1"><a name="line1711"></a>1711             Kernel.raise ArgumentError, &quot;no files given&quot;
+</span><span class="uncovered0"><a name="line1712"></a>1712         end
+</span><span class="uncovered1"><a name="line1713"></a>1713         files.each { |f|
+</span><span class="uncovered0"><a name="line1714"></a>1714             Magick::Image.ping(f, &amp;block).each { |n| @images &lt;&lt; n }
+</span><span class="uncovered1"><a name="line1715"></a>1715             }
+</span><span class="uncovered0"><a name="line1716"></a>1716         @scene = length - 1
+</span><span class="uncovered1"><a name="line1717"></a>1717         self
+</span><span class="uncovered0"><a name="line1718"></a>1718     end
+</span><span class="inferred1"><a name="line1719"></a>1719 
+</span><span class="marked0"><a name="line1720"></a>1720     def pop
+</span><span class="uncovered1"><a name="line1721"></a>1721         current = get_current()
+</span><span class="uncovered0"><a name="line1722"></a>1722         a = @images.pop       # can return nil
+</span><span class="uncovered1"><a name="line1723"></a>1723         set_current current
+</span><span class="uncovered0"><a name="line1724"></a>1724         return a
+</span><span class="uncovered1"><a name="line1725"></a>1725     end
+</span><span class="inferred0"><a name="line1726"></a>1726 
+</span><span class="marked1"><a name="line1727"></a>1727     def push(*objs)
+</span><span class="uncovered0"><a name="line1728"></a>1728         objs.each do |image|
+</span><span class="uncovered1"><a name="line1729"></a>1729             is_an_image image
+</span><span class="uncovered0"><a name="line1730"></a>1730             @images &lt;&lt; image
+</span><span class="uncovered1"><a name="line1731"></a>1731         end
+</span><span class="uncovered0"><a name="line1732"></a>1732         @scene = length - 1
+</span><span class="uncovered1"><a name="line1733"></a>1733         self
+</span><span class="uncovered0"><a name="line1734"></a>1734     end
+</span><span class="inferred1"><a name="line1735"></a>1735 
+</span><span class="inferred0"><a name="line1736"></a>1736     # Read files and concatenate the new images
+</span><span class="marked1"><a name="line1737"></a>1737     def read(*files, &amp;block)
+</span><span class="uncovered0"><a name="line1738"></a>1738         if (files.length == 0)
+</span><span class="uncovered1"><a name="line1739"></a>1739             Kernel.raise ArgumentError, &quot;no files given&quot;
+</span><span class="uncovered0"><a name="line1740"></a>1740         end
+</span><span class="uncovered1"><a name="line1741"></a>1741         files.each { |f|
+</span><span class="uncovered0"><a name="line1742"></a>1742             Magick::Image.read(f, &amp;block).each { |n| @images &lt;&lt; n }
+</span><span class="uncovered1"><a name="line1743"></a>1743             }
+</span><span class="uncovered0"><a name="line1744"></a>1744         @scene = length - 1
+</span><span class="uncovered1"><a name="line1745"></a>1745         self
+</span><span class="uncovered0"><a name="line1746"></a>1746     end
+</span><span class="inferred1"><a name="line1747"></a>1747 
+</span><span class="inferred0"><a name="line1748"></a>1748     # override Enumerable's reject
+</span><span class="marked1"><a name="line1749"></a>1749     def reject(&amp;block)
+</span><span class="uncovered0"><a name="line1750"></a>1750         current = get_current()
+</span><span class="uncovered1"><a name="line1751"></a>1751         ilist = self.class.new
+</span><span class="uncovered0"><a name="line1752"></a>1752         a = @images.reject(&amp;block)
+</span><span class="uncovered1"><a name="line1753"></a>1753         a.each {|image| ilist &lt;&lt; image}
+</span><span class="uncovered0"><a name="line1754"></a>1754         ilist.set_current current
+</span><span class="uncovered1"><a name="line1755"></a>1755         return ilist
+</span><span class="uncovered0"><a name="line1756"></a>1756     end
+</span><span class="inferred1"><a name="line1757"></a>1757 
+</span><span class="marked0"><a name="line1758"></a>1758     def reject!(&amp;block)
+</span><span class="uncovered1"><a name="line1759"></a>1759         current = get_current()
+</span><span class="uncovered0"><a name="line1760"></a>1760         a = @images.reject!(&amp;block)
+</span><span class="uncovered1"><a name="line1761"></a>1761         @images = a if !a.nil?
+</span><span class="uncovered0"><a name="line1762"></a>1762         set_current current
+</span><span class="uncovered1"><a name="line1763"></a>1763         return a.nil? ? nil : self
+</span><span class="uncovered0"><a name="line1764"></a>1764     end
+</span><span class="inferred1"><a name="line1765"></a>1765 
+</span><span class="marked0"><a name="line1766"></a>1766     def replace(other)
+</span><span class="uncovered1"><a name="line1767"></a>1767         is_an_image_array other
+</span><span class="uncovered0"><a name="line1768"></a>1768         current = get_current()
+</span><span class="uncovered1"><a name="line1769"></a>1769         @images.clear
+</span><span class="uncovered0"><a name="line1770"></a>1770         other.each {|image| @images &lt;&lt; image}
+</span><span class="uncovered1"><a name="line1771"></a>1771         @scene = self.length == 0 ? nil : 0
+</span><span class="uncovered0"><a name="line1772"></a>1772         set_current current
+</span><span class="uncovered1"><a name="line1773"></a>1773         self
+</span><span class="uncovered0"><a name="line1774"></a>1774     end
+</span><span class="inferred1"><a name="line1775"></a>1775 
+</span><span class="inferred0"><a name="line1776"></a>1776     # Ensure respond_to? answers correctly when we are delegating to Image
+</span><span class="marked1"><a name="line1777"></a>1777     alias_method :__respond_to__?, :respond_to?
+</span><span class="marked0"><a name="line1778"></a>1778     def respond_to?(methID, priv=false)
+</span><span class="uncovered1"><a name="line1779"></a>1779         return true if __respond_to__?(methID, priv)
+</span><span class="uncovered0"><a name="line1780"></a>1780         if @scene
+</span><span class="uncovered1"><a name="line1781"></a>1781             @images[@scene].respond_to?(methID, priv)
+</span><span class="uncovered0"><a name="line1782"></a>1782         else
+</span><span class="uncovered1"><a name="line1783"></a>1783             super
+</span><span class="uncovered0"><a name="line1784"></a>1784         end
+</span><span class="uncovered1"><a name="line1785"></a>1785     end
+</span><span class="inferred0"><a name="line1786"></a>1786 
+</span><span class="marked1"><a name="line1787"></a>1787     def reverse
+</span><span class="uncovered0"><a name="line1788"></a>1788         current = get_current()
+</span><span class="uncovered1"><a name="line1789"></a>1789         a = self.class.new
+</span><span class="uncovered0"><a name="line1790"></a>1790         @images.reverse_each {|image| a &lt;&lt; image}
+</span><span class="uncovered1"><a name="line1791"></a>1791         a.set_current current
+</span><span class="uncovered0"><a name="line1792"></a>1792         return a
+</span><span class="uncovered1"><a name="line1793"></a>1793     end
+</span><span class="inferred0"><a name="line1794"></a>1794 
+</span><span class="marked1"><a name="line1795"></a>1795     def reverse!
+</span><span class="uncovered0"><a name="line1796"></a>1796         current = get_current()
+</span><span class="uncovered1"><a name="line1797"></a>1797         @images.reverse!
+</span><span class="uncovered0"><a name="line1798"></a>1798         set_current current
+</span><span class="uncovered1"><a name="line1799"></a>1799         self
+</span><span class="uncovered0"><a name="line1800"></a>1800     end
+</span><span class="inferred1"><a name="line1801"></a>1801 
+</span><span class="marked0"><a name="line1802"></a>1802     def reverse_each
+</span><span class="uncovered1"><a name="line1803"></a>1803         @images.reverse_each {|image| yield(image)}
+</span><span class="uncovered0"><a name="line1804"></a>1804         self
+</span><span class="uncovered1"><a name="line1805"></a>1805     end
+</span><span class="inferred0"><a name="line1806"></a>1806 
+</span><span class="marked1"><a name="line1807"></a>1807     def shift
+</span><span class="uncovered0"><a name="line1808"></a>1808         current = get_current()
+</span><span class="uncovered1"><a name="line1809"></a>1809         a = @images.shift
+</span><span class="uncovered0"><a name="line1810"></a>1810         set_current current
+</span><span class="uncovered1"><a name="line1811"></a>1811         return a
+</span><span class="uncovered0"><a name="line1812"></a>1812     end
+</span><span class="inferred1"><a name="line1813"></a>1813 
+</span><span class="marked0"><a name="line1814"></a>1814     def slice(*args)
+</span><span class="uncovered1"><a name="line1815"></a>1815         current = get_current()
+</span><span class="uncovered0"><a name="line1816"></a>1816         slice = @images.slice(*args)
+</span><span class="uncovered1"><a name="line1817"></a>1817         if slice
+</span><span class="uncovered0"><a name="line1818"></a>1818             ilist = self.class.new
+</span><span class="uncovered1"><a name="line1819"></a>1819             if slice.respond_to?(:each) then
+</span><span class="uncovered0"><a name="line1820"></a>1820                 slice.each {|image| ilist &lt;&lt; image}
+</span><span class="uncovered1"><a name="line1821"></a>1821             else
+</span><span class="uncovered0"><a name="line1822"></a>1822                 ilist &lt;&lt; slice
+</span><span class="uncovered1"><a name="line1823"></a>1823             end
+</span><span class="uncovered0"><a name="line1824"></a>1824         else
+</span><span class="uncovered1"><a name="line1825"></a>1825             ilist = nil
+</span><span class="uncovered0"><a name="line1826"></a>1826         end
+</span><span class="uncovered1"><a name="line1827"></a>1827         return ilist
+</span><span class="uncovered0"><a name="line1828"></a>1828     end
+</span><span class="inferred1"><a name="line1829"></a>1829 
+</span><span class="marked0"><a name="line1830"></a>1830     def slice!(*args)
+</span><span class="uncovered1"><a name="line1831"></a>1831         current = get_current()
+</span><span class="uncovered0"><a name="line1832"></a>1832         a = @images.slice!(*args)
+</span><span class="uncovered1"><a name="line1833"></a>1833         set_current current
+</span><span class="uncovered0"><a name="line1834"></a>1834         return a
+</span><span class="uncovered1"><a name="line1835"></a>1835     end
+</span><span class="inferred0"><a name="line1836"></a>1836 
+</span><span class="marked1"><a name="line1837"></a>1837     def ticks_per_second=(t)
+</span><span class="uncovered0"><a name="line1838"></a>1838         if Integer(t) &lt; 0
+</span><span class="uncovered1"><a name="line1839"></a>1839             Kernel.raise ArgumentError, &quot;ticks_per_second must be greater than or equal to 0&quot;
+</span><span class="uncovered0"><a name="line1840"></a>1840         end
+</span><span class="uncovered1"><a name="line1841"></a>1841         @images.each { |f| f.ticks_per_second = Integer(t) }
+</span><span class="uncovered0"><a name="line1842"></a>1842     end
+</span><span class="inferred1"><a name="line1843"></a>1843 
+</span><span class="marked0"><a name="line1844"></a>1844     def to_a
+</span><span class="uncovered1"><a name="line1845"></a>1845         a = Array.new
+</span><span class="uncovered0"><a name="line1846"></a>1846         @images.each {|image| a &lt;&lt; image}
+</span><span class="uncovered1"><a name="line1847"></a>1847         return a
+</span><span class="uncovered0"><a name="line1848"></a>1848     end
+</span><span class="inferred1"><a name="line1849"></a>1849 
+</span><span class="marked0"><a name="line1850"></a>1850     def uniq
+</span><span class="uncovered1"><a name="line1851"></a>1851         current = get_current()
+</span><span class="uncovered0"><a name="line1852"></a>1852         a = self.class.new
+</span><span class="uncovered1"><a name="line1853"></a>1853         @images.uniq.each {|image| a &lt;&lt; image}
+</span><span class="uncovered0"><a name="line1854"></a>1854         a.set_current current
+</span><span class="uncovered1"><a name="line1855"></a>1855         return a
+</span><span class="uncovered0"><a name="line1856"></a>1856     end
+</span><span class="inferred1"><a name="line1857"></a>1857 
+</span><span class="marked0"><a name="line1858"></a>1858     def uniq!(*args)
+</span><span class="uncovered1"><a name="line1859"></a>1859         current = get_current()
+</span><span class="uncovered0"><a name="line1860"></a>1860         a = @images.uniq!
+</span><span class="uncovered1"><a name="line1861"></a>1861         set_current current
+</span><span class="uncovered0"><a name="line1862"></a>1862         return a.nil? ? nil : self
+</span><span class="uncovered1"><a name="line1863"></a>1863     end
+</span><span class="inferred0"><a name="line1864"></a>1864 
+</span><span class="inferred1"><a name="line1865"></a>1865     # @scene -&gt; new object
+</span><span class="marked0"><a name="line1866"></a>1866     def unshift(obj)
+</span><span class="uncovered1"><a name="line1867"></a>1867         is_an_image obj
+</span><span class="uncovered0"><a name="line1868"></a>1868         @images.unshift(obj)
+</span><span class="uncovered1"><a name="line1869"></a>1869         @scene = 0
+</span><span class="uncovered0"><a name="line1870"></a>1870         self
+</span><span class="uncovered1"><a name="line1871"></a>1871     end
+</span><span class="inferred0"><a name="line1872"></a>1872 
+</span><span class="marked1"><a name="line1873"></a>1873     def values_at(*args)
+</span><span class="uncovered0"><a name="line1874"></a>1874         a = @images.values_at(*args)
+</span><span class="uncovered1"><a name="line1875"></a>1875         a = self.class.new
+</span><span class="uncovered0"><a name="line1876"></a>1876         @images.values_at(*args).each {|image| a &lt;&lt; image}
+</span><span class="uncovered1"><a name="line1877"></a>1877         a.scene = a.length - 1
+</span><span class="uncovered0"><a name="line1878"></a>1878         return a
+</span><span class="uncovered1"><a name="line1879"></a>1879     end
+</span><span class="marked0"><a name="line1880"></a>1880     alias_method :indexes, :values_at
+</span><span class="marked1"><a name="line1881"></a>1881     alias_method :indices, :values_at
+</span><span class="inferred0"><a name="line1882"></a>1882 
+</span><span class="inferred1"><a name="line1883"></a>1883 end # Magick::ImageList
+</span><span class="inferred0"><a name="line1884"></a>1884 
+</span><span class="inferred1"><a name="line1885"></a>1885 
+</span><span class="inferred0"><a name="line1886"></a>1886 #  Collects non-specific optional method arguments
+</span><span class="marked1"><a name="line1887"></a>1887 class OptionalMethodArguments
+</span><span class="marked0"><a name="line1888"></a>1888     def initialize(img)
+</span><span class="uncovered1"><a name="line1889"></a>1889        @img = img
+</span><span class="uncovered0"><a name="line1890"></a>1890     end
+</span><span class="inferred1"><a name="line1891"></a>1891 
+</span><span class="inferred0"><a name="line1892"></a>1892     # miscellaneous options like -verbose
+</span><span class="marked1"><a name="line1893"></a>1893     def method_missing(mth, val)
+</span><span class="uncovered0"><a name="line1894"></a>1894        @img.define(mth.to_s.tr('_', '-'), val)
+</span><span class="uncovered1"><a name="line1895"></a>1895     end
+</span><span class="inferred0"><a name="line1896"></a>1896 
+</span><span class="inferred1"><a name="line1897"></a>1897     # set(key, val) corresponds to -set option:key val
+</span><span class="marked0"><a name="line1898"></a>1898     def define(key, val = nil)
+</span><span class="uncovered1"><a name="line1899"></a>1899        @img.define(key, val)
+</span><span class="uncovered0"><a name="line1900"></a>1900     end
+</span><span class="inferred1"><a name="line1901"></a>1901 
+</span><span class="inferred0"><a name="line1902"></a>1902     # accepts Pixel object or color name
+</span><span class="marked1"><a name="line1903"></a>1903     def highlight_color=(color)
+</span><span class="uncovered0"><a name="line1904"></a>1904        color = @img.to_color(color) if color.respond_to?(:to_color)
+</span><span class="uncovered1"><a name="line1905"></a>1905        @img.define(&quot;highlight-color&quot;, color)
+</span><span class="uncovered0"><a name="line1906"></a>1906     end
+</span><span class="inferred1"><a name="line1907"></a>1907 
+</span><span class="inferred0"><a name="line1908"></a>1908     # accepts Pixel object or color name
+</span><span class="marked1"><a name="line1909"></a>1909     def lowlight_color=(color)
+</span><span class="uncovered0"><a name="line1910"></a>1910        color = @img.to_color(color) if color.respond_to?(:to_color)
+</span><span class="uncovered1"><a name="line1911"></a>1911        @img.define(&quot;lowlight-color&quot;, color)
+</span><span class="uncovered0"><a name="line1912"></a>1912     end
+</span><span class="uncovered1"><a name="line1913"></a>1913 end
+</span><span class="inferred0"><a name="line1914"></a>1914 
+</span><span class="inferred1"><a name="line1915"></a>1915 
+</span><span class="inferred0"><a name="line1916"></a>1916 # Example fill class. Fills the image with the specified background
+</span><span class="inferred1"><a name="line1917"></a>1917 # color, then crosshatches with the specified crosshatch color.
+</span><span class="inferred0"><a name="line1918"></a>1918 # @dist is the number of pixels between hatch lines.
+</span><span class="inferred1"><a name="line1919"></a>1919 # See Magick::Draw examples.
+</span><span class="marked0"><a name="line1920"></a>1920 class HatchFill
+</span><span class="marked1"><a name="line1921"></a>1921    def initialize(bgcolor, hatchcolor=&quot;white&quot;, dist=10)
+</span><span class="uncovered0"><a name="line1922"></a>1922       @bgcolor = bgcolor
+</span><span class="uncovered1"><a name="line1923"></a>1923       @hatchpixel = Pixel.from_color(hatchcolor)
+</span><span class="uncovered0"><a name="line1924"></a>1924       @dist = dist
+</span><span class="uncovered1"><a name="line1925"></a>1925    end
+</span><span class="inferred0"><a name="line1926"></a>1926 
+</span><span class="marked1"><a name="line1927"></a>1927    def fill(img)                # required
+</span><span class="uncovered0"><a name="line1928"></a>1928       img.background_color = @bgcolor
+</span><span class="uncovered1"><a name="line1929"></a>1929       img.erase!                # sets image to background color
+</span><span class="uncovered0"><a name="line1930"></a>1930       pixels = Array.new([img.rows, img.columns].max, @hatchpixel)
+</span><span class="uncovered1"><a name="line1931"></a>1931       @dist.step((img.columns-1)/@dist*@dist, @dist) { |x|
+</span><span class="uncovered0"><a name="line1932"></a>1932          img.store_pixels(x,0,1,img.rows,pixels)
+</span><span class="uncovered1"><a name="line1933"></a>1933       }
+</span><span class="uncovered0"><a name="line1934"></a>1934       @dist.step((img.rows-1)/@dist*@dist, @dist) { |y|
+</span><span class="uncovered1"><a name="line1935"></a>1935          img.store_pixels(0,y,img.columns,1,pixels)
+</span><span class="uncovered0"><a name="line1936"></a>1936       }
+</span><span class="uncovered1"><a name="line1937"></a>1937    end
+</span><span class="uncovered0"><a name="line1938"></a>1938 end
+</span><span class="uncovered1"><a name="line1939"></a>1939 
+</span><span class="uncovered0"><a name="line1940"></a>1940 end # Magick
+</span><span class="inferred1"><a name="line1941"></a>1941 
+</span></pre><hr/>
+    <p>Generated using the <a href='http://eigenclass.org/hiki.rb?rcov'>rcov code coverage analysis tool for Ruby</a>
+   version 0.8.1.2.</p>
+<p><a href='http://validator.w3.org/check/referer'><img src='http://www.w3.org/Icons/valid-xhtml10' height='31' alt='Valid XHTML 1.0!' width='88'/>
+        </a>
+      <a href='http://jigsaw.w3.org/css-validator/check/referer'><img src='http://jigsaw.w3.org/css-validator/images/vcss' alt='Valid CSS!' style='border:0;width:88px;height:31px'/>
+        </a>
+      </p>
+    </body>
+  </html>

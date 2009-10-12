@@ -1,0 +1,20 @@
+<h2><%=l(:label_solution_edit)%></h2>
+
+<% labelled_tabular_form_for @solution, @solution, :url => { :action => "update" } do |f| %>
+  <%= f.error_messages %>
+
+  <fieldset class="box">
+    <p>
+      <%= f.text_field :name,:disabled=>true %>
+    </p>
+    <p>
+      <%= f.text_field :message,:required=>true %>
+    </p>
+  </fieldset>
+  <p>
+    <%= f.submit l(:button_update) %>
+  </p>
+<% end %>
+
+<%= link_to l(:button_show), @solution %> |
+<%= link_to l(:button_back), solutions_path %>

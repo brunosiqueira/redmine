@@ -1,0 +1,1076 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'><head><title>app/models/query.rb - C0 code coverage information</title>
+    <style type='text/css'>body { background-color: rgb(240, 240, 245); }</style>
+    <style type='text/css'>span.cross-ref-title {
+ font-size: 140%;
+}
+span.cross-ref a {
+ text-decoration: none;
+}
+span.cross-ref {
+ background-color:#f3f7fa;
+ border: 1px dashed #333;
+ margin: 1em;
+ padding: 0.5em;
+ overflow: hidden;
+}
+a.crossref-toggle {
+ text-decoration: none;
+}
+span.marked0 {
+ background-color: rgb(185, 210, 200);
+ display: block;
+}
+span.marked1 {
+ background-color: rgb(190, 215, 205);
+ display: block;
+}
+span.inferred0 {
+ background-color: rgb(175, 200, 200);
+ display: block;
+}
+span.inferred1 {
+ background-color: rgb(180, 205, 205);
+ display: block;
+}
+span.uncovered0 {
+ background-color: rgb(225, 110, 110);
+ display: block;
+}
+span.uncovered1 {
+ background-color: rgb(235, 120, 120);
+ display: block;
+}
+span.overview {
+ border-bottom: 8px solid black;
+}
+div.overview {
+ border-bottom: 8px solid black;
+}
+body {
+ font-family: verdana, arial, helvetica;
+}
+div.footer {
+ font-size: 68%;
+ margin-top: 1.5em;
+}
+h1, h2, h3, h4, h5, h6 {
+ margin-bottom: 0.5em;
+}
+h5 {
+ margin-top: 0.5em;
+}
+.hidden {
+ display: none;
+}
+div.separator {
+ height: 10px;
+}
+/* Commented out for better readability, esp. on IE */
+/*
+table tr td, table tr th {
+ font-size: 68%;
+}
+td.value table tr td {
+ font-size: 11px;
+}
+*/
+table.percent_graph {
+ height: 12px;
+ border: #808080 1px solid;
+ empty-cells: show;
+}
+table.percent_graph td.covered {
+ height: 10px;
+ background: #00f000;
+}
+table.percent_graph td.uncovered {
+ height: 10px;
+ background: #e00000;
+}
+table.percent_graph td.NA {
+ height: 10px;
+ background: #eaeaea;
+}
+table.report {
+ border-collapse: collapse;
+ width: 100%;
+}
+table.report td.heading {
+ background: #dcecff;
+ border: #d0d0d0 1px solid;
+ font-weight: bold;
+ text-align: center;
+}
+table.report td.heading:hover {
+ background: #c0ffc0;
+}
+table.report td.text {
+ border: #d0d0d0 1px solid;
+}
+table.report td.value,
+table.report td.lines_total,
+table.report td.lines_code {
+ text-align: right;
+ border: #d0d0d0 1px solid;
+}
+table.report tr.light {
+ background-color: rgb(240, 240, 245);
+}
+table.report tr.dark {
+ background-color: rgb(230, 230, 235);
+}
+</style>
+    <script type='text/javascript'>
+// <![CDATA[
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make cross-references hidden by default
+  document.writeln( "<style type=\"text/css\">span.cross-ref { display: none }</style>" )
+  // ]]>
+</script>
+    <style type='text/css'>span.run0 {
+  background-color: rgb(178, 204, 255);
+  display: block;
+}
+span.run1 {
+  background-color: rgb(178, 206, 255);
+  display: block;
+}
+span.run2 {
+  background-color: rgb(178, 209, 255);
+  display: block;
+}
+span.run3 {
+  background-color: rgb(178, 211, 255);
+  display: block;
+}
+span.run4 {
+  background-color: rgb(178, 214, 255);
+  display: block;
+}
+span.run5 {
+  background-color: rgb(178, 218, 255);
+  display: block;
+}
+span.run6 {
+  background-color: rgb(178, 220, 255);
+  display: block;
+}
+span.run7 {
+  background-color: rgb(178, 223, 255);
+  display: block;
+}
+span.run8 {
+  background-color: rgb(178, 225, 255);
+  display: block;
+}
+span.run9 {
+  background-color: rgb(178, 228, 255);
+  display: block;
+}
+span.run10 {
+  background-color: rgb(178, 232, 255);
+  display: block;
+}
+span.run11 {
+  background-color: rgb(178, 234, 255);
+  display: block;
+}
+span.run12 {
+  background-color: rgb(178, 237, 255);
+  display: block;
+}
+span.run13 {
+  background-color: rgb(178, 239, 255);
+  display: block;
+}
+span.run14 {
+  background-color: rgb(178, 242, 255);
+  display: block;
+}
+span.run15 {
+  background-color: rgb(178, 246, 255);
+  display: block;
+}
+span.run16 {
+  background-color: rgb(178, 248, 255);
+  display: block;
+}
+span.run17 {
+  background-color: rgb(178, 251, 255);
+  display: block;
+}
+span.run18 {
+  background-color: rgb(178, 253, 255);
+  display: block;
+}
+span.run19 {
+  background-color: rgb(178, 255, 253);
+  display: block;
+}
+span.run20 {
+  background-color: rgb(178, 255, 249);
+  display: block;
+}
+span.run21 {
+  background-color: rgb(178, 255, 247);
+  display: block;
+}
+span.run22 {
+  background-color: rgb(178, 255, 244);
+  display: block;
+}
+span.run23 {
+  background-color: rgb(178, 255, 242);
+  display: block;
+}
+span.run24 {
+  background-color: rgb(178, 255, 239);
+  display: block;
+}
+span.run25 {
+  background-color: rgb(178, 255, 235);
+  display: block;
+}
+span.run26 {
+  background-color: rgb(178, 255, 233);
+  display: block;
+}
+span.run27 {
+  background-color: rgb(178, 255, 230);
+  display: block;
+}
+span.run28 {
+  background-color: rgb(178, 255, 228);
+  display: block;
+}
+span.run29 {
+  background-color: rgb(178, 255, 225);
+  display: block;
+}
+span.run30 {
+  background-color: rgb(178, 255, 221);
+  display: block;
+}
+span.run31 {
+  background-color: rgb(178, 255, 219);
+  display: block;
+}
+span.run32 {
+  background-color: rgb(178, 255, 216);
+  display: block;
+}
+span.run33 {
+  background-color: rgb(178, 255, 214);
+  display: block;
+}
+span.run34 {
+  background-color: rgb(178, 255, 211);
+  display: block;
+}
+span.run35 {
+  background-color: rgb(178, 255, 207);
+  display: block;
+}
+span.run36 {
+  background-color: rgb(178, 255, 205);
+  display: block;
+}
+span.run37 {
+  background-color: rgb(178, 255, 202);
+  display: block;
+}
+span.run38 {
+  background-color: rgb(178, 255, 200);
+  display: block;
+}
+span.run39 {
+  background-color: rgb(178, 255, 197);
+  display: block;
+}
+span.run40 {
+  background-color: rgb(178, 255, 193);
+  display: block;
+}
+span.run41 {
+  background-color: rgb(178, 255, 191);
+  display: block;
+}
+span.run42 {
+  background-color: rgb(178, 255, 188);
+  display: block;
+}
+span.run43 {
+  background-color: rgb(178, 255, 186);
+  display: block;
+}
+span.run44 {
+  background-color: rgb(178, 255, 183);
+  display: block;
+}
+span.run45 {
+  background-color: rgb(178, 255, 179);
+  display: block;
+}
+span.run46 {
+  background-color: rgb(179, 255, 178);
+  display: block;
+}
+span.run47 {
+  background-color: rgb(182, 255, 178);
+  display: block;
+}
+span.run48 {
+  background-color: rgb(184, 255, 178);
+  display: block;
+}
+span.run49 {
+  background-color: rgb(187, 255, 178);
+  display: block;
+}
+span.run50 {
+  background-color: rgb(191, 255, 178);
+  display: block;
+}
+span.run51 {
+  background-color: rgb(193, 255, 178);
+  display: block;
+}
+span.run52 {
+  background-color: rgb(196, 255, 178);
+  display: block;
+}
+span.run53 {
+  background-color: rgb(198, 255, 178);
+  display: block;
+}
+span.run54 {
+  background-color: rgb(201, 255, 178);
+  display: block;
+}
+span.run55 {
+  background-color: rgb(205, 255, 178);
+  display: block;
+}
+span.run56 {
+  background-color: rgb(207, 255, 178);
+  display: block;
+}
+span.run57 {
+  background-color: rgb(210, 255, 178);
+  display: block;
+}
+span.run58 {
+  background-color: rgb(212, 255, 178);
+  display: block;
+}
+span.run59 {
+  background-color: rgb(215, 255, 178);
+  display: block;
+}
+span.run60 {
+  background-color: rgb(219, 255, 178);
+  display: block;
+}
+span.run61 {
+  background-color: rgb(221, 255, 178);
+  display: block;
+}
+span.run62 {
+  background-color: rgb(224, 255, 178);
+  display: block;
+}
+span.run63 {
+  background-color: rgb(226, 255, 178);
+  display: block;
+}
+span.run64 {
+  background-color: rgb(229, 255, 178);
+  display: block;
+}
+span.run65 {
+  background-color: rgb(233, 255, 178);
+  display: block;
+}
+span.run66 {
+  background-color: rgb(235, 255, 178);
+  display: block;
+}
+span.run67 {
+  background-color: rgb(238, 255, 178);
+  display: block;
+}
+span.run68 {
+  background-color: rgb(240, 255, 178);
+  display: block;
+}
+span.run69 {
+  background-color: rgb(243, 255, 178);
+  display: block;
+}
+span.run70 {
+  background-color: rgb(247, 255, 178);
+  display: block;
+}
+span.run71 {
+  background-color: rgb(249, 255, 178);
+  display: block;
+}
+span.run72 {
+  background-color: rgb(252, 255, 178);
+  display: block;
+}
+span.run73 {
+  background-color: rgb(255, 255, 178);
+  display: block;
+}
+span.run74 {
+  background-color: rgb(255, 252, 178);
+  display: block;
+}
+span.run75 {
+  background-color: rgb(255, 248, 178);
+  display: block;
+}
+span.run76 {
+  background-color: rgb(255, 246, 178);
+  display: block;
+}
+span.run77 {
+  background-color: rgb(255, 243, 178);
+  display: block;
+}
+span.run78 {
+  background-color: rgb(255, 240, 178);
+  display: block;
+}
+span.run79 {
+  background-color: rgb(255, 238, 178);
+  display: block;
+}
+span.run80 {
+  background-color: rgb(255, 234, 178);
+  display: block;
+}
+span.run81 {
+  background-color: rgb(255, 232, 178);
+  display: block;
+}
+span.run82 {
+  background-color: rgb(255, 229, 178);
+  display: block;
+}
+span.run83 {
+  background-color: rgb(255, 226, 178);
+  display: block;
+}
+span.run84 {
+  background-color: rgb(255, 224, 178);
+  display: block;
+}
+span.run85 {
+  background-color: rgb(255, 220, 178);
+  display: block;
+}
+span.run86 {
+  background-color: rgb(255, 218, 178);
+  display: block;
+}
+span.run87 {
+  background-color: rgb(255, 215, 178);
+  display: block;
+}
+span.run88 {
+  background-color: rgb(255, 212, 178);
+  display: block;
+}
+span.run89 {
+  background-color: rgb(255, 210, 178);
+  display: block;
+}
+span.run90 {
+  background-color: rgb(255, 206, 178);
+  display: block;
+}
+span.run91 {
+  background-color: rgb(255, 204, 178);
+  display: block;
+}
+span.run92 {
+  background-color: rgb(255, 201, 178);
+  display: block;
+}
+span.run93 {
+  background-color: rgb(255, 198, 178);
+  display: block;
+}
+span.run94 {
+  background-color: rgb(255, 196, 178);
+  display: block;
+}
+span.run95 {
+  background-color: rgb(255, 192, 178);
+  display: block;
+}
+span.run96 {
+  background-color: rgb(255, 189, 178);
+  display: block;
+}
+span.run97 {
+  background-color: rgb(255, 187, 178);
+  display: block;
+}
+span.run98 {
+  background-color: rgb(255, 184, 178);
+  display: block;
+}
+span.run99 {
+  background-color: rgb(255, 182, 178);
+  display: block;
+}
+span.run100 {
+  background-color: rgb(255, 178, 178);
+  display: block;
+}
+</style>
+    </head>
+  <body><h3>C0 code coverage information</h3>
+    <p>Generated on Wed Sep 23 21:32:47 -0300 2009 with <a href='http://eigenclass.org/hiki/rcov'>rcov 0.8.1.2</a>
+      </p>
+    <hr/>
+    <pre><span class='marked0'>Code reported as executed by Ruby looks like this...
+</span><span class='marked1'>and this: this line is also marked as covered.
+</span><span class='inferred0'>Lines considered as run by rcov, but not reported by Ruby, look like this,
+</span><span class='inferred1'>and this: these lines were inferred by rcov (using simple heuristics).
+</span><span class='uncovered0'>Finally, here&apos;s a line marked as not executed.
+</span></pre>                       
+<table class='report'><thead><tr><td class='heading'>Name</td>
+      <td class='heading'>Total lines</td>
+      <td class='heading'>Lines of code</td>
+      <td class='heading'>Total coverage</td>
+      <td class='heading'>Code coverage</td>
+      </tr>
+    </thead>
+  <tbody><tr class='light'><td><a href='app-models-query_rb.html'>app/models/query.rb</a>
+        </td>
+      <td class='lines_total'><tt>466</tt>
+        </td>
+      <td class='lines_code'><tt>361</tt>
+        </td>
+      <td><table cellspacing='0' align='right' cellpadding='0'><tr><td><tt class='coverage_total'>88.6%</tt>
+              &nbsp;</td>
+            <td><table class='percent_graph' cellspacing='0' width='100' cellpadding='0'><tr><td class='covered' width='89'/>
+                  <td class='uncovered' width='11'/>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      <td><table cellspacing='0' align='right' cellpadding='0'><tr><td><tt class='coverage_code'>86.4%</tt>
+              &nbsp;</td>
+            <td><table class='percent_graph' cellspacing='0' width='100' cellpadding='0'><tr><td class='covered' width='86'/>
+                  <td class='uncovered' width='14'/>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<pre><span class="inferred0"><a name="line1"></a>  1 # Redmine - project management software
+</span><span class="inferred1"><a name="line2"></a>  2 # Copyright (C) 2006-2008  Jean-Philippe Lang
+</span><span class="inferred0"><a name="line3"></a>  3 #
+</span><span class="inferred1"><a name="line4"></a>  4 # This program is free software; you can redistribute it and/or
+</span><span class="inferred0"><a name="line5"></a>  5 # modify it under the terms of the GNU General Public License
+</span><span class="inferred1"><a name="line6"></a>  6 # as published by the Free Software Foundation; either version 2
+</span><span class="inferred0"><a name="line7"></a>  7 # of the License, or (at your option) any later version.
+</span><span class="inferred1"><a name="line8"></a>  8 # 
+</span><span class="inferred0"><a name="line9"></a>  9 # This program is distributed in the hope that it will be useful,
+</span><span class="inferred1"><a name="line10"></a> 10 # but WITHOUT ANY WARRANTY; without even the implied warranty of
+</span><span class="inferred0"><a name="line11"></a> 11 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+</span><span class="inferred1"><a name="line12"></a> 12 # GNU General Public License for more details.
+</span><span class="inferred0"><a name="line13"></a> 13 # 
+</span><span class="inferred1"><a name="line14"></a> 14 # You should have received a copy of the GNU General Public License
+</span><span class="inferred0"><a name="line15"></a> 15 # along with this program; if not, write to the Free Software
+</span><span class="inferred1"><a name="line16"></a> 16 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+</span><span class="inferred0"><a name="line17"></a> 17 
+</span><span class="marked1"><a name="line18"></a> 18 class QueryColumn  
+</span><span class="marked0"><a name="line19"></a> 19   attr_accessor :name, :sortable, :groupable, :default_order
+</span><span class="marked1"><a name="line20"></a> 20   include Redmine::I18n
+</span><span class="inferred0"><a name="line21"></a> 21   
+</span><span class="marked1"><a name="line22"></a> 22   def initialize(name, options={})
+</span><span class="marked0"><a name="line23"></a> 23     self.name = name
+</span><span class="marked1"><a name="line24"></a> 24     self.sortable = options[:sortable]
+</span><span class="marked0"><a name="line25"></a> 25     self.groupable = options[:groupable] || false
+</span><span class="marked1"><a name="line26"></a> 26     self.default_order = options[:default_order]
+</span><span class="inferred0"><a name="line27"></a> 27   end
+</span><span class="inferred1"><a name="line28"></a> 28   
+</span><span class="marked0"><a name="line29"></a> 29   def caption
+</span><span class="uncovered1"><a name="line30"></a> 30     l(&quot;field_#{name}&quot;)
+</span><span class="uncovered0"><a name="line31"></a> 31   end
+</span><span class="inferred1"><a name="line32"></a> 32   
+</span><span class="inferred0"><a name="line33"></a> 33   # Returns true if the column is sortable, otherwise false
+</span><span class="marked1"><a name="line34"></a> 34   def sortable?
+</span><span class="uncovered0"><a name="line35"></a> 35     !sortable.nil?
+</span><span class="uncovered1"><a name="line36"></a> 36   end
+</span><span class="uncovered0"><a name="line37"></a> 37 end
+</span><span class="inferred1"><a name="line38"></a> 38 
+</span><span class="marked0"><a name="line39"></a> 39 class QueryCustomFieldColumn &lt; QueryColumn
+</span><span class="inferred1"><a name="line40"></a> 40 
+</span><span class="marked0"><a name="line41"></a> 41   def initialize(custom_field)
+</span><span class="marked1"><a name="line42"></a> 42     self.name = &quot;cf_#{custom_field.id}&quot;.to_sym
+</span><span class="marked0"><a name="line43"></a> 43     self.sortable = custom_field.order_statement || false
+</span><span class="marked1"><a name="line44"></a> 44     @cf = custom_field
+</span><span class="inferred0"><a name="line45"></a> 45   end
+</span><span class="inferred1"><a name="line46"></a> 46   
+</span><span class="marked0"><a name="line47"></a> 47   def caption
+</span><span class="uncovered1"><a name="line48"></a> 48     @cf.name
+</span><span class="uncovered0"><a name="line49"></a> 49   end
+</span><span class="inferred1"><a name="line50"></a> 50   
+</span><span class="marked0"><a name="line51"></a> 51   def custom_field
+</span><span class="marked1"><a name="line52"></a> 52     @cf
+</span><span class="inferred0"><a name="line53"></a> 53   end
+</span><span class="inferred1"><a name="line54"></a> 54 end
+</span><span class="inferred0"><a name="line55"></a> 55 
+</span><span class="marked1"><a name="line56"></a> 56 class Query &lt; ActiveRecord::Base
+</span><span class="marked0"><a name="line57"></a> 57   belongs_to :project
+</span><span class="marked1"><a name="line58"></a> 58   belongs_to :user
+</span><span class="marked0"><a name="line59"></a> 59   serialize :filters
+</span><span class="marked1"><a name="line60"></a> 60   serialize :column_names
+</span><span class="marked0"><a name="line61"></a> 61   serialize :sort_criteria, Array
+</span><span class="inferred1"><a name="line62"></a> 62   
+</span><span class="marked0"><a name="line63"></a> 63   attr_protected :project_id, :user_id
+</span><span class="inferred1"><a name="line64"></a> 64   
+</span><span class="marked0"><a name="line65"></a> 65   validates_presence_of :name, :on =&gt; :save
+</span><span class="marked1"><a name="line66"></a> 66   validates_length_of :name, :maximum =&gt; 255
+</span><span class="inferred0"><a name="line67"></a> 67     
+</span><span class="marked1"><a name="line68"></a> 68   @@operators = { &quot;=&quot;   =&gt; :label_equals, 
+</span><span class="inferred0"><a name="line69"></a> 69                   &quot;!&quot;   =&gt; :label_not_equals,
+</span><span class="inferred1"><a name="line70"></a> 70                   &quot;o&quot;   =&gt; :label_open_issues,
+</span><span class="inferred0"><a name="line71"></a> 71                   &quot;c&quot;   =&gt; :label_closed_issues,
+</span><span class="inferred1"><a name="line72"></a> 72                   &quot;!*&quot;  =&gt; :label_none,
+</span><span class="inferred0"><a name="line73"></a> 73                   &quot;*&quot;   =&gt; :label_all,
+</span><span class="inferred1"><a name="line74"></a> 74                   &quot;&gt;=&quot;  =&gt; :label_greater_or_equal,
+</span><span class="inferred0"><a name="line75"></a> 75                   &quot;&lt;=&quot;  =&gt; :label_less_or_equal,
+</span><span class="inferred1"><a name="line76"></a> 76                   &quot;&lt;t+&quot; =&gt; :label_in_less_than,
+</span><span class="inferred0"><a name="line77"></a> 77                   &quot;&gt;t+&quot; =&gt; :label_in_more_than,
+</span><span class="inferred1"><a name="line78"></a> 78                   &quot;t+&quot;  =&gt; :label_in,
+</span><span class="inferred0"><a name="line79"></a> 79                   &quot;t&quot;   =&gt; :label_today,
+</span><span class="inferred1"><a name="line80"></a> 80                   &quot;w&quot;   =&gt; :label_this_week,
+</span><span class="inferred0"><a name="line81"></a> 81                   &quot;&gt;t-&quot; =&gt; :label_less_than_ago,
+</span><span class="inferred1"><a name="line82"></a> 82                   &quot;&lt;t-&quot; =&gt; :label_more_than_ago,
+</span><span class="inferred0"><a name="line83"></a> 83                   &quot;t-&quot;  =&gt; :label_ago,
+</span><span class="inferred1"><a name="line84"></a> 84                   &quot;~&quot;   =&gt; :label_contains,
+</span><span class="inferred0"><a name="line85"></a> 85                   &quot;!~&quot;  =&gt; :label_not_contains }
+</span><span class="inferred1"><a name="line86"></a> 86 
+</span><span class="marked0"><a name="line87"></a> 87   cattr_reader :operators
+</span><span class="inferred1"><a name="line88"></a> 88     
+</span><span class="marked0"><a name="line89"></a> 89   @@operators_by_filter_type = { :list =&gt; [ &quot;=&quot;, &quot;!&quot; ],
+</span><span class="inferred1"><a name="line90"></a> 90                                  :list_status =&gt; [ &quot;o&quot;, &quot;=&quot;, &quot;!&quot;, &quot;c&quot;, &quot;*&quot; ],
+</span><span class="inferred0"><a name="line91"></a> 91                                  :list_optional =&gt; [ &quot;=&quot;, &quot;!&quot;, &quot;!*&quot;, &quot;*&quot; ],
+</span><span class="inferred1"><a name="line92"></a> 92                                  :list_subprojects =&gt; [ &quot;*&quot;, &quot;!*&quot;, &quot;=&quot; ],
+</span><span class="inferred0"><a name="line93"></a> 93                                  :date =&gt; [ &quot;&lt;t+&quot;, &quot;&gt;t+&quot;, &quot;t+&quot;, &quot;t&quot;, &quot;w&quot;, &quot;&gt;t-&quot;, &quot;&lt;t-&quot;, &quot;t-&quot; ],
+</span><span class="inferred1"><a name="line94"></a> 94                                  :date_past =&gt; [ &quot;&gt;t-&quot;, &quot;&lt;t-&quot;, &quot;t-&quot;, &quot;t&quot;, &quot;w&quot; ],
+</span><span class="inferred0"><a name="line95"></a> 95                                  :string =&gt; [ &quot;=&quot;, &quot;~&quot;, &quot;!&quot;, &quot;!~&quot; ],
+</span><span class="inferred1"><a name="line96"></a> 96                                  :text =&gt; [  &quot;~&quot;, &quot;!~&quot; ],
+</span><span class="inferred0"><a name="line97"></a> 97                                  :integer =&gt; [ &quot;=&quot;, &quot;&gt;=&quot;, &quot;&lt;=&quot;, &quot;!*&quot;, &quot;*&quot; ] }
+</span><span class="inferred1"><a name="line98"></a> 98 
+</span><span class="marked0"><a name="line99"></a> 99   cattr_reader :operators_by_filter_type
+</span><span class="inferred1"><a name="line100"></a>100 
+</span><span class="marked0"><a name="line101"></a>101   @@available_columns = [
+</span><span class="marked1"><a name="line102"></a>102     QueryColumn.new(:project, :sortable =&gt; &quot;#{Project.table_name}.name&quot;, :groupable =&gt; true),
+</span><span class="marked0"><a name="line103"></a>103     QueryColumn.new(:tracker, :sortable =&gt; &quot;#{Tracker.table_name}.position&quot;, :groupable =&gt; true),
+</span><span class="marked1"><a name="line104"></a>104     QueryColumn.new(:status, :sortable =&gt; &quot;#{IssueStatus.table_name}.position&quot;, :groupable =&gt; true),
+</span><span class="marked0"><a name="line105"></a>105     QueryColumn.new(:priority, :sortable =&gt; &quot;#{IssuePriority.table_name}.position&quot;, :default_order =&gt; 'desc', :groupable =&gt; true),
+</span><span class="marked1"><a name="line106"></a>106     QueryColumn.new(:subject, :sortable =&gt; &quot;#{Issue.table_name}.subject&quot;),
+</span><span class="marked0"><a name="line107"></a>107     QueryColumn.new(:author),
+</span><span class="marked1"><a name="line108"></a>108     QueryColumn.new(:assigned_to, :sortable =&gt; [&quot;#{User.table_name}.lastname&quot;, &quot;#{User.table_name}.firstname&quot;, &quot;#{User.table_name}.id&quot;], :groupable =&gt; true),
+</span><span class="marked0"><a name="line109"></a>109     QueryColumn.new(:updated_on, :sortable =&gt; &quot;#{Issue.table_name}.updated_on&quot;, :default_order =&gt; 'desc'),
+</span><span class="marked1"><a name="line110"></a>110     QueryColumn.new(:category, :sortable =&gt; &quot;#{IssueCategory.table_name}.name&quot;, :groupable =&gt; true),
+</span><span class="marked0"><a name="line111"></a>111     QueryColumn.new(:fixed_version, :sortable =&gt; [&quot;#{Version.table_name}.effective_date&quot;, &quot;#{Version.table_name}.name&quot;], :default_order =&gt; 'desc', :groupable =&gt; true),
+</span><span class="marked1"><a name="line112"></a>112     QueryColumn.new(:start_date, :sortable =&gt; &quot;#{Issue.table_name}.start_date&quot;),
+</span><span class="marked0"><a name="line113"></a>113     QueryColumn.new(:due_date, :sortable =&gt; &quot;#{Issue.table_name}.due_date&quot;),
+</span><span class="marked1"><a name="line114"></a>114     QueryColumn.new(:estimated_hours, :sortable =&gt; &quot;#{Issue.table_name}.estimated_hours&quot;),
+</span><span class="marked0"><a name="line115"></a>115     QueryColumn.new(:done_ratio, :sortable =&gt; &quot;#{Issue.table_name}.done_ratio&quot;, :groupable =&gt; true),
+</span><span class="marked1"><a name="line116"></a>116     QueryColumn.new(:created_on, :sortable =&gt; &quot;#{Issue.table_name}.created_on&quot;, :default_order =&gt; 'desc'),
+</span><span class="inferred0"><a name="line117"></a>117   ]
+</span><span class="marked1"><a name="line118"></a>118   cattr_reader :available_columns
+</span><span class="inferred0"><a name="line119"></a>119   
+</span><span class="marked1"><a name="line120"></a>120   def initialize(attributes = nil)
+</span><span class="marked0"><a name="line121"></a>121     super attributes
+</span><span class="marked1"><a name="line122"></a>122     self.filters ||= { 'status_id' =&gt; {:operator =&gt; &quot;o&quot;, :values =&gt; [&quot;&quot;]} }
+</span><span class="inferred0"><a name="line123"></a>123   end
+</span><span class="inferred1"><a name="line124"></a>124   
+</span><span class="marked0"><a name="line125"></a>125   def after_initialize
+</span><span class="inferred1"><a name="line126"></a>126     # Store the fact that project is nil (used in #editable_by?)
+</span><span class="marked0"><a name="line127"></a>127     @is_for_all = project.nil?
+</span><span class="inferred1"><a name="line128"></a>128   end
+</span><span class="inferred0"><a name="line129"></a>129   
+</span><span class="marked1"><a name="line130"></a>130   def validate
+</span><span class="marked0"><a name="line131"></a>131     filters.each_key do |field|
+</span><span class="uncovered1"><a name="line132"></a>132       errors.add label_for(field), :blank unless 
+</span><span class="inferred0"><a name="line133"></a>133           # filter requires one or more values
+</span><span class="marked1"><a name="line134"></a>134           (values_for(field) and !values_for(field).first.blank?) or 
+</span><span class="inferred0"><a name="line135"></a>135           # filter doesn't require any value
+</span><span class="marked1"><a name="line136"></a>136           [&quot;o&quot;, &quot;c&quot;, &quot;!*&quot;, &quot;*&quot;, &quot;t&quot;, &quot;w&quot;].include? operator_for(field)
+</span><span class="marked0"><a name="line137"></a>137     end if filters
+</span><span class="inferred1"><a name="line138"></a>138   end
+</span><span class="inferred0"><a name="line139"></a>139   
+</span><span class="marked1"><a name="line140"></a>140   def editable_by?(user)
+</span><span class="marked0"><a name="line141"></a>141     return false unless user
+</span><span class="inferred1"><a name="line142"></a>142     # Admin can edit them all and regular users can edit their private queries
+</span><span class="marked0"><a name="line143"></a>143     return true if user.admin? || (!is_public &amp;&amp; self.user_id == user.id)
+</span><span class="inferred1"><a name="line144"></a>144     # Members can not edit public queries that are for all project (only admin is allowed to)
+</span><span class="marked0"><a name="line145"></a>145     is_public &amp;&amp; !@is_for_all &amp;&amp; user.allowed_to?(:manage_public_queries, project)
+</span><span class="inferred1"><a name="line146"></a>146   end
+</span><span class="inferred0"><a name="line147"></a>147   
+</span><span class="marked1"><a name="line148"></a>148   def available_filters
+</span><span class="marked0"><a name="line149"></a>149     return @available_filters if @available_filters
+</span><span class="inferred1"><a name="line150"></a>150     
+</span><span class="marked0"><a name="line151"></a>151     trackers = project.nil? ? Tracker.find(:all, :order =&gt; 'position') : project.rolled_up_trackers
+</span><span class="inferred1"><a name="line152"></a>152     
+</span><span class="marked0"><a name="line153"></a>153     @available_filters = { &quot;status_id&quot; =&gt; { :type =&gt; :list_status, :order =&gt; 1, :values =&gt; IssueStatus.find(:all, :order =&gt; 'position').collect{|s| [s.name, s.id.to_s] } },       
+</span><span class="marked1"><a name="line154"></a>154                            &quot;tracker_id&quot; =&gt; { :type =&gt; :list, :order =&gt; 2, :values =&gt; trackers.collect{|s| [s.name, s.id.to_s] } },                                                                                                                
+</span><span class="marked0"><a name="line155"></a>155                            &quot;priority_id&quot; =&gt; { :type =&gt; :list, :order =&gt; 3, :values =&gt; IssuePriority.all.collect{|s| [s.name, s.id.to_s] } },
+</span><span class="inferred1"><a name="line156"></a>156                            &quot;subject&quot; =&gt; { :type =&gt; :text, :order =&gt; 8 },  
+</span><span class="inferred0"><a name="line157"></a>157                            &quot;created_on&quot; =&gt; { :type =&gt; :date_past, :order =&gt; 9 },                        
+</span><span class="inferred1"><a name="line158"></a>158                            &quot;updated_on&quot; =&gt; { :type =&gt; :date_past, :order =&gt; 10 },
+</span><span class="inferred0"><a name="line159"></a>159                            &quot;start_date&quot; =&gt; { :type =&gt; :date, :order =&gt; 11 },
+</span><span class="inferred1"><a name="line160"></a>160                            &quot;due_date&quot; =&gt; { :type =&gt; :date, :order =&gt; 12 },
+</span><span class="inferred0"><a name="line161"></a>161                            &quot;estimated_hours&quot; =&gt; { :type =&gt; :integer, :order =&gt; 13 },
+</span><span class="inferred1"><a name="line162"></a>162                            &quot;done_ratio&quot; =&gt;  { :type =&gt; :integer, :order =&gt; 14 }}
+</span><span class="inferred0"><a name="line163"></a>163     
+</span><span class="marked1"><a name="line164"></a>164     user_values = []
+</span><span class="marked0"><a name="line165"></a>165     user_values &lt;&lt; [&quot;&lt;&lt; #{l(:label_me)} &gt;&gt;&quot;, &quot;me&quot;] if User.current.logged?
+</span><span class="marked1"><a name="line166"></a>166     if project
+</span><span class="marked0"><a name="line167"></a>167       user_values += project.users.sort.collect{|s| [s.name, s.id.to_s] }
+</span><span class="inferred1"><a name="line168"></a>168     else
+</span><span class="inferred0"><a name="line169"></a>169       # members of the user's projects
+</span><span class="marked1"><a name="line170"></a>170       user_values += User.current.projects.collect(&amp;:users).flatten.uniq.sort.collect{|s| [s.name, s.id.to_s] }
+</span><span class="inferred0"><a name="line171"></a>171     end
+</span><span class="marked1"><a name="line172"></a>172     @available_filters[&quot;assigned_to_id&quot;] = { :type =&gt; :list_optional, :order =&gt; 4, :values =&gt; user_values } unless user_values.empty?
+</span><span class="marked0"><a name="line173"></a>173     @available_filters[&quot;author_id&quot;] = { :type =&gt; :list, :order =&gt; 5, :values =&gt; user_values } unless user_values.empty?
+</span><span class="inferred1"><a name="line174"></a>174     
+</span><span class="marked0"><a name="line175"></a>175     if User.current.logged?
+</span><span class="marked1"><a name="line176"></a>176       @available_filters[&quot;watcher_id&quot;] = { :type =&gt; :list, :order =&gt; 15, :values =&gt; [[&quot;&lt;&lt; #{l(:label_me)} &gt;&gt;&quot;, &quot;me&quot;]] }
+</span><span class="inferred0"><a name="line177"></a>177     end
+</span><span class="inferred1"><a name="line178"></a>178   
+</span><span class="marked0"><a name="line179"></a>179     if project
+</span><span class="inferred1"><a name="line180"></a>180       # project specific filters
+</span><span class="marked0"><a name="line181"></a>181       unless @project.issue_categories.empty?
+</span><span class="marked1"><a name="line182"></a>182         @available_filters[&quot;category_id&quot;] = { :type =&gt; :list_optional, :order =&gt; 6, :values =&gt; @project.issue_categories.collect{|s| [s.name, s.id.to_s] } }
+</span><span class="inferred0"><a name="line183"></a>183       end
+</span><span class="marked1"><a name="line184"></a>184       unless @project.versions.empty?
+</span><span class="marked0"><a name="line185"></a>185         @available_filters[&quot;fixed_version_id&quot;] = { :type =&gt; :list_optional, :order =&gt; 7, :values =&gt; @project.versions.sort.collect{|s| [s.name, s.id.to_s] } }
+</span><span class="inferred1"><a name="line186"></a>186       end
+</span><span class="marked0"><a name="line187"></a>187       unless @project.descendants.active.empty?
+</span><span class="marked1"><a name="line188"></a>188         @available_filters[&quot;subproject_id&quot;] = { :type =&gt; :list_subprojects, :order =&gt; 13, :values =&gt; @project.descendants.visible.collect{|s| [s.name, s.id.to_s] } }
+</span><span class="inferred0"><a name="line189"></a>189       end
+</span><span class="marked1"><a name="line190"></a>190       add_custom_fields_filters(@project.all_issue_custom_fields)
+</span><span class="inferred0"><a name="line191"></a>191     else
+</span><span class="inferred1"><a name="line192"></a>192       # global filters for cross project issue list
+</span><span class="marked0"><a name="line193"></a>193       add_custom_fields_filters(IssueCustomField.find(:all, :conditions =&gt; {:is_filter =&gt; true, :is_for_all =&gt; true}))
+</span><span class="inferred1"><a name="line194"></a>194     end
+</span><span class="marked0"><a name="line195"></a>195     @available_filters
+</span><span class="inferred1"><a name="line196"></a>196   end
+</span><span class="inferred0"><a name="line197"></a>197   
+</span><span class="marked1"><a name="line198"></a>198   def add_filter(field, operator, values)
+</span><span class="inferred0"><a name="line199"></a>199     # values must be an array
+</span><span class="marked1"><a name="line200"></a>200     return unless values and values.is_a? Array # and !values.first.empty?
+</span><span class="inferred0"><a name="line201"></a>201     # check if field is defined as an available filter
+</span><span class="marked1"><a name="line202"></a>202     if available_filters.has_key? field
+</span><span class="marked0"><a name="line203"></a>203       filter_options = available_filters[field]
+</span><span class="inferred1"><a name="line204"></a>204       # check if operator is allowed for that filter
+</span><span class="inferred0"><a name="line205"></a>205       #if @@operators_by_filter_type[filter_options[:type]].include? operator
+</span><span class="inferred1"><a name="line206"></a>206       #  allowed_values = values &amp; ([&quot;&quot;] + (filter_options[:values] || []).collect {|val| val[1]})
+</span><span class="inferred0"><a name="line207"></a>207       #  filters[field] = {:operator =&gt; operator, :values =&gt; allowed_values } if (allowed_values.first and !allowed_values.first.empty?) or [&quot;o&quot;, &quot;c&quot;, &quot;!*&quot;, &quot;*&quot;, &quot;t&quot;].include? operator
+</span><span class="inferred1"><a name="line208"></a>208       #end
+</span><span class="marked0"><a name="line209"></a>209       filters[field] = {:operator =&gt; operator, :values =&gt; values }
+</span><span class="inferred1"><a name="line210"></a>210     end
+</span><span class="inferred0"><a name="line211"></a>211   end
+</span><span class="inferred1"><a name="line212"></a>212   
+</span><span class="marked0"><a name="line213"></a>213   def add_short_filter(field, expression)
+</span><span class="uncovered1"><a name="line214"></a>214     return unless expression
+</span><span class="uncovered0"><a name="line215"></a>215     parms = expression.scan(/^(o|c|\!|\*)?(.*)$/).first
+</span><span class="uncovered1"><a name="line216"></a>216     add_filter field, (parms[0] || &quot;=&quot;), [parms[1] || &quot;&quot;]
+</span><span class="uncovered0"><a name="line217"></a>217   end
+</span><span class="inferred1"><a name="line218"></a>218   
+</span><span class="marked0"><a name="line219"></a>219   def has_filter?(field)
+</span><span class="marked1"><a name="line220"></a>220     filters and filters[field]
+</span><span class="inferred0"><a name="line221"></a>221   end
+</span><span class="inferred1"><a name="line222"></a>222   
+</span><span class="marked0"><a name="line223"></a>223   def operator_for(field)
+</span><span class="marked1"><a name="line224"></a>224     has_filter?(field) ? filters[field][:operator] : nil
+</span><span class="inferred0"><a name="line225"></a>225   end
+</span><span class="inferred1"><a name="line226"></a>226   
+</span><span class="marked0"><a name="line227"></a>227   def values_for(field)
+</span><span class="marked1"><a name="line228"></a>228     has_filter?(field) ? filters[field][:values] : nil
+</span><span class="inferred0"><a name="line229"></a>229   end
+</span><span class="inferred1"><a name="line230"></a>230   
+</span><span class="marked0"><a name="line231"></a>231   def label_for(field)
+</span><span class="marked1"><a name="line232"></a>232     label = available_filters[field][:name] if available_filters.has_key?(field)
+</span><span class="marked0"><a name="line233"></a>233     label ||= field.gsub(/\_id$/, &quot;&quot;)
+</span><span class="inferred1"><a name="line234"></a>234   end
+</span><span class="inferred0"><a name="line235"></a>235 
+</span><span class="marked1"><a name="line236"></a>236   def available_columns
+</span><span class="marked0"><a name="line237"></a>237     return @available_columns if @available_columns
+</span><span class="marked1"><a name="line238"></a>238     @available_columns = Query.available_columns
+</span><span class="marked0"><a name="line239"></a>239     @available_columns += (project ? 
+</span><span class="inferred1"><a name="line240"></a>240                             project.all_issue_custom_fields :
+</span><span class="marked0"><a name="line241"></a>241                             IssueCustomField.find(:all)
+</span><span class="marked1"><a name="line242"></a>242                            ).collect {|cf| QueryCustomFieldColumn.new(cf) }      
+</span><span class="inferred0"><a name="line243"></a>243   end
+</span><span class="inferred1"><a name="line244"></a>244   
+</span><span class="inferred0"><a name="line245"></a>245   # Returns an array of columns that can be used to group the results
+</span><span class="marked1"><a name="line246"></a>246   def groupable_columns
+</span><span class="uncovered0"><a name="line247"></a>247     available_columns.select {|c| c.groupable}
+</span><span class="uncovered1"><a name="line248"></a>248   end
+</span><span class="inferred0"><a name="line249"></a>249   
+</span><span class="marked1"><a name="line250"></a>250   def columns
+</span><span class="marked0"><a name="line251"></a>251     if has_default_columns?
+</span><span class="marked1"><a name="line252"></a>252       available_columns.select do |c|
+</span><span class="inferred0"><a name="line253"></a>253         # Adds the project column by default for cross-project lists
+</span><span class="marked1"><a name="line254"></a>254         Setting.issue_list_default_columns.include?(c.name.to_s) || (c.name == :project &amp;&amp; project.nil?)
+</span><span class="inferred0"><a name="line255"></a>255       end
+</span><span class="inferred1"><a name="line256"></a>256     else
+</span><span class="inferred0"><a name="line257"></a>257       # preserve the column_names order
+</span><span class="marked1"><a name="line258"></a>258       column_names.collect {|name| available_columns.find {|col| col.name == name}}.compact
+</span><span class="inferred0"><a name="line259"></a>259     end
+</span><span class="inferred1"><a name="line260"></a>260   end
+</span><span class="inferred0"><a name="line261"></a>261   
+</span><span class="marked1"><a name="line262"></a>262   def column_names=(names)
+</span><span class="marked0"><a name="line263"></a>263     names = names.select {|n| n.is_a?(Symbol) || !n.blank? } if names
+</span><span class="marked1"><a name="line264"></a>264     names = names.collect {|n| n.is_a?(Symbol) ? n : n.to_sym } if names
+</span><span class="marked0"><a name="line265"></a>265     write_attribute(:column_names, names)
+</span><span class="inferred1"><a name="line266"></a>266   end
+</span><span class="inferred0"><a name="line267"></a>267   
+</span><span class="marked1"><a name="line268"></a>268   def has_column?(column)
+</span><span class="marked0"><a name="line269"></a>269     column_names &amp;&amp; column_names.include?(column.name)
+</span><span class="inferred1"><a name="line270"></a>270   end
+</span><span class="inferred0"><a name="line271"></a>271   
+</span><span class="marked1"><a name="line272"></a>272   def has_default_columns?
+</span><span class="marked0"><a name="line273"></a>273     column_names.nil? || column_names.empty?
+</span><span class="inferred1"><a name="line274"></a>274   end
+</span><span class="inferred0"><a name="line275"></a>275   
+</span><span class="marked1"><a name="line276"></a>276   def sort_criteria=(arg)
+</span><span class="marked0"><a name="line277"></a>277     c = []
+</span><span class="marked1"><a name="line278"></a>278     if arg.is_a?(Hash)
+</span><span class="marked0"><a name="line279"></a>279       arg = arg.keys.sort.collect {|k| arg[k]}
+</span><span class="inferred1"><a name="line280"></a>280     end
+</span><span class="marked0"><a name="line281"></a>281     c = arg.select {|k,o| !k.to_s.blank?}.slice(0,3).collect {|k,o| [k.to_s, o == 'desc' ? o : 'asc']}
+</span><span class="marked1"><a name="line282"></a>282     write_attribute(:sort_criteria, c)
+</span><span class="inferred0"><a name="line283"></a>283   end
+</span><span class="inferred1"><a name="line284"></a>284   
+</span><span class="marked0"><a name="line285"></a>285   def sort_criteria
+</span><span class="marked1"><a name="line286"></a>286     read_attribute(:sort_criteria) || []
+</span><span class="inferred0"><a name="line287"></a>287   end
+</span><span class="inferred1"><a name="line288"></a>288   
+</span><span class="marked0"><a name="line289"></a>289   def sort_criteria_key(arg)
+</span><span class="uncovered1"><a name="line290"></a>290     sort_criteria &amp;&amp; sort_criteria[arg] &amp;&amp; sort_criteria[arg].first
+</span><span class="uncovered0"><a name="line291"></a>291   end
+</span><span class="inferred1"><a name="line292"></a>292   
+</span><span class="marked0"><a name="line293"></a>293   def sort_criteria_order(arg)
+</span><span class="uncovered1"><a name="line294"></a>294     sort_criteria &amp;&amp; sort_criteria[arg] &amp;&amp; sort_criteria[arg].last
+</span><span class="uncovered0"><a name="line295"></a>295   end
+</span><span class="inferred1"><a name="line296"></a>296   
+</span><span class="inferred0"><a name="line297"></a>297   # Returns the SQL sort order that should be prepended for grouping
+</span><span class="marked1"><a name="line298"></a>298   def group_by_sort_order
+</span><span class="uncovered0"><a name="line299"></a>299     if grouped? &amp;&amp; (column = group_by_column)
+</span><span class="uncovered1"><a name="line300"></a>300       column.sortable.is_a?(Array) ?
+</span><span class="uncovered0"><a name="line301"></a>301         column.sortable.collect {|s| &quot;#{s} #{column.default_order}&quot;}.join(',') :
+</span><span class="uncovered1"><a name="line302"></a>302         &quot;#{column.sortable} #{column.default_order}&quot;
+</span><span class="uncovered0"><a name="line303"></a>303     end
+</span><span class="uncovered1"><a name="line304"></a>304   end
+</span><span class="inferred0"><a name="line305"></a>305   
+</span><span class="inferred1"><a name="line306"></a>306   # Returns true if the query is a grouped query
+</span><span class="marked0"><a name="line307"></a>307   def grouped?
+</span><span class="uncovered1"><a name="line308"></a>308     !group_by.blank?
+</span><span class="uncovered0"><a name="line309"></a>309   end
+</span><span class="inferred1"><a name="line310"></a>310   
+</span><span class="marked0"><a name="line311"></a>311   def group_by_column
+</span><span class="uncovered1"><a name="line312"></a>312     groupable_columns.detect {|c| c.name.to_s == group_by}
+</span><span class="uncovered0"><a name="line313"></a>313   end
+</span><span class="inferred1"><a name="line314"></a>314   
+</span><span class="marked0"><a name="line315"></a>315   def project_statement
+</span><span class="marked1"><a name="line316"></a>316     project_clauses = []
+</span><span class="marked0"><a name="line317"></a>317     if project &amp;&amp; !@project.descendants.active.empty?
+</span><span class="marked1"><a name="line318"></a>318       ids = [project.id]
+</span><span class="marked0"><a name="line319"></a>319       if has_filter?(&quot;subproject_id&quot;)
+</span><span class="uncovered1"><a name="line320"></a>320         case operator_for(&quot;subproject_id&quot;)
+</span><span class="uncovered0"><a name="line321"></a>321         when '='
+</span><span class="uncovered1"><a name="line322"></a>322           # include the selected subprojects
+</span><span class="uncovered0"><a name="line323"></a>323           ids += values_for(&quot;subproject_id&quot;).each(&amp;:to_i)
+</span><span class="uncovered1"><a name="line324"></a>324         when '!*'
+</span><span class="uncovered0"><a name="line325"></a>325           # main project only
+</span><span class="uncovered1"><a name="line326"></a>326         else
+</span><span class="uncovered0"><a name="line327"></a>327           # all subprojects
+</span><span class="uncovered1"><a name="line328"></a>328           ids += project.descendants.collect(&amp;:id)
+</span><span class="uncovered0"><a name="line329"></a>329         end
+</span><span class="marked1"><a name="line330"></a>330       elsif Setting.display_subprojects_issues?
+</span><span class="marked0"><a name="line331"></a>331         ids += project.descendants.collect(&amp;:id)
+</span><span class="inferred1"><a name="line332"></a>332       end
+</span><span class="marked0"><a name="line333"></a>333       project_clauses &lt;&lt; &quot;#{Project.table_name}.id IN (%s)&quot; % ids.join(',')
+</span><span class="marked1"><a name="line334"></a>334     elsif project
+</span><span class="uncovered0"><a name="line335"></a>335       project_clauses &lt;&lt; &quot;#{Project.table_name}.id = %d&quot; % project.id
+</span><span class="uncovered1"><a name="line336"></a>336     end
+</span><span class="marked0"><a name="line337"></a>337     project_clauses &lt;&lt;  Project.allowed_to_condition(User.current, :view_issues)
+</span><span class="marked1"><a name="line338"></a>338     project_clauses.join(' AND ')
+</span><span class="inferred0"><a name="line339"></a>339   end
+</span><span class="inferred1"><a name="line340"></a>340 
+</span><span class="marked0"><a name="line341"></a>341   def statement
+</span><span class="inferred1"><a name="line342"></a>342     # filters clauses
+</span><span class="marked0"><a name="line343"></a>343     filters_clauses = []
+</span><span class="marked1"><a name="line344"></a>344     filters.each_key do |field|
+</span><span class="marked0"><a name="line345"></a>345       next if field == &quot;subproject_id&quot;
+</span><span class="marked1"><a name="line346"></a>346       v = values_for(field).clone
+</span><span class="marked0"><a name="line347"></a>347       next unless v and !v.empty?
+</span><span class="marked1"><a name="line348"></a>348       operator = operator_for(field)
+</span><span class="inferred0"><a name="line349"></a>349       
+</span><span class="inferred1"><a name="line350"></a>350       # &quot;me&quot; value subsitution
+</span><span class="marked0"><a name="line351"></a>351       if %w(assigned_to_id author_id watcher_id).include?(field)
+</span><span class="marked1"><a name="line352"></a>352         v.push(User.current.logged? ? User.current.id.to_s : &quot;0&quot;) if v.delete(&quot;me&quot;)
+</span><span class="inferred0"><a name="line353"></a>353       end
+</span><span class="inferred1"><a name="line354"></a>354       
+</span><span class="marked0"><a name="line355"></a>355       sql = ''
+</span><span class="marked1"><a name="line356"></a>356       if field =~ /^cf_(\d+)$/
+</span><span class="inferred0"><a name="line357"></a>357         # custom field
+</span><span class="marked1"><a name="line358"></a>358         db_table = CustomValue.table_name
+</span><span class="marked0"><a name="line359"></a>359         db_field = 'value'
+</span><span class="marked1"><a name="line360"></a>360         is_custom_filter = true
+</span><span class="marked0"><a name="line361"></a>361         sql &lt;&lt; &quot;#{Issue.table_name}.id IN (SELECT #{Issue.table_name}.id FROM #{Issue.table_name} LEFT OUTER JOIN #{db_table} ON #{db_table}.customized_type='Issue' AND #{db_table}.customized_id=#{Issue.table_name}.id AND #{db_table}.custom_field_id=#{$1} WHERE &quot;
+</span><span class="marked1"><a name="line362"></a>362         sql &lt;&lt; sql_for_field(field, operator, v, db_table, db_field, true) + ')'
+</span><span class="marked0"><a name="line363"></a>363       elsif field == 'watcher_id'
+</span><span class="marked1"><a name="line364"></a>364         db_table = Watcher.table_name
+</span><span class="marked0"><a name="line365"></a>365         db_field = 'user_id'
+</span><span class="marked1"><a name="line366"></a>366         sql &lt;&lt; &quot;#{Issue.table_name}.id #{ operator == '=' ? 'IN' : 'NOT IN' } (SELECT #{db_table}.watchable_id FROM #{db_table} WHERE #{db_table}.watchable_type='Issue' AND &quot;
+</span><span class="marked0"><a name="line367"></a>367         sql &lt;&lt; sql_for_field(field, '=', v, db_table, db_field) + ')'
+</span><span class="inferred1"><a name="line368"></a>368       else
+</span><span class="inferred0"><a name="line369"></a>369         # regular field
+</span><span class="marked1"><a name="line370"></a>370         db_table = Issue.table_name
+</span><span class="marked0"><a name="line371"></a>371         db_field = field
+</span><span class="marked1"><a name="line372"></a>372         sql &lt;&lt; '(' + sql_for_field(field, operator, v, db_table, db_field) + ')'
+</span><span class="inferred0"><a name="line373"></a>373       end
+</span><span class="marked1"><a name="line374"></a>374       filters_clauses &lt;&lt; sql
+</span><span class="inferred0"><a name="line375"></a>375       
+</span><span class="marked1"><a name="line376"></a>376     end if filters and valid?
+</span><span class="inferred0"><a name="line377"></a>377     
+</span><span class="marked1"><a name="line378"></a>378     (filters_clauses &lt;&lt; project_statement).join(' AND ')
+</span><span class="inferred0"><a name="line379"></a>379   end
+</span><span class="inferred1"><a name="line380"></a>380   
+</span><span class="marked0"><a name="line381"></a>381   private
+</span><span class="inferred1"><a name="line382"></a>382   
+</span><span class="inferred0"><a name="line383"></a>383   # Helper method to generate the WHERE sql for a +field+, +operator+ and a +value+
+</span><span class="marked1"><a name="line384"></a>384   def sql_for_field(field, operator, value, db_table, db_field, is_custom_filter=false)
+</span><span class="marked0"><a name="line385"></a>385     sql = ''
+</span><span class="marked1"><a name="line386"></a>386     case operator
+</span><span class="marked0"><a name="line387"></a>387     when &quot;=&quot;
+</span><span class="marked1"><a name="line388"></a>388       sql = &quot;#{db_table}.#{db_field} IN (&quot; + value.collect{|val| &quot;'#{connection.quote_string(val)}'&quot;}.join(&quot;,&quot;) + &quot;)&quot;
+</span><span class="marked0"><a name="line389"></a>389     when &quot;!&quot;
+</span><span class="uncovered1"><a name="line390"></a>390       sql = &quot;(#{db_table}.#{db_field} IS NULL OR #{db_table}.#{db_field} NOT IN (&quot; + value.collect{|val| &quot;'#{connection.quote_string(val)}'&quot;}.join(&quot;,&quot;) + &quot;))&quot;
+</span><span class="marked0"><a name="line391"></a>391     when &quot;!*&quot;
+</span><span class="marked1"><a name="line392"></a>392       sql = &quot;#{db_table}.#{db_field} IS NULL&quot;
+</span><span class="marked0"><a name="line393"></a>393       sql &lt;&lt; &quot; OR #{db_table}.#{db_field} = ''&quot; if is_custom_filter
+</span><span class="marked1"><a name="line394"></a>394     when &quot;*&quot;
+</span><span class="marked0"><a name="line395"></a>395       sql = &quot;#{db_table}.#{db_field} IS NOT NULL&quot;
+</span><span class="marked1"><a name="line396"></a>396       sql &lt;&lt; &quot; AND #{db_table}.#{db_field} &lt;&gt; ''&quot; if is_custom_filter
+</span><span class="marked0"><a name="line397"></a>397     when &quot;&gt;=&quot;
+</span><span class="marked1"><a name="line398"></a>398       sql = &quot;#{db_table}.#{db_field} &gt;= #{value.first.to_i}&quot;
+</span><span class="marked0"><a name="line399"></a>399     when &quot;&lt;=&quot;
+</span><span class="uncovered1"><a name="line400"></a>400       sql = &quot;#{db_table}.#{db_field} &lt;= #{value.first.to_i}&quot;
+</span><span class="marked0"><a name="line401"></a>401     when &quot;o&quot;
+</span><span class="marked1"><a name="line402"></a>402       sql = &quot;#{IssueStatus.table_name}.is_closed=#{connection.quoted_false}&quot; if field == &quot;status_id&quot;
+</span><span class="marked0"><a name="line403"></a>403     when &quot;c&quot;
+</span><span class="uncovered1"><a name="line404"></a>404       sql = &quot;#{IssueStatus.table_name}.is_closed=#{connection.quoted_true}&quot; if field == &quot;status_id&quot;
+</span><span class="marked0"><a name="line405"></a>405     when &quot;&gt;t-&quot;
+</span><span class="marked1"><a name="line406"></a>406       sql = date_range_clause(db_table, db_field, - value.first.to_i, 0)
+</span><span class="marked0"><a name="line407"></a>407     when &quot;&lt;t-&quot;
+</span><span class="marked1"><a name="line408"></a>408       sql = date_range_clause(db_table, db_field, nil, - value.first.to_i)
+</span><span class="marked0"><a name="line409"></a>409     when &quot;t-&quot;
+</span><span class="marked1"><a name="line410"></a>410       sql = date_range_clause(db_table, db_field, - value.first.to_i, - value.first.to_i)
+</span><span class="marked0"><a name="line411"></a>411     when &quot;&gt;t+&quot;
+</span><span class="marked1"><a name="line412"></a>412       sql = date_range_clause(db_table, db_field, value.first.to_i, nil)
+</span><span class="marked0"><a name="line413"></a>413     when &quot;&lt;t+&quot;
+</span><span class="marked1"><a name="line414"></a>414       sql = date_range_clause(db_table, db_field, 0, value.first.to_i)
+</span><span class="marked0"><a name="line415"></a>415     when &quot;t+&quot;
+</span><span class="marked1"><a name="line416"></a>416       sql = date_range_clause(db_table, db_field, value.first.to_i, value.first.to_i)
+</span><span class="marked0"><a name="line417"></a>417     when &quot;t&quot;
+</span><span class="marked1"><a name="line418"></a>418       sql = date_range_clause(db_table, db_field, 0, 0)
+</span><span class="marked0"><a name="line419"></a>419     when &quot;w&quot;
+</span><span class="marked1"><a name="line420"></a>420       from = l(:general_first_day_of_week) == '7' ?
+</span><span class="uncovered0"><a name="line421"></a>421       # week starts on sunday
+</span><span class="uncovered1"><a name="line422"></a>422       ((Date.today.cwday == 7) ? Time.now.at_beginning_of_day : Time.now.at_beginning_of_week - 1.day) :
+</span><span class="inferred0"><a name="line423"></a>423         # week starts on monday (Rails default)
+</span><span class="marked1"><a name="line424"></a>424         Time.now.at_beginning_of_week
+</span><span class="marked0"><a name="line425"></a>425       sql = &quot;#{db_table}.#{db_field} BETWEEN '%s' AND '%s'&quot; % [connection.quoted_date(from), connection.quoted_date(from + 7.days)]
+</span><span class="marked1"><a name="line426"></a>426     when &quot;~&quot;
+</span><span class="marked0"><a name="line427"></a>427       sql = &quot;LOWER(#{db_table}.#{db_field}) LIKE '%#{connection.quote_string(value.first.to_s.downcase)}%'&quot;
+</span><span class="marked1"><a name="line428"></a>428     when &quot;!~&quot;
+</span><span class="marked0"><a name="line429"></a>429       sql = &quot;LOWER(#{db_table}.#{db_field}) NOT LIKE '%#{connection.quote_string(value.first.to_s.downcase)}%'&quot;
+</span><span class="inferred1"><a name="line430"></a>430     end
+</span><span class="inferred0"><a name="line431"></a>431     
+</span><span class="marked1"><a name="line432"></a>432     return sql
+</span><span class="inferred0"><a name="line433"></a>433   end
+</span><span class="inferred1"><a name="line434"></a>434   
+</span><span class="marked0"><a name="line435"></a>435   def add_custom_fields_filters(custom_fields)
+</span><span class="marked1"><a name="line436"></a>436     @available_filters ||= {}
+</span><span class="inferred0"><a name="line437"></a>437     
+</span><span class="marked1"><a name="line438"></a>438     custom_fields.select(&amp;:is_filter?).each do |field|
+</span><span class="marked0"><a name="line439"></a>439       case field.field_format
+</span><span class="marked1"><a name="line440"></a>440       when &quot;text&quot;
+</span><span class="uncovered0"><a name="line441"></a>441         options = { :type =&gt; :text, :order =&gt; 20 }
+</span><span class="marked1"><a name="line442"></a>442       when &quot;list&quot;
+</span><span class="marked0"><a name="line443"></a>443         options = { :type =&gt; :list_optional, :values =&gt; field.possible_values, :order =&gt; 20}
+</span><span class="uncovered1"><a name="line444"></a>444       when &quot;date&quot;
+</span><span class="uncovered0"><a name="line445"></a>445         options = { :type =&gt; :date, :order =&gt; 20 }
+</span><span class="uncovered1"><a name="line446"></a>446       when &quot;bool&quot;
+</span><span class="uncovered0"><a name="line447"></a>447         options = { :type =&gt; :list, :values =&gt; [[l(:general_text_yes), &quot;1&quot;], [l(:general_text_no), &quot;0&quot;]], :order =&gt; 20 }
+</span><span class="uncovered1"><a name="line448"></a>448       else
+</span><span class="uncovered0"><a name="line449"></a>449         options = { :type =&gt; :string, :order =&gt; 20 }
+</span><span class="uncovered1"><a name="line450"></a>450       end
+</span><span class="marked0"><a name="line451"></a>451       @available_filters[&quot;cf_#{field.id}&quot;] = options.merge({ :name =&gt; field.name })
+</span><span class="inferred1"><a name="line452"></a>452     end
+</span><span class="inferred0"><a name="line453"></a>453   end
+</span><span class="inferred1"><a name="line454"></a>454   
+</span><span class="inferred0"><a name="line455"></a>455   # Returns a SQL clause for a date or datetime field.
+</span><span class="marked1"><a name="line456"></a>456   def date_range_clause(table, field, from, to)
+</span><span class="marked0"><a name="line457"></a>457     s = []
+</span><span class="marked1"><a name="line458"></a>458     if from
+</span><span class="marked0"><a name="line459"></a>459       s &lt;&lt; (&quot;#{table}.#{field} &gt; '%s'&quot; % [connection.quoted_date((Date.yesterday + from).to_time.end_of_day)])
+</span><span class="inferred1"><a name="line460"></a>460     end
+</span><span class="marked0"><a name="line461"></a>461     if to
+</span><span class="marked1"><a name="line462"></a>462       s &lt;&lt; (&quot;#{table}.#{field} &lt;= '%s'&quot; % [connection.quoted_date((Date.today + to).to_time.end_of_day)])
+</span><span class="inferred0"><a name="line463"></a>463     end
+</span><span class="marked1"><a name="line464"></a>464     s.join(' AND ')
+</span><span class="inferred0"><a name="line465"></a>465   end
+</span><span class="inferred1"><a name="line466"></a>466 end
+</span></pre><hr/>
+    <p>Generated using the <a href='http://eigenclass.org/hiki.rb?rcov'>rcov code coverage analysis tool for Ruby</a>
+   version 0.8.1.2.</p>
+<p><a href='http://validator.w3.org/check/referer'><img src='http://www.w3.org/Icons/valid-xhtml10' height='31' alt='Valid XHTML 1.0!' width='88'/>
+        </a>
+      <a href='http://jigsaw.w3.org/css-validator/check/referer'><img src='http://jigsaw.w3.org/css-validator/images/vcss' alt='Valid CSS!' style='border:0;width:88px;height:31px'/>
+        </a>
+      </p>
+    </body>
+  </html>
