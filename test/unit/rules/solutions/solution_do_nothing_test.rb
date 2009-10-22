@@ -8,13 +8,13 @@ class SolutionDoNothingTest < Test::Unit::TestCase
   end
 
   def test_html
-    assert_match /Ignorar/,@solution::html
+    assert_match /Ignorar/,@solution.html
   end
 
   def test_create
     assert_difference("Version.count", 0) do
       assert_difference("Issue.count", 0) do
-        @solution::create({})
+        @solution.create({})
       end
     end
   end

@@ -11,14 +11,14 @@ class SolutionMoveStoryToOpenVersionTest < Test::Unit::TestCase
 
   def test_html
     stories(:one).update_attribute(:version_id,versions(:versions_002).id)
-    out = @solution::html(:project=>projects(:projects_001),:story=>stories(:one))
+    out = @solution.html(:project=>projects(:projects_001),:story=>stories(:one))
     assert_match /Mover as seguintes tarefas para/, out
   end
 
   def test_create
     stories(:one).update_attribute(:version_id,versions(:versions_002).id)
     assert_nil issues(:issues_011_teste).fixed_version
-    @solution::create :story=>stories(:one),:params=>{:version_id=>versions(:versions_002),:issues=>[issues(:issues_011_teste).id]}
+    @solution.create :story=>stories(:one),:params=>{:version_id=>versions(:versions_002),:issues=>[issues(:issues_011_teste).id]}
     issues(:issues_011_teste).reload
     assert_equal versions(:versions_002).id,issues(:issues_011_teste).fixed_version_id
     assert_equal versions(:versions_002),stories(:one).version

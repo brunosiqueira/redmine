@@ -1,7 +1,7 @@
 <div class="solution_box">
   <br>
-  <% form_remote_tag(:url=>{:action=>"execute",:project_id=>@project,:type=>@type,:id=>@object,:rule_id=>solution.rule,:solution_id=>solution}, :method=>:put) do %>
+  <% form_remote_tag(:url=>{:action=>"execute",:project_id=>@project,:type=>@type,:id=>@object,:rule_id=>rule,:solution_id=>solution}, :method=>:put) do %>
     <% key = @type.downcase.to_sym %>
-    <%=solution.name.constantize::html(:project=>@project,key=>@object)%>
+    <%=solution.name.constantize.html(:project=>@project,key=>@object)%>
   <% end  %>
 </div>

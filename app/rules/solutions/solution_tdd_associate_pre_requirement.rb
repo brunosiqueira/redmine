@@ -1,6 +1,4 @@
-# To change this template, choose Tools | Templates
-# and open the template in the editor.
-module SolutionTddAssociatePreRequirement
+class SolutionTddAssociatePreRequirement
   class Form
     include ActionView::Helpers
   end

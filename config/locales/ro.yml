@@ -866,3 +866,5 @@ ro:
   label_story: Story
   label_story_new: New Stories
   field_story: Story
+  label_high: High
+  label_low: Low

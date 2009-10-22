@@ -1,4 +1,4 @@
 <div id="rule_<%=rule.id%>" class="rule_box">
   <h2><%= rule.context %></h2>
-  <%= render :partial=>"solution",:collection=>rule.solutions %>
+  <%= render :partial=>"solution",:collection=>rule.solutions,:locals=>{:rule=>rule} %>
 </div>

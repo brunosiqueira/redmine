@@ -3,7 +3,7 @@ class Rule < ActiveRecord::Base
   has_many :projects, :through => :project_rules
   has_many :rule_solutions,:dependent=>:destroy
   has_many :solutions, :through => :rule_solutions
-  validates_presence_of :name,:context,:message,:importance,:action
+  validates_presence_of :name,:context,:importance,:action
   validates_uniqueness_of :name
   validates_format_of :name, :with => /^[a-zA-Z][a-z0-9A-Z_\-]+$/
 
@@ -32,7 +32,7 @@ class Rule < ActiveRecord::Base
     [[l(:label_issue),"Issue"],[l(:label_story),"Story"]]
   end
   def self.importances
-    ["low","high"]
+    [[l(:label_low),"low"],[l(:label_high),"high"]]
   end
 
   def self.actions

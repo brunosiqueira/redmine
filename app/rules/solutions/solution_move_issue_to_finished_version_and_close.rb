@@ -1,7 +1,4 @@
-# To change this template, choose Tools | Templates
-# and open the template in the editor.
-
-module SolutionMoveIssueToFinishedVersionAndClose
+class SolutionMoveIssueToFinishedVersionAndClose
   class Form
     include ActionView::Helpers
   end

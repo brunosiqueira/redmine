@@ -1,4 +1,4 @@
-module SolutionMoveStoryToOpenVersion
+class SolutionMoveStoryToOpenVersion
   class Form
     include ActionView::Helpers
   end

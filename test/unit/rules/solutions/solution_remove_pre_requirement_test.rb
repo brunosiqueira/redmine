@@ -11,7 +11,7 @@ class SolutionRemovePreRequirementTest < Test::Unit::TestCase
 
   def test_html
     dev = issues(:issues_010)
-    out = @solution::html(:issue=>dev)
+    out = @solution.html(:issue=>dev)
     assert_match /Remover o pré-requisito/, out
   end
 
@@ -22,7 +22,7 @@ class SolutionRemovePreRequirementTest < Test::Unit::TestCase
     assert !dev.status.eql?(pre.status)
     assert_difference("IssuePreRequirement.count", -1) do
       assert_difference("Journal.count", 2) do
-        @solution::create(:issue=>dev,:current_user=>users(:users_001))
+        @solution.create(:issue=>dev,:current_user=>users(:users_001))
       end
     end
     issues(:issues_010).reload
