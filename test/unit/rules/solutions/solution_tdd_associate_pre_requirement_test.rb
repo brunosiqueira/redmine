@@ -9,15 +9,15 @@ class SolutionTddAssociatePreRequirementTest < Test::Unit::TestCase
     @solution = SolutionTddAssociatePreRequirement
   end
 
-  def test_html_with_test
+  def test_html_with_test 
     out = @solution.html(:project=>projects(:projects_005))
     assert_match /Associar tarefa a uma tarefa de teste/, out
     assert_match /#{issues(:issues_011_teste).subject}/,out
   end
 
   def test_html_without_test
-    out = @solution.html(:project=>projects(:projects_002))
-    assert_match /disabled="disabled"/,out
+    out = @solution.enabled?(:project=>projects(:projects_002))
+    assert !out
   end
 
   def test_create

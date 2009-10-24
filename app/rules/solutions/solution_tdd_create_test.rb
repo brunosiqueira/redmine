@@ -1,12 +1,8 @@
 # To change this template, choose Tools | Templates
 # and open the template in the editor.
 class SolutionTddCreateTest
-  class Form
-    include ActionView::Helpers
-  end
   def self.html(options={})
     output = "Criar uma nova tarefa de teste<br>"
-    output << Form.new.submit_tag("Enviar")
     return output
   end
 

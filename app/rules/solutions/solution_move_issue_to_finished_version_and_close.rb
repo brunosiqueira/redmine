@@ -1,11 +1,7 @@
 class SolutionMoveIssueToFinishedVersionAndClose
-  class Form
-    include ActionView::Helpers
-  end
 
   def self.html(options={})
     output = "Mover para a iteração finalizada e concluir a tarefa<br>"
-    output << Form.new.submit_tag("Enviar")
     return output
   end
 

@@ -1,11 +1,7 @@
 class SolutionRemovePreRequirement
-  class Form
-    include ActionView::Helpers
-  end
 
   def self.html(options={})
     output = "Remover o pré-requisito #{options[:issue].pre_requirement} <br>"
-    output << Form.new.submit_tag("Enviar")
     return output
   end
 

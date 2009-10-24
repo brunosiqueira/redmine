@@ -2,6 +2,8 @@
   <br>
   <% form_remote_tag(:url=>{:action=>"execute",:project_id=>@project,:type=>@type,:id=>@object,:rule_id=>rule,:solution_id=>solution}, :method=>:put) do %>
     <% key = @type.downcase.to_sym %>
-    <%=solution.name.constantize.html(:project=>@project,key=>@object)%>
+  <% solution_class = solution.name.constantize %>
+    <%=solution_class.html(:project=>@project,key=>@object)%>
+    <%= submit_tag("Executar",:disabled=>solution_class.methods.include?("enabled?") ? !solution_class.enabled?(:project=>@project,key=>@object) : false) %>
   <% end  %>
 </div>

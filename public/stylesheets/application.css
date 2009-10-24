@@ -401,7 +401,7 @@ div.flash.warning {
     text-align:center;
     padding:0.6em;
     z-index:100;
-    filter:alpha(opacity=50);
+    /*filter:alpha(opacity=50);*/
     opacity: 0.5;
 }
 
@@ -787,22 +787,38 @@ h2 img { vertical-align:middle; }
 }
 div.rule_box{
 
-    border-right-style: groove;
-    border-left-style: groove;
-    border-bottom-style: groove;
-    border-top-style: groove;
-    background-color: #496e9a;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-bottom-style: solid;
+    border-top-style: solid;
+    background-color: #507aaa;
+    border-right-width: 2px;
+    border-left-width: 2px;
+    border-bottom-width: 2px;
+    border-top-width: 2px;
+    border-right-color: #205998;
+    border-left-color: #205998;
+    border-bottom-color: #205998;
+    border-top-color: #205998;
 }
 div.solution_box{
-    border-right-style: groove;
-    border-left-style: groove;
-    border-bottom-style: groove;
-    border-top-style: groove;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-bottom-style: solid;
+    border-top-style: solid;
+    border-right-width: 2px;
+    border-left-width: 2px;
+    border-bottom-width: 2px;
+    border-top-width: 2px;
+    border-right-color: #205998;
+    border-left-color: #205998;
+    border-bottom-color: #205998;
+    border-top-color: #205998;
     padding-left: 40px;
-    background-color: #b0c9e6;
+    background-color: #ffffff;
 }
 div.rule_box h2{
-    color:black;
+    color:white;
 }
 fieldset.check_list ul {
     text-decoration:none;

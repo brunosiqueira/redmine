@@ -1,11 +1,6 @@
 class SolutionClosePreRequirement
-  class Form
-    include ActionView::Helpers
-  end
-
   def self.html(options={})
     output = "Concluír a tarefa #{options[:issue].pre_requirement} <br>"
-    output << Form.new.submit_tag("Enviar")
     return output
   end
 

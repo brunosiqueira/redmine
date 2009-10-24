@@ -14,7 +14,6 @@ class SolutionMoveStoryToOpenVersion
     output << "<fieldset class=\"check_list\">"
     output << form_check.collection_multiple_select_tag("issues",options[:story].opened_issues,:id,:to_s,:selected_items=>options[:story].opened_issue_ids)
     output << "</fieldset>"
-    output << form.submit_tag("Enviar")
     return output
   end
 
