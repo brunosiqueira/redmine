@@ -318,6 +318,10 @@ class Issue < ActiveRecord::Base
     IssueStatus.find_by_id(self.status_id).name == "Concluída"
   end
 
+  def is_default?
+    return IssueStatus.find_by_id(self.status_id).is_default
+  end
+
   def invalid_rules
     @invalid_rules || []
   end

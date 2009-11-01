@@ -11,7 +11,7 @@ class TestPreRequirementConclusionRule < Test::Unit::TestCase
   
   def test_invalid
     test = issues(:issues_011_teste)
-    dev = Issue.new(:pre_requirement_id=>test.id,:status=>issue_statuses(:issue_statuses_006))
+    dev = Issue.new(:pre_requirement_id=>test.id,:status=>issue_statuses(:issue_statuses_002))
     assert !@rule.valid?(dev)
   end
 

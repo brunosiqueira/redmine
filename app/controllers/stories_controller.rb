@@ -49,7 +49,7 @@ class StoriesController < ApplicationController
       if @story.save
         if !@story.invalid_rules.empty?
           flash[:invalid_rules] = @story.invalid_rules
-          redirect_to(:controller=>"rules",:action=>"list",:id => @story,:project_id=>@story,:type=>"Story")
+          redirect_to(:controller=>"rules",:action=>"list",:id => @story,:project_id=>@project,:type=>"Story")
           return
         end
         flash[:notice] = l(:notice_successful_create)
@@ -72,7 +72,7 @@ class StoriesController < ApplicationController
       if @story.update_attributes(params[:story])
         if !@story.invalid_rules.empty?
           flash[:invalid_rules] = @story.invalid_rules
-          redirect_to(:controller=>"rules",:action=>"list",:id => @story,:project_id=>@story,:type=>"Story")
+          redirect_to(:controller=>"rules",:action=>"list",:id => @story,:project_id=>@project,:type=>"Story")
           return
         end
         flash[:notice] = l(:notice_successful_update)

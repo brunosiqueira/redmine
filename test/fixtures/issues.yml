@@ -175,3 +175,20 @@ issues_011_teste:
   status_id: 1
   start_date: <%= Date.today.to_s(:db) %>
   due_date: <%= 1.days.from_now.to_date.to_s(:db) %>
+issues_012_desenvolvimento:
+  created_on: <%= 1.minute.ago.to_date.to_s(:db) %>
+  project_id: 5
+  updated_on: <%= 1.minute.ago.to_date.to_s(:db) %>
+  priority_id: 5
+  story_id: 1
+  subject: Development Issue
+  id: 12
+  fixed_version_id:
+  category_id:
+  description: This is an test issue
+  tracker_id: 4
+  assigned_to_id:
+  author_id: 2
+  status_id: 1
+  start_date: <%= Date.today.to_s(:db) %>
+  due_date: <%= 1.days.from_now.to_date.to_s(:db) %>
