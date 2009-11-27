@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091012151238) do
+ActiveRecord::Schema.define(:version => 20091121234900) do
 
   create_table "attachments", :force => true do |t|
     t.integer  "container_id",                 :default => 0,  :null => false
@@ -286,6 +286,13 @@ ActiveRecord::Schema.define(:version => 20091012151238) do
 
   add_index "messages", ["board_id"], :name => "messages_board_id"
   add_index "messages", ["parent_id"], :name => "messages_parent_id"
+
+  create_table "mutual_rules", :force => true do |t|
+    t.integer  "rule_one_id"
+    t.integer  "rule_two_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "news", :force => true do |t|
     t.integer  "project_id"

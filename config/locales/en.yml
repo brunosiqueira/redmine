@@ -373,7 +373,7 @@ en:
   project_module_wiki: Wiki
   project_module_repository: Repository
   project_module_boards: Boards
-  
+  label_mutual_rule: Imcompatible Rules
   label_user: User
   label_user_plural: Users
   label_user_new: New user

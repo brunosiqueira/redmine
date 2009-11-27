@@ -1,0 +1,2 @@
+module MutualRulesHelper
+end

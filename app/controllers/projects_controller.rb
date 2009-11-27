@@ -56,7 +56,7 @@ class ProjectsController < ApplicationController
       }
       format.atom {
         projects = Project.visible.find(:all, :order => 'created_on DESC',
-                                              :limit => Setting.feeds_limit.to_i)
+          :limit => Setting.feeds_limit.to_i)
         render_feed(projects, :title => "#{Setting.app_title}: #{l(:label_project_latest)}")
       }
     end
@@ -92,8 +92,8 @@ class ProjectsController < ApplicationController
     @issue_custom_fields = IssueCustomField.find(:all, :order => "#{CustomField.table_name}.position")
     @trackers = Tracker.all
     @root_projects = Project.find(:all,
-                                  :conditions => "parent_id IS NULL AND status = #{Project::STATUS_ACTIVE}",
-                                  :order => 'name')
+      :conditions => "parent_id IS NULL AND status = #{Project::STATUS_ACTIVE}",
+      :order => 'name')
     if request.get?
       @project = Project.copy_from(params[:id])
       if @project
@@ -127,16 +127,16 @@ class ProjectsController < ApplicationController
     cond = @project.project_condition(Setting.display_subprojects_issues?)
     
     @open_issues_by_tracker = Issue.visible.count(:group => :tracker,
-                                            :include => [:project, :status, :tracker],
-                                            :conditions => ["(#{cond}) AND #{IssueStatus.table_name}.is_closed=?", false])
+      :include => [:project, :status, :tracker],
+      :conditions => ["(#{cond}) AND #{IssueStatus.table_name}.is_closed=?", false])
     @total_issues_by_tracker = Issue.visible.count(:group => :tracker,
-                                            :include => [:project, :status, :tracker],
-                                            :conditions => cond)
+      :include => [:project, :status, :tracker],
+      :conditions => cond)
     
     TimeEntry.visible_by(User.current) do
       @total_hours = TimeEntry.sum(:hours, 
-                                   :include => :project,
-                                   :conditions => cond).to_f
+        :include => :project,
+        :conditions => cond).to_f
     end
     @key = User.current.rss_key
   end
@@ -171,7 +171,11 @@ class ProjectsController < ApplicationController
   end
 
   def rules
-    @project.rule_ids = params[:rules]
+    unless MutualRule.conflict? params[:rules]
+      @project.rule_ids = params[:rules]
+    else
+      flash[:error] = "Algumas regras são incompatíveis!"
+    end
     redirect_to :action => 'settings', :id => @project, :tab => 'rules'
   end
 
@@ -240,9 +244,9 @@ class ProjectsController < ApplicationController
   def list_files
     sort_init 'filename', 'asc'
     sort_update 'filename' => "#{Attachment.table_name}.filename",
-                'created_on' => "#{Attachment.table_name}.created_on",
-                'size' => "#{Attachment.table_name}.filesize",
-                'downloads' => "#{Attachment.table_name}.downloads"
+      'created_on' => "#{Attachment.table_name}.created_on",
+      'size' => "#{Attachment.table_name}.filesize",
+      'downloads' => "#{Attachment.table_name}.downloads"
                 
     @containers = [ Project.find(@project.id, :include => :attachments, :order => sort_clause)]
     @containers += @project.versions.find(:all, :include => :attachments, :order => sort_clause).sort.reverse
@@ -276,8 +280,8 @@ class ProjectsController < ApplicationController
     @author = (params[:user_id].blank? ? nil : User.active.find(params[:user_id]))
     
     @activity = Redmine::Activity::Fetcher.new(User.current, :project => @project, 
-                                                             :with_subprojects => @with_subprojects,
-                                                             :author => @author)
+      :with_subprojects => @with_subprojects,
+      :author => @author)
     @activity.scope_select {|t| !params["show_#{t}"].nil?}
     @activity.scope = (@author.nil? ? :default : :all) if @activity.scope.empty?
 
@@ -303,7 +307,7 @@ class ProjectsController < ApplicationController
     render_404
   end
   
-private
+  private
   # Find project of id params[:id]
   # if not found, redirect to project list
   # Used as a before_filter

@@ -1,0 +1,29 @@
+<% form_tag :action=>:update do %>
+  <table class="list">
+    <tr>
+      <th></th>
+      <% @rules.each do |rule_one| %>
+        <th>
+          <%=rule_one.name unless rule_one == @rules.last%>
+        </th>
+      <% end %>
+    </tr>
+    <% @rules.each do |rule| %>
+      <% unless rule == @rules.first %>
+        <tr>
+          <th>
+            <%=rule.name%>
+          </th>
+          <% @rules.each do |rule_2| %>
+            <% if @rules.index(rule)>@rules.index(rule_2) %>
+              <td style="text-align:center;"><%= check_box_tag("check[#{rule.id.to_s}_#{rule_2.id.to_s}]",1,!(MutualRule.find_by_rule_one_id_and_rule_two_id(rule.id,rule_2.id)).nil?) %></td>
+            <% else %>
+              <td></td>
+            <% end %>
+          <% end %>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
+  <%=submit_tag "Atualizar"%>
+<% end %>
