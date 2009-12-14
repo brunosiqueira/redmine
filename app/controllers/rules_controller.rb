@@ -55,6 +55,7 @@ class RulesController < ApplicationController
     @solution = @rule.solutions.find params[:solution_id]
     key = params[:type].downcase.to_sym
     @solution.name.constantize.create :project=>@project,key=>@object,:params=>params, :current_user=>User.find(session[:user_id])
+    RuleLog.create :project=>@project, :rule=>@rule,:solution=>@solution,:process=>@object
     render :update do |page|
       page.replace_html "rule_#{@rule.id}","<h2>Resolvido</h2>"
     end

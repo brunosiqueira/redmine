@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091121234900) do
+ActiveRecord::Schema.define(:version => 20091210181548) do
 
   create_table "attachments", :force => true do |t|
     t.integer  "container_id",                 :default => 0,  :null => false
@@ -378,6 +378,16 @@ ActiveRecord::Schema.define(:version => 20091121234900) do
     t.boolean "assignable",                :default => true
     t.integer "builtin",                   :default => 0,    :null => false
     t.text    "permissions"
+  end
+
+  create_table "rule_logs", :force => true do |t|
+    t.integer  "project_id"
+    t.integer  "rule_id"
+    t.integer  "solution_id"
+    t.integer  "process_id"
+    t.string   "process_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "rule_solutions", :force => true do |t|

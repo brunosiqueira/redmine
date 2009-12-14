@@ -909,3 +909,4 @@ fi:
   label_high: High
   label_low: Low
   label_mutual_rule: Imcompatible Rules
+  label_rule_logs: Log
