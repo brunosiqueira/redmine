@@ -1,0 +1,2 @@
+module RuleLogsHelper
+end

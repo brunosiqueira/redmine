@@ -1,0 +1,21 @@
+<h2><%=l :label_rule_logs%></h2>
+
+<table class="list">
+  <tr>
+    <th><%= l "field_project"%></th>
+    <th><%= l "label_rule"%></th>
+    <th><%= l "label_solution"%></th>
+    <th><%= l "field_process_type"%></th>
+    <th><%= l "field_effective_date"%></th>
+  </tr>
+
+  <% for log in @rule_logs %>
+    <tr>
+      <td><%=h log.project %></td>
+      <td><%=h log.rule %></td>
+      <td><%=h log.solution %></td>
+      <td><%=h log.process %></td>
+      <td><%=h log.created_at.strftime("%d/%m/%y %H:%M") %></td>
+    </tr>
+  <% end %>
+</table>
